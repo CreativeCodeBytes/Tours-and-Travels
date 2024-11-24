@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Air Ticket & Hotel Booking</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="Air-Tecket.css" rel="stylesheet">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">
+                <a href="#"><img src="logo.png" alt="Logo" class="logo-img"></a>
+            </div>
+            <div class="hamburger">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+            <ul class="nav-links">
+                <li class="dropdown">
+                    <a href="#">Group Tours <i class="fa fa-caret-down"></i></a>
+                    <ul class="dropdown-menu">
+                        <li class="nested-dropdown">
+                            <a href="#">Domestic <i class="fa fa-caret-right"></i></a>
+                            <ul class="nested-menu">
+                                <li><a href="#">Andaman</a></li>
+                                <li><a href="#">Andhra Pradesh</a></li>
+                                <li><a href="#">Gujarat</a></li>
+                                <li><a href="#">Himachal Pradesh</a></li>
+                                <li><a href="#">Jammu & Kashmir</a></li>
+                                <li><a href="#">Karnataka</a></li>
+                                <li><a href="#">Kerala</a></li>
+                                <li><a href="#">Leh Ladakh</a></li>
+                                <li><a href="#">Madhya Pradesh</a></li>
+                                <li><a href="#">Northeast India</a></li>
+                                <li><a href="#">Orissa</a></li>
+                                <li><a href="#">Rajasthan</a></li>
+                                <li><a href="#">Uttarakhand</a></li>
+                                <li><a href="#">West Bengal</a></li>
+                                <li><a href="#">Maharashtra</a></li>
+                                <li><a href="#">Goa</a></li>
+                            </ul>
+                        </li>
+                        <li class="nested-dropdown">
+                            <a href="#">Pilgrimage Yatra <i class="fa fa-caret-right"></i></a>
+                            <ul class="nested-menu">
+                                <li><a href="#">Amarnath Vaishnodevi</a></li>
+                                <li><a href="#">Chardham Yatra</a></li>
+                                <li><a href="#">Narmada Parikrama</a></li>
+                                <li><a href="#">Pithapur Kuravpur</a></li>
+                                <li><a href="#">Tristhali Yatra</a></li>
+                                <li><a href="#">Gujarat</a></li>
+                            </ul>
+                        </li>
+                        <li class="nested-dropdown">
+                            <a href="#">International <i class="fa fa-caret-right"></i></a>
+                            <ul class="nested-menu">
+                                <li><a href="#">Africa</a></li>
+                                <li><a href="#">America</a></li>
+                                <li><a href="#">Australia</a></li>
+                                <li><a href="#">Bali</a></li>
+                                <li><a href="#">Bhutan</a></li>
+                                <li><a href="#">Cambodia</a></li>
+                                <li><a href="#">Canada</a></li>
+                                <li><a href="#">China</a></li>
+                                <li><a href="#">Dubai</a></li>
+                                <li><a href="#">Europe</a></li>
+                                <li><a href="#">Hong Kong</a></li>
+                                <li><a href="#">Malaysia</a></li>
+                                <li><a href="#">Nepal</a></li>
+                                <li><a href="#">New Zealand</a></li>
+                                <li><a href="#">Russia</a></li>
+                                <li><a href="#">Singapore</a></li>
+                                <li><a href="#">Sri Lanka</a></li>
+                                <li><a href="#">Thailand</a></li>
+                                <li><a href="#">Vietnam</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">International Customised Tour</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#">Honeymoon <i class="fa fa-caret-down"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">DOMESTIC</a></li>
+                        <li><a href="#">INTERNATIONAL</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#">Customised Tours <i class="fa fa-caret-down"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">DOMESTIC</a></li>
+                        <li><a href="#">INTERNATIONAL</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Air Ticket & Hotel Booking</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+            <div class="search-container">
+                <input type="text" placeholder="Search..." class="search-input">
+                <button class="search-btn">
+                    <i class="fas fa-search"></i>
+                </button>
+            </div>
+        </div>
+    </nav> 
+    <!-- Nav Ends -->
+    <!-- Hero Section -->
+    <div class="hero-section">
+        <h1 class="display-2 fw-bold mb-3">Explore the world together</h1>
+        <p class="lead">Find awesome flights and hotel packages</p>
+    </div>
+
+    <!-- Search Container -->
+    <div class="container">
+        <div class="search-container">
+            <!-- Navigation Pills -->
+            <ul class="nav nav-pills mb-4">
+                <li class="nav-item">
+                    <a class="nav-link active" href="#" data-form="flightForm">
+                        <i class="fas fa-plane"></i> Flights
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" data-form="hotelForm">
+                        <i class="fas fa-hotel"></i> Hotels
+                    </a>
+                </li>
+            </ul>
+
+            <!-- Flight Search Form -->
+            <div id="flightForm" class="search-form">
+                <form id="flightSearchForm">
+                    <div class="flight-search mb-3">
+                        <!-- From Field -->
+                        <div class="search-field">
+                            <div class="field-label">From</div>
+                            <input type="text" id="fromCity" placeholder="Enter city or airport" required>
+                            <i class="fas fa-plane-departure plane-icon"></i>
+                        </div>
+
+                        <!-- Exchange Icon -->
+                        <div class="exchange-icon">
+                            <i class="fas fa-exchange-alt"></i>
+                        </div>
+
+                        <!-- To Field -->
+                        <div class="search-field">
+                            <div class="field-label">To</div>
+                            <input type="text" id="toCity" placeholder="Enter city or airport" required>
+                            <i class="fas fa-plane-arrival plane-icon"></i>
+                        </div>
+                    </div>
+
+                    <div class="row g-3">
+                        <div class="col-md-6">
+                            <div class="search-field">
+                                <div class="field-label">Journey date</div>
+                                <input type="date" id="journeyDate" required>
+                                <div class="field-subtext" id="journeyDay"></div>
+                                <i class="far fa-calendar-alt plane-icon"></i>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="search-field position-relative">
+                                <div class="field-label">Passenger, Class</div>
+                                <div id="passengerTrigger" class="d-flex justify-content-between align-items-center">
+                                    <div>
+                                        <div class="field-value" id="passengerSummary">2 Passengers</div>
+                                        <div class="field-subtext" id="classType">Business</div>
+                                    </div>
+                                    <i class="fas fa-user plane-icon"></i>
+                                </div>
+                    
+                                <!-- Passenger Selection Dropdown -->
+                                <div id="passengerDropdown" class="passenger-dropdown">
+                                    <div class="passengers-section">
+                                        <h3 class="passengers-title">Passengers</h3>
+                                        
+                                        <!-- Adult -->
+                                        <div class="passenger-type">
+                                            <div class="passenger-info">
+                                                <div class="passenger-title">Adult</div>
+                                                <div class="passenger-subtitle">12+ yrs</div>
+                                            </div>
+                                            <div class="counter-controls">
+                                                <button type="button" class="counter-btn" onclick="updatePassenger('adult', -1)">-</button>
+                                                <span class="counter-value" id="adultCount">2</span>
+                                                <button type="button" class="counter-btn" onclick="updatePassenger('adult', 1)">+</button>
+                                            </div>
+                                        </div>
+                    
+                                        <!-- Children -->
+                                        <div class="passenger-type">
+                                            <div class="passenger-info">
+                                                <div class="passenger-title">Children</div>
+                                                <div class="passenger-subtitle">2 - Less than 12 yrs</div>
+                                            </div>
+                                            <div class="counter-controls">
+                                                <button type="button" class="counter-btn" onclick="updatePassenger('children', -1)">-</button>
+                                                <span class="counter-value" id="childrenCount">0</span>
+                                                <button type="button" class="counter-btn" onclick="updatePassenger('children', 1)">+</button>
+                                            </div>
+                                        </div>
+                    
+                                        <!-- Infant -->
+                                        <div class="passenger-type">
+                                            <div class="passenger-info">
+                                                <div class="passenger-title">Infant</div>
+                                                <div class="passenger-subtitle">Less than 2 yrs</div>
+                                            </div>
+                                            <div class="counter-controls">
+                                                <button type="button" class="counter-btn" onclick="updatePassenger('infant', -1)">-</button>
+                                                <span class="counter-value" id="infantCount">0</span>
+                                                <button type="button" class="counter-btn" onclick="updatePassenger('infant', 1)">+</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                    
+                                    <div class="cabin-class">
+                                        <h3>Cabin Class</h3>
+                                        <div class="cabin-option" onclick="selectCabinClass(this, 'Economy')">Economy</div>
+                                        <div class="cabin-option selected" onclick="selectCabinClass(this, 'Business')">Business</div>
+                                        <div class="cabin-option" onclick="selectCabinClass(this, 'First Class')">First Class</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="text-center mt-4">
+                        <button type="submit" class="search-btn">Search</button>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Hotel Search Form (hidden by default) -->
+            <div id="hotelForm" class="search-form" style="display: none;">
+                <form>
+                    <div class="row g-3">
+                        <div class="col-md-3">
+                            <label class="form-label">Destination</label>
+                            <input type="text" class="form-control" placeholder="Where are you going?">
+                        </div>
+                        <div class="col-md-3">
+                            <label class="form-label">Journey date</label>
+                            <input type="date" class="form-control" value="2022-03-05">
+                            <small class="text-muted">Thursday</small>
+                        </div>
+                        <div class="col-md-3">
+                            <label class="form-label">Return date</label>
+                            <input type="date" class="form-control" value="2022-05-05">
+                            <small class="text-muted">Thursday</small>
+                        </div>
+                        <div class="col-md-3">
+                            <label class="form-label">Passenger, Class</label>
+                            <select class="form-select">
+                                <option>0 Passenger, Business</option>
+                                <option>1 Passenger, Economy</option>
+                                <option>2 Passengers, Business</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="text-center mt-4">
+                        <button type="submit" class="search-btn">Search</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Flight Search Results -->
+    <div id="flightSearchResults" class="container mt-5" style="display: none;">
+        <h2 class="mb-4">Available Flights</h2>
+        <div class="row">
+            <div class="col-12">
+                <div class="alert alert-info">
+                    <i class="fas fa-info-circle"></i>
+                    Showing flights from <strong id="fromCityDisplay"></strong> to <strong id="toCityDisplay"></strong>
+                </div>
+            </div>
+        </div>
+        <div id="flightResultsContainer" class="row">
+            <!-- Flight results will be dynamically inserted here -->
+        </div>
+    </div>
+
+
+    <div class="container py-5">
+        <h2 class="section-title">Explore our hot deals</h2>
+        
+        <div class="filter-bar">
+            <button class="filter-button active">Hotels</button>
+        </div>
+
+        <div class="row">
+            <!-- Hotel Card 1 -->
+            <div class="col-lg-3 col-md-6">
+                <div class="hotel-card">
+                    <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&q=80" alt="Kantua hotel" class="hotel-image">
+                    <div class="location-badge">
+                        <i class="fas fa-map-marker-alt"></i> New beach, Thailand
+                    </div>
+                    <div class="hotel-info">
+                        <h3 class="hotel-name">Kantua hotel, Thailand</h3>
+                        <div class="rating">
+                            <span>4.8/5 Excellent</span>
+                            <span class="rating-text">(1214 reviewes)</span>
+                        </div>
+                        <div class="price">
+                           ₹80000.00 <span class="price-subtext">Price starts from</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Hotel Card 2 -->
+            <div class="col-lg-3 col-md-6">
+                <div class="hotel-card">
+                    <img src="https://images.unsplash.com/photo-1571896349842-33c89424de2d?auto=format&fit=crop&q=80" alt="Hotel paradise" class="hotel-image">
+                    <div class="location-badge">
+                        <i class="fas fa-map-marker-alt"></i> Indonesia
+                    </div>
+                    <div class="discount-badge">50%</div>
+                    <div class="hotel-info">
+                        <h3 class="hotel-name">Hotel paradise international</h3>
+                        <div class="rating">
+                            <span>4.8/5 Excellent</span>
+                            <span class="rating-text">(1214 reviewes)</span>
+                        </div>
+                        <div class="price">
+                           ₹99999.00 <span class="price-subtext">Price starts from</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Hotel Card 3 -->
+            <div class="col-lg-3 col-md-6">
+                <div class="hotel-card">
+                    <img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&q=80" alt="Hotel kualalampur" class="hotel-image">
+                    <div class="location-badge">
+                        <i class="fas fa-map-marker-alt"></i> Kualalampur
+                    </div>
+                    <div class="hotel-info">
+                        <h3 class="hotel-name">Hotel kualalampur</h3>
+                        <div class="rating">
+                            <span>4.8/5 Excellent</span>
+                            <span class="rating-text">(1214 reviewes)</span>
+                        </div>
+                        <div class="price">
+                           ₹91229.00 <span class="price-subtext">Price starts from</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Hotel Card 4 -->
+            <div class="col-lg-3 col-md-6">
+                <div class="hotel-card">
+                    <img src="https://images.unsplash.com/photo-1578683010236-d716f9a3f461?auto=format&fit=crop&q=80" alt="Hotel deluxe" class="hotel-image">
+                    <div class="location-badge">
+                        <i class="fas fa-map-marker-alt"></i> Mariana island
+                    </div>
+                    <div class="discount-badge">50%</div>
+                    <div class="hotel-info">
+                        <h3 class="hotel-name">Hotel deluxe</h3>
+                        <div class="rating">
+                            <span>4.8/5 Excellent</span>
+                            <span class="rating-text">(1214 reviewes)</span>
+                        </div>
+                        <div class="price">
+                           ₹79999.00 <span class="price-subtext">Price starts from</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer Starts -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="row">
+                <div class="footer-section about">
+                    <h4>About Us</h4>
+                    <p>At cybromatech pvt Ltd we specialize in creating memorable travel experiences. With years of experience in the industry. Join us to explore the world with ease and style!</p>
+                </div>
+                <div class="footer-section contact">
+                    <h4>Contact Us</h4>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt"></i>marisoft it park kalyani nagar, pune, pune, Maharashtra, 411014</li>
+                        <li><i class="fas fa-phone-alt"></i> <a href="tel:9422295192">9422295192</a></li>
+                        <li><i class="fas fa-phone-alt"></i> <a href="tel:9730972384">9730972384</a></li>
+                        <li><i class="fas fa-envelope"></i> <a href="mailto:cybromatechpvtltd.info@gmail.com">cybromatechpvtltd.info@gmail.com</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section follow">
+                    <h4>Follow Us</h4>
+                    <div class="social-icons">
+                        <a href="https://wa.me/9422295192" target="_blank" class="social-icon whatsapp-icon" aria-label="WhatsApp"></a>
+                        <a href="https://www.instagram.com/shrisamarthconstruction" target="_blank" class="social-icon instagram-icon" aria-label="Instagram"></a>
+                        <a href="https://www.facebook.com/shrisamarthconst" target="_blank" class="social-icon facebook-icon" aria-label="Facebook"></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© <span id="currentYear"></span> Tours and Travels | All Rights Reserved</p>
+                <p>Powered by <a href="https://www.cybromatech.com" target="_blank" rel="noopener noreferrer">Cybromatech Technology Pvt Ltd</a></p>
+            </div>
+        </div>
+    </footer>
+    <!-- Footer Ends -->
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
