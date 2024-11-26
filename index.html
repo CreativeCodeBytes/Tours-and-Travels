@@ -3,136 +3,92 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Navbar with Nested Dropdown</title>
-    <link rel="stylesheet" href="styles.css">
-    <!-- Include Font Awesome for Icons -->
+    <title>Tours & Travels</title>    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
-    
-
-    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    
-
-    
- 
-    
+    <link rel="stylesheet" href="index.css">
 </head>
 <body>
-    <nav class="navbar">
-        <div class="container">
-            <div class="logo">
-                <a href="index.html"><img src="Images/Cybromatech-logo.jpg" alt="Logo" class="logo-img"></a>
-            </div>
-
-
-            <!-- Add hamburger menu -->
-            <div class="hamburger">
-                <div class="bar"></div>
-                <div class="bar"></div>
-                <div class="bar"></div>
-            </div>
-
-
-            
-            <ul class="nav-links">
-                <li class="dropdown">
-                    <a href="#">Group Tours <i class="fa fa-caret-down"></i> </a>
-                    <ul class="dropdown-menu">
-                        <!-- Domestic Dropdown -->
-                        <li class="nested-dropdown">
-                            <a href="#">Domestic <i class="fa fa-caret-down"></i></a>
-                            <ul class="nested-menu">
-                                <li><a href="#">Andaman</a></li>
-                                <li><a href="AndraPradesh.html">Andhra Pradesh</a></li>
-                                <li><a href="Gujarat.html">Gujarat</a></li>
-                                <li><a href="#">Himachal Pradesh</a></li>
-                                <li><a href="#">Jammu & Kashmir</a></li>
-                                <li><a href="#">Karnataka</a></li>
-                                <li><a href="#">Kerala</a></li>
-                                <li><a href="#">Leh Ladakh</a></li>
-                                <li><a href="madhyapradesh.html">Madhya Pradesh</a></li>
-                                <li><a href="#">Northeast India</a></li>
-                                <li><a href="#">Orissa</a></li>
-                                <li><a href="#">Rajasthan</a></li>
-                                <li><a href="#">Uttarakhand</a></li>
-                                <li><a href="#">West Bengal</a></li>
-                                <li><a href="madhyapradesh.html">Maharashtra</a></li>
-                                <li><a href="#">Goa</a></li>
-                            </ul>
-                        </li>
-                        <!-- Pilgrimage Yatra Dropdown -->
-                        <li class="nested-dropdown">
-                            <a href="#">Pilgrimage Yatra <i class="fa fa-caret-down"></i></a>
-                            <ul class="nested-menu">
-                                <li><a href="#">Amarnath Vaishnodevi</a></li>
-                                <li><a href="Chardham yatra.html">Chardham Yatra</a></li>
-                                <li><a href="#">Narmada Parikrama</a></li>
-                                <li><a href="#">Pithapur Kuravpur</a></li>
-                                <li><a href="#">Tristhali Yatra</a></li>
-                                <li><a href="#">Gujarat</a></li>
-                            </ul>
-                        </li>
-                        <!-- International Dropdown -->
-                        <li class="nested-dropdown">
-                            <a href="#">International <i class="fa fa-caret-down"></i> </a>
-                            <ul class="nested-menu">
-                                <li><a href="#">Africa</a></li>
-                                <li><a href="#">America</a></li>
-                                <li><a href="#">Australia</a></li>
-                                <li><a href="Bali.html">Bali</a></li>
-                                <li><a href="#">Bhutan</a></li>
-                                <li><a href="#">Cambodia</a></li>
-                                <li><a href="#">Canada</a></li>
-                                <li><a href="#">China</a></li>
-                                <li><a href="Dubai.html">Dubai</a></li>
-                                <li><a href="#">Europe</a></li>
-                                <li><a href="#">Hong Kong</a></li>
-                                <li><a href="#">Malaysia</a></li>
-                                <li><a href="#">Nepal</a></li>
-                                <li><a href="#">New Zealand</a></li>
-                                <li><a href="#">Russia</a></li>
-                                <li><a href="#">Singapore</a></li>
-                                <li><a href="#">Sri Lanka</a></li>
-                                <li><a href="#">Thailand</a></li>
-                                <li><a href="#">Vietnam</a></li>
-                            </ul>
-                        </li>
-                        <!-- International Customised Tour -->
-                        <li><a href="#">International Customised Tour</a></li>
-                    </ul>
-                </li>
-                <li class="dropdown">
-                    <a href="#">Honeymoon <i class="fa fa-caret-down"></i> </a>
-                    <ul class="dropdown-menu">
-                        <!-- Honeymoon Domestic -->
-                        <li><a href="Domestic.html">DOMESTIC</a></li>
-                        <!-- Honeymoon International -->
-                        <li><a href="international.html">INTERNATIONAL</a></li>
-                    </ul>
-                </li>
-                <li class="dropdown">
-                    <a href="#">Customised Tours <i class="fa fa-caret-down"></i> </a>
-                    <ul class="dropdown-menu">
-                        <!-- Customised Domestic -->
-                        <li><a href="#">DOMESTIC</a></li>
-                        <!-- Customised International -->
-                        <li><a href="#">INTERNATIONAL</a></li>
-                    </ul>
-                </li>
-                <li><a href="Air Ticket.html">Air Ticket & Hotel Booking <i class="fa fa-caret-down"></i> </a></li>
-                <li><a href="contact.html">Contact <i class="fa fa-caret-down"></i></a></li>
-            </ul>
-            <div class="search-container">
-                <input type="text" placeholder="Search..." class="search-input">
-                <button class="search-btn">
-                    <i class="fas fa-search"></i>
-                </button>
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.html">
+                <img src="/Images/Cybromatech-logo.jpg" alt="Logo" class="logo-img">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="groupToursDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            GROUP TOURS
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="groupToursDropdown">
+                            <li class="dropdown-submenu">
+                                <a class="dropdown-item dropdown-toggle" href="#">Domestic</a>
+                                <ul class="dropdown-menu">
+                                  <!---  <li><a class="dropdown-item" href="#">Andaman</a></li>-->
+                                    <li><a class="dropdown-item" href="AndraPradesh.html">Andhra Pradesh</a></li>
+                                    <li><a class="dropdown-item" href="Gujarat.html">Gujarat</a></li>
+                                    <li><a class="dropdown-item" href="madhyapradesh.html">Madhya Pradesh</a></li>
+                                    <li><a class="dropdown-item" href="maharashtra.html">Maharashtra</a></li>
+                                   <!-- <li><a class="dropdown-item" href="#">Goa</a></li> -->
+                                </ul>
+                            </li>
+                            <li class="dropdown-submenu">
+                                <a class="dropdown-item dropdown-toggle" href="#">Pilgrimage Yatra</a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="#">Amarnath Vaishnodevi</a></li>
+                                    <li><a class="dropdown-item" href="Chardham yatra.html">Chardham Yatra</a></li>
+                                    <li><a class="dropdown-item" href="#">Narmada Parikrama</a></li>
+                                    <li><a class="dropdown-item" href="#">Pithapur Kuravpur</a></li>
+                                    <li><a class="dropdown-item" href="#">Tristhali Yatra</a></li>
+                                    <li><a class="dropdown-item" href="#">Gujarat</a></li>
+                                </ul>
+                            </li>
+                            <li class="dropdown-submenu">
+                                <a class="dropdown-item dropdown-toggle" href="#">International</a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="Bali.html">Bali</a></li>
+                                    <li><a class="dropdown-item" href="Dubai.html">Dubai</a></li>
+                                </ul>
+                            </li>
+                            <li><a class="dropdown-item" href="#">International Customised Tour</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="honeymoonDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            HONEYMOON
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="honeymoonDropdown">
+                            <li><a class="dropdown-item" href="Domestic.html">DOMESTIC</a></li>
+                            <li><a class="dropdown-item" href="international.html">INTERNATIONAL</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="customisedToursDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            CUSTOMISED TOURS
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="customisedToursDropdown">
+                            <li><a class="dropdown-item" href="#">DOMESTIC</a></li>
+                            <li><a class="dropdown-item" href="#">INTERNATIONAL</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="Air Ticket.html">AIR TICKET & HOTEL BOOKING</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">CONTACT</a></li>
+                </ul>
+                <form class="d-flex search-container1">
+                    <input class="form-control me-2 search-input1" type="search" placeholder="Search..." aria-label="Search">
+                    <button class="btn search1-btn" type="submit">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </form>
             </div>
         </div>
     </nav>
-   
 
-
+    
     <div class="slideshow-container">
         <div class="slide slide1">
             <div class="caption"> 
@@ -171,9 +127,15 @@
             </div>
         </div>
     </div>
-       
 
 
+
+
+
+
+
+
+    
 <!-- Travel Destinations Section -->
 <section class="travel-destinations">
     <div class="travel-container">
@@ -312,6 +274,8 @@
 
 
 
+
+  
   <section class="why-choose-us">
     <div class="why-container">
         <h2>Why Choose Us?</h2>
@@ -345,6 +309,7 @@
 
 
 
+
 <section class="tours">
     <div class="Tcontainer">
       <h2 class="section-title">Speciality Tours</h2>
@@ -362,7 +327,7 @@
           </div>
           <!-- Honeymoon Special -->
           <div class="tour-card">
-            <img src="/Images/Specialitytour2.jpg" alt="Honeymoon Special">
+            <img src="/Images/Specialitytourhoneymoon.jpg" alt="Honeymoon Special">
             <div class="tour-content">
               <h4>Honeymoon Special</h4>
               <p>Romantic escapes for couples.</p>
@@ -402,12 +367,11 @@
     </div>
   </section>
   
+
+
+
+
   
-
-
-
-
-
   <section class="Game">
     <div class="gamecontainer">
         <!-- Question Section -->
@@ -442,6 +406,10 @@
 
 
 
+
+
+
+
 <!-- About Section -->
 <section class="about-section">
     <div class="about-content">
@@ -452,7 +420,7 @@
           With years of experience in the industry, we offer domestic and international tours, luxurious transportation services, 
           and custom holiday packages tailored to meet your needs.
         </p>
-        <a href="/Images/about.html" class="read-more-btn">Read More</a>
+        <a href="about.html" class="read-more-btn">Read More</a>
       </div>
       <div class="about-image">
         <img src="/Images/About-homepage.jpg" alt="Our Office">
@@ -461,8 +429,14 @@
   </section>
 
 
-   <!-- Review Section -->
-   <section class="review-section">
+
+
+
+
+
+
+<!-- Review Section -->
+<section class="review-section">
     <h2 class="review-title text-center">Our pride</h2> 
     
     <!-- Review Navigation Controls -->
@@ -558,6 +532,10 @@
 
 
 
+
+
+
+  
 <!-- Travel Sources Section -->
 <div class="travel-sources-container">
     <h2 class="travel-sources-title">Our Travel Sources</h2>
@@ -613,145 +591,55 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-    <!-- Footer Section Start -->
-    <footer class="footer">
-        <div class="footer-container">
-            <!-- Row 1: About, Contact, Follow Us -->
-            <div class="row">
-                <!-- About Us Section -->
-                <div class="footer-section about">
-                    <h4>About Us</h4>
-                    <p>At cybromatech pvt Ltd we specialize in creating memorable travel experiences. With years of experience in the industry. Join us to explore the world with ease and style!</p>
-                </div>
-
-                <!-- Contact Us Section -->
-                <div class="footer-section contact">
-                    <h4>Contact Us</h4>
-                    <ul>
-                        <li><i class="fas fa-map-marker-alt"></i>marisoft it park kalyani nagar, pune, pune, Maharashtra, 411014</li>
-                        <li><i class="fas fa-phone-alt"></i> <a href="tel:9422295192">9422295192</a></li>
-                        <li><i class="fas fa-phone-alt"></i> <a href="tel:9730972384">9730972384</a></li>
-                        <li><i class="fas fa-envelope"></i> <a href="mailto:shrisamarthconst1974@gmail.com">cybromatechpvtltd.info@gmail.com</a></li>
-                    </ul>
-                </div>
-
-                <!-- Follow Us Section -->
-                <div class="footer-section follow">
-                    <h4>Follow Us</h4>
-                    <div class="social-icons">
-                        <a href="https://wa.me/9422295192" target="_blank" class="social-icon whatsapp-icon" aria-label="WhatsApp"></a>
-                        <a href="https://www.instagram.com/shrisamarthconstruction" target="_blank" class="social-icon instagram-icon" aria-label="Instagram"></a>
-                        <a href="https://www.facebook.com/shrisamarthconstruction" target="_blank" class="social-icon facebook-icon" aria-label="Facebook"></a>
-                    </div>
-                </div>
+   <!-- Footer Section Start -->
+   <footer class="footer">
+    <div class="footer-container">
+        <!-- Row 1: About, Contact, Follow Us -->
+        <div class="row">
+            <!-- About Us Section -->
+            <div class="footer-section about">
+                <h4>About Us</h4>
+                <p>At cybromatech pvt Ltd we specialize in creating memorable travel experiences. With years of experience in the industry. Join us to explore the world with ease and style!</p>
             </div>
 
+            <!-- Contact Us Section -->
+            <div class="footer-section contact">
+                <h4>Contact Us</h4>
+                <ul>
+                    <li><i class="fas fa-map-marker-alt"></i>marisoft it park kalyani nagar, pune, pune, Maharashtra, 411014</li>
+                    <li><i class="fas fa-phone-alt"></i> <a href="tel:9422295192">9422295192</a></li>
+                    <li><i class="fas fa-phone-alt"></i> <a href="tel:9730972384">9730972384</a></li>
+                    <li><i class="fas fa-envelope"></i> <a href="mailto:shrisamarthconst1974@gmail.com">cybromatechpvtltd.info@gmail.com</a></li>
+                </ul>
+            </div>
 
-            <!-- Row 2: Footer Bottom -->
-            <div class="footer-bottom">
-                <p>© <span id="currentYear"></span> Tours and Travels | All Rights Reserved</p>
-                <p>Powered by <a href="https://www.cybromatech.com" target="_blank" rel="noopener noreferrer">Cybromatech Technology Pvt Ltd</a></p>
+            <!-- Follow Us Section -->
+            <div class="footer-section follow">
+                <h4>Follow Us</h4>
+                <div class="social-icons">
+                    <a href="https://wa.me/9422295192" target="_blank" class="social-icon whatsapp-icon" aria-label="WhatsApp"></a>
+                    <a href="https://www.instagram.com/shrisamarthconstruction" target="_blank" class="social-icon instagram-icon" aria-label="Instagram"></a>
+                    <a href="https://www.facebook.com/shrisamarthconstruction" target="_blank" class="social-icon facebook-icon" aria-label="Facebook"></a>
+                </div>
             </div>
         </div>
-    </footer>
 
 
-
-
-
-
-
+        <!-- Row 2: Footer Bottom -->
+        <div class="footer-bottom">
+            <p>© <span id="currentYear"></span> Tours and Travels | All Rights Reserved</p>
+            <p>Powered by <a href="https://www.cybromatech.com" target="_blank" rel="noopener noreferrer">Cybromatech Technology Pvt Ltd</a></p>
+        </div>
+    </div>
+</footer>
 
 
 
 
 
 <script>
-    document.getElementById('currentYear').textContent = new Date().getFullYear();
 
-     // Select the hamburger icon and the nav-links
-      const hamburger = document.querySelector('.hamburger');
-      const navLinks = document.querySelector('.nav-links');
-
-      // Add click event to toggle the nav menu
-      hamburger.addEventListener('click', () => {
-          navLinks.classList.toggle('active');
-      });
-
-      // Select all dropdown menu items
-      const dropdownItems = document.querySelectorAll('.dropdown, .nested-dropdown');
-
-      dropdownItems.forEach(item => {
-          item.addEventListener('click', function(event) {
-              // Prevent the default link behavior (prevents page navigation)
-              event.preventDefault();
-
-              // Find the dropdown menu or nested menu inside the clicked item
-              const dropdownMenu = this.querySelector('.dropdown-menu, .nested-menu');
-      
-              if (dropdownMenu) {
-                  // Toggle visibility of the clicked menu (nested or parent)
-                  dropdownMenu.classList.toggle('show');
-              }
-
-              // Close other nested menus if open (optional: if you want only one menu open at a time)
-              dropdownItems.forEach(otherItem => {
-                  if (otherItem !== this) {
-                      const otherMenu = otherItem.querySelector('.dropdown-menu, .nested-menu');
-                      if (otherMenu) {
-                          otherMenu.classList.remove('show');
-                      }
-                  }
-              });
-          });
-      });
-
-      // Toggle nested dropdown on mobile
-      // Toggle nested dropdown on mobile
-      document.addEventListener('DOMContentLoaded', function () {
-          const nestedDropdowns = document.querySelectorAll('.nested-dropdown');
-          nestedDropdowns.forEach(function (dropdown) {
-              dropdown.addEventListener('click', function (e) {
-                  // Prevent parent link from redirecting
-                  e.preventDefault();
-                  // Toggle the active class to show/hide the nested menu
-                  dropdown.classList.toggle('active');
-              });
-          });
-      });
-
-
-
-
-      function scrollTours(direction) {
+ function scrollTours(direction) {
 const list = document.querySelector('.tours-list');
 const scrollAmount = list.offsetWidth / 2;
 
@@ -761,10 +649,6 @@ if (direction === 'prev') {
   list.scrollLeft += scrollAmount;
 }
 };
-
-
-
-
 
 
 
@@ -907,11 +791,14 @@ nextBtn.addEventListener('click', () => {
 });
 
 
+</script>
 
 
-  </script>
 
-    
-  
-    </body>
-    </html>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+   
+  <script>  document.getElementById('currentYear').textContent = new Date().getFullYear();</script>
+</body>
+</html>
