@@ -149,8 +149,6 @@ body {
 
 
 
-
-
  
   /* Slideshow Container */
   .slideshow-container {
@@ -179,7 +177,7 @@ body {
   
   /* Specific slide backgrounds */
   .slide1 {
-    background-image: url('MUMBAI\ 1.jpg');
+    background-image: url('Images/MUMBAI\ 1.jpg');
   }
   
   /* Caption Styling */
@@ -212,23 +210,23 @@ body {
   
   /* Specific slide backgrounds (use your images) */
   .slide1 {
-    background-image: url('/Images/MUMBAI\ 1.jpg');
+    background-image: url('Images/MUMBAI\ 1.jpg');
   }
   
   .slide2 {
-    background-image: url('/Images/Punebappa.jpg');
+    background-image: url('Images/Punebappa.jpg');
   }
   
   .slide3 {
-    background-image: url('/Images/Lonavala.jpg');
+    background-image: url('Images/Lonavala.jpg');
   }
   
   .slide4 {
-    background-image: url('/Images/Andaman.jpg');
+    background-image: url('Images/Andaman.jpg');
   }
   
   .slide5 {
-    background-image: url('/Images/Paris.jpg');
+    background-image: url('Images/Paris.jpg');
   }
   
   
@@ -260,7 +258,7 @@ body {
     animation-delay: 20s;
   }
   
-  /* Media Queries for Responsiveness */
+  /* Media Queries for Responsiveness 
   @media screen and (max-width: 768px) {
     .container {
         flex-direction: column;
@@ -283,7 +281,7 @@ body {
     }
   
     .slideshow-container {
-        height: 400px; /* Reduce height on smaller screens */
+        height: 400px; 
     }
   
     .caption h3 {
@@ -297,7 +295,7 @@ body {
   
   @media screen and (max-width: 480px) {
     .nav-links {
-        display: none; /* Hide navigation links for smaller screens, implement toggle logic for a mobile menu */
+        display: none; 
     }
   
     .search-box {
@@ -312,7 +310,7 @@ body {
     }
   
     .slideshow-container {
-        height: 300px; /* Further reduce height for smaller screens */
+        height: 300px; 
         margin-top: 65px;
     }
   
@@ -323,7 +321,7 @@ body {
     .caption p {
         font-size: 14px;
     }
-  }
+  }*/
   
 
 
@@ -347,7 +345,7 @@ body {
   .travel-destinations {
     padding: 60px 15px;
    /* background-color: #ff6565; */
-   background-image: url('/Images/Rainbowbackground.jpg');
+   background-image: url('Images/Rainbowbackground.jpg');
     background-size: cover;
   }
   
@@ -525,7 +523,7 @@ body {
 /* Why Choose Us Section */
 .why-choose-us {
     padding: 80px 20px;
-    background: url('/Images/why2.jpg') center/cover no-repeat; /* Add a travel-themed background */
+    background: url('Images/why2.jpg') center/cover no-repeat; /* Add a travel-themed background */
     color: white;
     position: relative;
     text-align: center; /* Center align text */
@@ -653,19 +651,19 @@ body {
 }
 
 .feature:nth-child(1) {
-    background-image: url('/Images/Trusted.jpg'); /* Image for box 1 */
+    background-image: url('Images/Trusted.jpg'); /* Image for box 1 */
 }
 
 .feature:nth-child(2) {
-    background-image: url('/Images/Support.jpg'); /* Image for box 2 */
+    background-image: url('Images/Support.jpg'); /* Image for box 2 */
 }
 
 .feature:nth-child(3) {
-    background-image: url('/Images/Money.jpg'); /* Image for box 3 */
+    background-image: url('Images/Money.jpg'); /* Image for box 3 */
 }
 
 .feature:nth-child(4) {
-    background-image: url('/Images/Exclusive Destinations.jpg'); /* Image for box 4 */
+    background-image: url('Images/Exclusive Destinations.jpg'); /* Image for box 4 */
 }
 
 /* Ensure text and icons appear above the background image */
@@ -856,7 +854,7 @@ body {
   }
   
   .Game {
-    background-image: url('/Images/Rainbowbackground.jpg');
+    background-image: url('Images/Rainbowbackground.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -1270,7 +1268,7 @@ body {
 /* Travel Sources Section */
 .travel-sources-container {
     background-color: #f9f9f968;
-    background-image: url('/Images/Seaback.jpg');
+    background-image: url('Images/Seaback.jpg');
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
