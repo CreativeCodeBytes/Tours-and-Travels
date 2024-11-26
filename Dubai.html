@@ -1,0 +1,849 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dubai Tourism - Tours and Travels</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <!-- <link rel="stylesheet" href="madhyapradesh.css"> -->
+    
+    <style>
+        :root {
+    --primary-color: #00BFA6;
+}
+body {
+    font-family: 'Poppins', sans-serif;
+}
+/* Navbar styling */
+.navbar {
+    background-color: rgb(117, 33, 187);
+    color: white;
+    padding: 10px 20px;
+    position: relative;
+    z-index: 1000;
+}
+.logo .logo-img {
+    height: 40px;
+}
+.nav-links {
+    list-style-type: none;
+    display: flex;
+    gap: 15px;
+    position: relative;
+    padding: 0;
+    margin: 0;
+}
+.nav-links li {
+    display: inline-block;
+    position: relative;
+}
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    padding: 8px 12px;
+    text-transform: uppercase;
+}
+.nav-links a:hover {
+    background-color: rgb(152, 61, 226);
+    border-radius: 4px;
+}
+ul li i {
+    font-size: 1.2rem;
+    margin-right: 10px;
+    color: #f1c40f; /* Gold color for icons */
+  }
+ul li a:hover {
+    color: #f1c40f; /* Gold on hover */
+  }
+/* Dropdown styling */
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: rgb(63, 21, 97);
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    min-width: 200px;
+}
+.dropdown-menu li {
+    width: 100%;
+}
+.dropdown-menu a {
+    display: block;
+    padding: 10px 15px;
+    color: white;
+    text-decoration: none;
+}
+.dropdown-menu a:hover {
+    background-color: rgb(117, 33, 187);
+}
+/* Nested dropdown (submenu) */
+.nested-menu {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 100%;
+    background-color: rgb(117, 33, 187);
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    min-width: 200px;
+}
+.nested-menu a {
+    padding: 10px 15px;
+    color: white;
+    text-decoration: none;
+    text-transform: capitalize;
+}
+.nested-menu a:hover {
+    background-color: rgb(152, 61, 226);
+}
+/* Show dropdown and nested menus on hover */
+.dropdown:hover > .dropdown-menu,
+.nested-dropdown:hover > .nested-menu {
+    display: block;
+}
+/* Hamburger Icon Styling */
+.hamburger {
+    display: none;
+    cursor: pointer;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 25px;
+    height: 20px;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 10;
+}
+.hamburger .bar {
+    background-color: white;
+    height: 3px;
+    width: 100%;
+    border-radius: 5px;
+}
+/* Search container styling */
+.search-container {
+    position: relative;
+    width: 300px;
+    height: 40px;
+    border: 2px solid #333;
+    border-radius: 30px;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    padding: 0 15px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
+}
+.search-input {
+    width: 100%;
+    height: 30px;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    color: #333;
+    padding-left: 10px;
+    background-color: transparent;
+}
+.search-input::placeholder {
+    color: #888;
+}
+.search-btn {
+    position: absolute;
+    right: 15px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    color: #333;
+    font-size: 18px;
+    transition: color 0.3s ease;
+    visibility: hidden;
+}
+.search-container:hover .search-btn,
+.search-input:focus + .search-btn {
+    visibility: visible;
+}
+.search-container:hover {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+.search-btn:hover {
+    color: #007BFF;
+}
+/* Banner styling */
+.banner {
+    position: relative;
+    height: 80vh;
+    overflow: hidden;
+}
+.banner-slider {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+.banner-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+.banner-slide.active {
+    opacity: 1;
+}
+.banner-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+.banner-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+.banner-text {
+    color: rgb(245, 163, 12);
+    font-size: 5rem;
+    font-weight: bold;
+    text-align: center;
+    text-transform: uppercase;
+    opacity: 0;
+    transform: translateY(-20px);
+    animation: fadeInUp 1s ease-out forwards;
+    text-shadow: -1px 1px 0 #000,
+                 1px 1px 0 #000,
+                 1px -1px 0 #000,
+                 -1px -1px 0 #000;
+}
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+.slider-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(255, 255, 255, 0.5);
+    color: #000;
+    padding: 10px;
+    text-decoration: none;
+    font-size: 24px;
+    z-index: 10;
+    transition: background-color 0.3s;
+}
+.slider-arrow:hover {
+    background-color: rgba(255, 255, 255, 0.8);
+}
+.slider-arrow.prev {
+    left: 10px;
+}
+.slider-arrow.next {
+    right: 10px;
+}
+/* Tour card styling */
+.tour-card {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    transition: all 0.3s ease-in-out;
+    border: 2px solid var(--primary-color);
+    opacity: 0;
+    transform: translateY(20px);
+}
+.tour-card.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+.tour-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    border-color: #ff6b6b;
+}
+.tour-card .card-img-top {
+    height: 200px;
+    object-fit: cover;
+}
+.tour-card .card-body {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+.tour-card .card-text {
+    flex-grow: 1;
+}
+.tour-price {
+    color: var(--primary-color);
+    font-weight: bold;
+    font-family:'Times New Roman', Times, serif;
+}
+.card-title{
+    font-weight: bold;
+}
+.btn-contact {
+    align-self: flex-end;
+    margin-top: auto;
+}
+.animated-title {
+    font-size: 3rem;
+    font-weight: 700;
+    background-color: #000;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 300% 300%;
+    animation: gradient-animation 5s ease infinite;
+    text-decoration: black underline;
+}
+@keyframes gradient-animation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+.attractive-container {
+    background: whitesmoke;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    transform: translateY(0);
+    transition: all 0.3s ease;
+}
+.attractive-container:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+}
+.attractive-container h2 {
+    color: white;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+}
+.info-label {
+    color: #00BFA6;
+    font-weight: 500;
+}
+.travel-text {
+    color: #00BFA6;
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+.info-row {
+    padding: 1rem 0;
+    border-bottom: 1px solid #eee;
+}
+.info-row:last-child {
+    border-bottom: none;
+}
+/* Footer styling */
+.footer {
+    background-color: rgb(117, 33, 187);
+    color: #eee;
+    padding: 50px 20px;
+    font-family: Arial, sans-serif;
+}
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+.footer-section {
+    flex: 1;
+    min-width: 250px;
+    padding: 20px;
+    border: 2px solid transparent;
+    border-radius: 10px;
+    transition: transform 0.3s ease, border 0.3s ease, background-color 0.3s ease;
+}
+.footer-section:hover {
+    transform: translateY(-10px);
+    border: 2px solid #f1c40f;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+.footer-section h4 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    color: #f1c40f;
+}
+.footer-section p, .footer-section li, .footer-section a {
+    font-size: 1rem;
+    color: #ddd;
+    margin-bottom: 10px;
+    line-height: 1.5;
+}
+.footer-section a {
+    text-decoration: none;
+}
+.footer-section a:hover {
+    color: #f1c40f;
+}
+.footer ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.footer ul li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+.footer ul li i {
+    font-size: 1.5rem;
+    margin-right: 15px;
+    color: #f1c40f;
+}
+.social-icons {
+    display: flex;
+    gap: 15px;
+}
+.social-icon {
+    width: 40px;
+    height: 40px;
+    display: block;
+    background-size: cover;
+    border-radius: 50%;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.social-icon:hover {
+    transform: scale(1.2);
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.2);
+}
+.whatsapp-icon { background: url('https://img.icons8.com/color/48/000000/whatsapp--v1.png') center/cover no-repeat; }
+.instagram-icon { background: url('https://img.icons8.com/fluency/48/000000/instagram-new.png') center/cover no-repeat; }
+.facebook-icon { background: url('https://img.icons8.com/color/48/000000/facebook-new.png') center/cover no-repeat; }
+.footer-bottom {
+    text-align: center;
+    font-size: 0.9rem;
+    color: #aaa;
+    border-top: 1px solid #444;
+    padding-top: 20px;
+}
+.footer-bottom a {
+    color: #f1c40f;
+    text-decoration: none;
+}
+.footer-bottom a:hover {
+    color: #fff;
+}
+/* Responsive styles */
+@media screen and (max-width: 768px) {
+    .hamburger {
+        display: flex;
+    }
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        gap: 10px;
+        width: 100%;
+    }
+    .nav-links.active {
+        display: flex;
+    }
+    .dropdown-menu,
+    .nested-menu {
+        position: static;
+        background-color: rgb(117, 33, 187);
+        width: 100%;
+    }
+    .dropdown-menu li,
+    .nested-menu li {
+        width: 100%;
+    }
+    .nested-dropdown .nested-menu {
+        left: 0;
+        top: 0;
+    }
+    .search-container {
+        width: 100%;
+        margin-top: 10px;
+    }
+    .banner-text {
+        font-size: 3rem;
+    }
+    .footer .row {
+        flex-direction: column;
+        align-items: center;
+    }
+    .footer-section {
+        text-align: center;
+    }
+    .social-icons {
+        justify-content: center;
+    }
+}
+    </style>
+
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">
+                <a href="#"><img src="logo.png" alt="Logo" class="logo-img"></a>
+            </div>
+            <div class="hamburger">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+            <ul class="nav-links">
+                <li class="dropdown">
+                    <a href="#">Group Tours <i class="fa fa-caret-down"></i></a>
+                    <ul class="dropdown-menu">
+                        <li class="nested-dropdown">
+                            <a href="#">Domestic <i class="fa fa-caret-right"></i></a>
+                            <ul class="nested-menu">
+                                <li><a href="#">Andaman</a></li>
+                                <li><a href="AndraPradesh.html">Andhra Pradesh</a></li>
+                                <li><a href="Gujarat.html">Gujarat</a></li>
+                                <!-- <li><a href="#">Himachal Pradesh</a></li>
+                                <li><a href="#">Jammu & Kashmir</a></li>
+                                <li><a href="#">Karnataka</a></li>
+                                <li><a href="#">Kerala</a></li>
+                                <li><a href="#">Leh Ladakh</a></li> -->
+                                <li><a href="madhyapradesh.html">Madhya Pradesh</a></li>
+                                <!-- <li><a href="#">Northeast India</a></li>
+                                <li><a href="#">Orissa</a></li>
+                                <li><a href="#">Rajasthan</a></li>
+                                <li><a href="#">Uttarakhand</a></li>
+                                <li><a href="#">West Bengal</a></li> -->
+                                <li><a href="maharashtra.html">Maharashtra</a></li>
+                                <li><a href="#">Goa</a></li>
+                            </ul>
+                        </li>
+                        <li class="nested-dropdown">
+                            <a href="#">Pilgrimage Yatra <i class="fa fa-caret-right"></i></a>
+                            <ul class="nested-menu">
+                                <li><a href="Chardham yatra.html">Amarnath Vaishnodevi</a></li>
+                                <li><a href="#">Chardham Yatra</a></li>
+                                <li><a href="#">Narmada Parikrama</a></li>
+                                <li><a href="#">Pithapur Kuravpur</a></li>
+                                <li><a href="#">Tristhali Yatra</a></li>
+                                <li><a href="#">Gujarat</a></li>
+                            </ul>
+                        </li>
+                        <li class="nested-dropdown">
+                            <a href="#">International <i class="fa fa-caret-right"></i></a>
+                            <ul class="nested-menu">
+                                <!-- <li><a href="#">Africa</a></li>
+                                <li><a href="#">America</a></li>
+                                <li><a href="#">Australia</a></li> -->
+                                <li><a href="Bali.html">Bali</a></li>
+                                <!-- <li><a href="#">Bhutan</a></li>
+                                <li><a href="#">Cambodia</a></li>
+                                <li><a href="#">Canada</a></li>
+                                <li><a href="#">China</a></li> -->
+                                <li><a href="Dubai.html">Dubai</a></li>
+                                <!-- <li><a href="#">Europe</a></li>
+                                <li><a href="#">Hong Kong</a></li>
+                                <li><a href="#">Malaysia</a></li>
+                                <li><a href="#">Nepal</a></li>
+                                <li><a href="#">New Zealand</a></li>
+                                <li><a href="#">Russia</a></li>
+                                <li><a href="#">Singapore</a></li>
+                                <li><a href="#">Sri Lanka</a></li>
+                                <li><a href="#">Thailand</a></li>
+                                <li><a href="#">Vietnam</a></li>
+                            </ul> -->
+                        </li>
+                        <li><a href="#">International Customised Tour</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#">Honeymoon <i class="fa fa-caret-down"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="Domestic.html">DOMESTIC</a></li>
+                        <li><a href="international.html">INTERNATIONAL</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#">Customised Tours <i class="fa fa-caret-down"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">DOMESTIC</a></li>
+                        <li><a href="#">INTERNATIONAL</a></li>
+                    </ul>
+                </li>
+                <li><a href="Air Ticket.html">Air Ticket & Hotel Booking</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="search-container">
+                <input type="text" placeholder="Search..." class="search-input">
+                <button class="search-btn">
+                    <i class="fas fa-search"></i>
+                </button>
+            </div>
+        </div>
+    </nav> <br>
+    <!-- Nav Ends -->
+
+    <div class="banner">
+        <div class="banner-slider">
+            <div class="banner-slide active">
+                <img src="Images/1db.jpg" alt="Dubai Tourism 1">
+            </div>
+            <div class="banner-slide">
+                <img src="Images/2db.jpg" alt="Dubai Tourism 2">
+            </div>
+            <div class="banner-slide">
+                <img src="Images/3db.jpg" alt="Dubai Tourism 3">
+            </div>
+        </div>
+        <div class="banner-overlay">
+            <span class="banner-text">Discover Dubai</span>
+        </div>
+        <a href="#" class="slider-arrow prev" aria-label="Previous slide">&lt;</a>
+        <a href="#" class="slider-arrow next" aria-label="Next slide">&gt;</a>
+    </div>
+
+    <div class="container mt-5">
+        <h2 class="text-center mb-4 animated-title">Our Best Tours</h2>
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+            <div class="col">
+                <div class="card tour-card">
+                    <img src="Images/Dubai-Mall.jpg" class="card-img-top" alt="Dubai Mall">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-center mb-2">
+                            <h5 class="card-title mb-0">Dubai Mall</h5>
+                            <p class="tour-price mb-0">Onwards ₹99,000</p>
+                        </div>
+                        <p class="card-text">Dubai Mall is a luminary attraction in the heart of Downtown Dubai. It’s one of the biggest shopping malls, most-visited retail and family entertainment destination in the world.</p>
+                        <a href="#" class="btn btn-primary btn-contact">Contact Us</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card tour-card">
+                    <img src="Images/Dubai-Mosque.jpg" class="card-img-top" alt="Dubai Mosque">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-center mb-2">
+                            <h5 class="card-title mb-0">Dubai Mosque</h5>
+                            <p class="tour-price mb-0">Onwards ₹49,000</p>
+                        </div>
+                        <p class="card-text">The Jumeirah Mosque in Dubai is a prominent example of Islamic architecture and a popular tourist attraction. It is one of the few mosques in the UAE that is open to non-Muslims for guided tours.</p>
+                        <a href="#" class="btn btn-primary btn-contact">Contact Us</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card tour-card">
+                    <img src="Images/DubaiBurj-Khalifa.jpg" class="card-img-top" alt="Burj Khalifa">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-center mb-2">
+                            <h5 class="card-title mb-0">Burj Khalifa</h5>
+                            <p class="tour-price mb-0">Onwards ₹69,999</p>
+                        </div>
+                        <p class="card-text">The Burj Khalifa (known as the Burj Dubai prior to its inauguration) is a skyscraper in Dubai, United Arab Emirates. It is the world's tallest structure. With a total height of 829.8m</p>
+                        <a href="#" class="btn btn-primary btn-contact">Contact Us</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card tour-card">
+                    <img src="Images/DubaiArab.jpg" class="card-img-top" alt="Burj Al Arab">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-center mb-2">
+                            <h5 class="card-title mb-0">Burj Al Arab</h5>
+                            <p class="tour-price mb-0">Onwards ₹79,999</p>
+                        </div>
+                        <p class="card-text">The Burj Al Arab is a luxury hotel in Dubai, United Arab Emirates. Developed and managed by Jumeirah, it is one of the tallest hotels in the world.</p>
+                        <a href="#" class="btn btn-primary btn-contact">Contact Us</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card tour-card">
+                    <img src="Images/palmIslandDubai.jpg" class="card-img-top" alt="Palm Islands">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-center mb-2">
+                            <h5 class="card-title mb-0">Palm Islands</h5>
+                            <p class="tour-price mb-0">Onwards ₹19,240</p>
+                        </div>
+                        <p class="card-text">The Palm Islands consist of three artificial archipelagos: Palm Jumeirah, Dubai Islands (formerly known as Palm Deira or Deira Islands), and Palm Jebel Ali, on the coast of Dubai, United Arab Emirates.</p>
+                        <a href="#" class="btn btn-primary btn-contact">Contact Us</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card tour-card">
+                    <img src="Images/FerrariWorld.jpg" class="card-img-top" alt="Ferrari World">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-center mb-2">
+                            <h5 class="card-title mb-0">Ferrari World</h5>
+                            <p class="tour-price mb-0">Onwards ₹1,99,999</p>
+                        </div>
+                        <p class="card-text">Ferrari World is the largest indoor theme park in the world, covering over 900,000 square feet. Located on Yas Island in Abu Dhabi, United Arab Emirates, it was inaugurated in 2010.</p>
+                        <a href="#" class="btn btn-primary btn-contact">Contact Us</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container py-5">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="info-row">
+                    <div class="info-label">Country</div>
+                    <div>United Arab Emirates</div>
+                </div>
+                <div class="info-row">
+                    <div class="info-label">Currency</div>
+                    <div>Dirham</div>
+                </div>
+                <div class="info-row">
+                    <div class="info-label">Time Difference</div>
+                    <div>-1.5 Hours</div>
+                </div>
+                <div class="info-row">
+                    <div class="info-label">VISA on Arrival</div>
+                    <div>No</div>
+                </div>
+                <div class="info-row">
+                    <div class="info-label">Best Time for Travel</div>
+                    <div>November to March</div>
+                </div>
+            </div>
+            
+            <div class="col-md-6">
+                <h1 class="mb-4">Dubai Tours</h1>
+                <p class="mb-4">Dubai is a global city known for its rapid growth, luxury, innovation, and remarkable blend of traditional and futuristic influences. </p>
+                <p class="mb-4">Check out Dubai Tour Packages.</p>
+                
+                <div class="d-flex justify-content-between align-items-center mt-5">
+                    <span class="travel-text">Travel Dubai with us -_- </span>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+<!-- Footer Starts -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="row">
+                <div class="footer-section about">
+                    <h4>About Us</h4>
+                    <p>At cybromatech pvt Ltd we specialize in creating memorable travel experiences. With years of experience in the industry. Join us to explore the world with ease and style!</p>
+                </div>
+                <div class="footer-section contact">
+                    <h4>Contact Us</h4>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt"></i>marisoft it park kalyani nagar, pune, pune, Maharashtra, 411014</li>
+                        <li><i class="fas fa-phone-alt"></i> <a href="tel:9422295192">9422295192</a></li>
+                        <li><i class="fas fa-phone-alt"></i> <a href="tel:9730972384">9730972384</a></li>
+                        <li><i class="fas fa-envelope"></i> <a href="mailto:cybromatechpvtltd.info@gmail.com">cybromatechpvtltd.info@gmail.com</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section follow">
+                    <h4>Follow Us</h4>
+                    <div class="social-icons">
+                        <a href="https://wa.me/9422295192" target="_blank" class="social-icon whatsapp-icon" aria-label="WhatsApp"></a>
+                        <a href="https://www.instagram.com/shrisamarthconstruction" target="_blank" class="social-icon instagram-icon" aria-label="Instagram"></a>
+                        <a href="https://www.facebook.com/shrisamarthconst" target="_blank" class="social-icon facebook-icon" aria-label="Facebook"></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© <span id="currentYear"></span> Tours and Travels | All Rights Reserved</p>
+                <p>Powered by <a href="https://www.cybromatech.com" target="_blank" rel="noopener noreferrer">Cybromatech Technology Pvt Ltd</a></p>
+            </div>
+        </div>
+    </footer>
+    <!-- Footer Ends -->
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const cards = document.querySelectorAll('.tour-card');
+            
+            function showCards() {
+                cards.forEach((card, index) => {
+                    setTimeout(() => {
+                        card.classList.add('show');
+                    }, index * 100);
+                });
+            }
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        showCards();
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            observer.observe(document.querySelector('.row'));
+
+            const slides = document.querySelectorAll('.banner-slide');
+            let currentSlide = 0;
+
+            function showSlide(index) {
+                slides[currentSlide].classList.remove('active');
+                currentSlide = (index + slides.length) % slides.length;
+                slides[currentSlide].classList.add('active');
+            }
+
+            function nextSlide() {
+                showSlide(currentSlide + 1);
+            }
+
+            function prevSlide() {
+                showSlide(currentSlide - 1);
+            }
+
+            document.querySelector('.slider-arrow.next').addEventListener('click', function(e) {
+                e.preventDefault();
+                nextSlide();
+            });
+
+            document.querySelector('.slider-arrow.prev').addEventListener('click', function(e) {
+                e.preventDefault();
+                prevSlide();
+            });
+
+            setInterval(nextSlide, 5000);
+
+            // Hamburger menu functionality
+            const hamburger = document.querySelector('.hamburger');
+            const navLinks = document.querySelector('.nav-links');
+
+            hamburger.addEventListener('click', () => {
+                navLinks.classList.toggle('active');
+            });
+
+            // Mobile dropdown functionality
+            if (window.innerWidth <= 768) {
+                const dropdowns = document.querySelectorAll('.dropdown, .nested-dropdown');
+                dropdowns.forEach(dropdown => {
+                    dropdown.addEventListener('click', (e) => {
+                        e.preventDefault();
+                        const submenu = dropdown.querySelector('.dropdown-menu, .nested-menu');
+                        if (submenu) {
+                            submenu.style.display = submenu.style.display === 'block' ? 'none' : 'block';
+                        }
+                    });
+                });
+            }
+
+            // Update current year in footer
+            document.getElementById('currentYear').textContent = new Date().getFullYear();
+        });
+    </script>
+</body>
+</html>

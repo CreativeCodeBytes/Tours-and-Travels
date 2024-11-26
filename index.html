@@ -1,0 +1,917 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navbar with Nested Dropdown</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Include Font Awesome for Icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    
+
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    
+
+    
+ 
+    
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html"><img src="Images/Cybromatech-logo.jpg" alt="Logo" class="logo-img"></a>
+            </div>
+
+
+            <!-- Add hamburger menu -->
+            <div class="hamburger">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+
+
+            
+            <ul class="nav-links">
+                <li class="dropdown">
+                    <a href="#">Group Tours <i class="fa fa-caret-down"></i> </a>
+                    <ul class="dropdown-menu">
+                        <!-- Domestic Dropdown -->
+                        <li class="nested-dropdown">
+                            <a href="#">Domestic <i class="fa fa-caret-down"></i></a>
+                            <ul class="nested-menu">
+                                <li><a href="#">Andaman</a></li>
+                                <li><a href="AndraPradesh.html">Andhra Pradesh</a></li>
+                                <li><a href="Gujarat.html">Gujarat</a></li>
+                                <li><a href="#">Himachal Pradesh</a></li>
+                                <li><a href="#">Jammu & Kashmir</a></li>
+                                <li><a href="#">Karnataka</a></li>
+                                <li><a href="#">Kerala</a></li>
+                                <li><a href="#">Leh Ladakh</a></li>
+                                <li><a href="madhyapradesh.html">Madhya Pradesh</a></li>
+                                <li><a href="#">Northeast India</a></li>
+                                <li><a href="#">Orissa</a></li>
+                                <li><a href="#">Rajasthan</a></li>
+                                <li><a href="#">Uttarakhand</a></li>
+                                <li><a href="#">West Bengal</a></li>
+                                <li><a href="madhyapradesh.html">Maharashtra</a></li>
+                                <li><a href="#">Goa</a></li>
+                            </ul>
+                        </li>
+                        <!-- Pilgrimage Yatra Dropdown -->
+                        <li class="nested-dropdown">
+                            <a href="#">Pilgrimage Yatra <i class="fa fa-caret-down"></i></a>
+                            <ul class="nested-menu">
+                                <li><a href="#">Amarnath Vaishnodevi</a></li>
+                                <li><a href="Chardham yatra.html">Chardham Yatra</a></li>
+                                <li><a href="#">Narmada Parikrama</a></li>
+                                <li><a href="#">Pithapur Kuravpur</a></li>
+                                <li><a href="#">Tristhali Yatra</a></li>
+                                <li><a href="#">Gujarat</a></li>
+                            </ul>
+                        </li>
+                        <!-- International Dropdown -->
+                        <li class="nested-dropdown">
+                            <a href="#">International <i class="fa fa-caret-down"></i> </a>
+                            <ul class="nested-menu">
+                                <li><a href="#">Africa</a></li>
+                                <li><a href="#">America</a></li>
+                                <li><a href="#">Australia</a></li>
+                                <li><a href="Bali.html">Bali</a></li>
+                                <li><a href="#">Bhutan</a></li>
+                                <li><a href="#">Cambodia</a></li>
+                                <li><a href="#">Canada</a></li>
+                                <li><a href="#">China</a></li>
+                                <li><a href="Dubai.html">Dubai</a></li>
+                                <li><a href="#">Europe</a></li>
+                                <li><a href="#">Hong Kong</a></li>
+                                <li><a href="#">Malaysia</a></li>
+                                <li><a href="#">Nepal</a></li>
+                                <li><a href="#">New Zealand</a></li>
+                                <li><a href="#">Russia</a></li>
+                                <li><a href="#">Singapore</a></li>
+                                <li><a href="#">Sri Lanka</a></li>
+                                <li><a href="#">Thailand</a></li>
+                                <li><a href="#">Vietnam</a></li>
+                            </ul>
+                        </li>
+                        <!-- International Customised Tour -->
+                        <li><a href="#">International Customised Tour</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#">Honeymoon <i class="fa fa-caret-down"></i> </a>
+                    <ul class="dropdown-menu">
+                        <!-- Honeymoon Domestic -->
+                        <li><a href="Domestic.html">DOMESTIC</a></li>
+                        <!-- Honeymoon International -->
+                        <li><a href="international.html">INTERNATIONAL</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#">Customised Tours <i class="fa fa-caret-down"></i> </a>
+                    <ul class="dropdown-menu">
+                        <!-- Customised Domestic -->
+                        <li><a href="#">DOMESTIC</a></li>
+                        <!-- Customised International -->
+                        <li><a href="#">INTERNATIONAL</a></li>
+                    </ul>
+                </li>
+                <li><a href="Air Ticket.html">Air Ticket & Hotel Booking <i class="fa fa-caret-down"></i> </a></li>
+                <li><a href="contact.html">Contact <i class="fa fa-caret-down"></i></a></li>
+            </ul>
+            <div class="search-container">
+                <input type="text" placeholder="Search..." class="search-input">
+                <button class="search-btn">
+                    <i class="fas fa-search"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+   
+
+
+    <div class="slideshow-container">
+        <div class="slide slide1">
+            <div class="caption"> 
+                <h3>Mumbai City Tour</h3>
+                <p>2 Night/ 3 Days - Gateway of India, Elephanta Caves, Marine Drive</p>
+                <p>Package starting from Rs. 5000</p>
+            </a>
+            </div>
+        </div>
+        <div class="slide slide2">
+            <div class="caption">
+                <h3>Pune Heritage Tour</h3>
+                <p>4 Night/ 5 Days - Shaniwar Wada Fort, Sinhagad Fort, Parvati Hill Temple Complex</p>
+                <p>Package starting from Rs. 2000</p>
+            </div>
+        </div>
+        <div class="slide slide3">
+            <div class="caption">
+                <h3>Lonavala Hill Station</h3>
+                <p>1 Night/ 2 Days - Lohagad Fort, Bushy Dam, Lonavala Lake, Lion's Point</p>
+                <p>Package starting from Rs. 3000</p>
+            </div>
+        </div>
+        <div class="slide slide4">
+            <div class="caption">
+                <h3>Andaman & Nicobar</h3>
+                <p>7 Night/ 6 Days - Arrival in Port Blair, Havelock Island, Neil Island</p>
+                <p>Package starting from Rs. 50000</p>
+            </div>
+        </div>
+        <div class="slide slide5">
+            <div class="caption">
+                <h3>Paris, France</h3>
+                <p>5 Night/ 4 Days - Arrival and Iconic Landmarks, Historic and Architectural Wonders, Art and Culture</p>
+                <p>Package starting from Rs. 60000</p>
+            </div>
+        </div>
+    </div>
+       
+
+
+<!-- Travel Destinations Section -->
+<section class="travel-destinations">
+    <div class="travel-container">
+      <h2 class="travel-title">Top Travel Destinations</h2>
+  
+      <!-- Domestic Section -->
+      <div class="destination-category">
+        <h3 class="category-title">Domestic Destinations</h3>
+        <div class="travel-cards">
+          <!-- Card 1 -->
+          <div class="travel-card">
+            <img src="/Images/Manalihomepage.jpg" alt="Manali" class="travel-image">
+            <div class="travel-card-content">
+              <h4>Manali</h4>
+              <p>5 Days / 4 Nights</p>
+              <p class="price">
+                <span class="original-price">₹15,000</span>
+                <span class="offer-price">₹12,000</span>
+              </p>
+              <a href="#" class="taketour-btn">Take a Tour</a>
+            </div>
+          </div>
+          <!-- Card 2 -->
+          <div class="travel-card">
+            <img src="/Images/Keralanew.jpg" alt="Kerala" class="travel-image">
+            <div class="travel-card-content">
+              <h4>Kerala</h4>
+              <p>4 Days / 3 Nights</p>
+              <p class="price">
+                <span class="original-price">₹18,000</span>
+                <span class="offer-price">₹14,499</span>
+              </p>
+              <a href="#" class="taketour-btn">Take a Tour</a>
+            </div>
+          </div>
+          <!-- Card 3 -->
+          <div class="travel-card">
+            <img src="/Images/Ooty.jpg" alt="OOty" class="travel-image">
+            <div class="travel-card-content">
+              <h4>Ooty</h4>
+              <p>5 Days / 4 Nights</p>
+              <p class="price">
+                <span class="original-price">₹15,000</span>
+                <span class="offer-price">₹12,000</span>
+              </p>
+              <a href="#" class="taketour-btn">Take a Tour</a>
+            </div>
+          </div>
+          <!-- Card 4 -->
+          <div class="travel-card">
+            <img src="/Images/Goa.jpg" alt="Goa" class="travel-image">
+            <div class="travel-card-content">
+              <h4>Goa</h4>
+              <p>5 Days / 4 Nights</p>
+              <p class="price">
+                <span class="original-price">₹15,000</span>
+                <span class="offer-price">₹12,000</span>
+              </p>
+              <a href="#" class="taketour-btn">Take a Tour</a>
+            </div>
+          </div>
+        </div>
+        <div class="explore-btn-container">
+          <a href="#" class="explore-btn">Explore More Domestic Destinations</a>
+        </div>
+      </div>
+  
+      <!-- International Section -->
+      <div class="destination-category">
+        <h3 class="category-title">International Destinations</h3>
+        <div class="travel-cards">
+          <!-- Card 1 -->
+          <div class="travel-card">
+            <img src="/Images/london.jpg" alt="London" class="travel-image">
+            <div class="travel-card-content">
+              <h4>London</h4>
+              <p>2 Days / 3 Nights</p>
+              <p class="price">
+                <span class="original-price">₹100,000</span>
+                <span class="offer-price">₹89,999</span>
+              </p>
+              <a href="#" class="taketour-btn">Take a Tour</a>
+            </div>
+          </div>
+          <!-- Card 2 -->
+          <div class="travel-card">
+            <img src="/Images/maldives.jpg" alt="Maldives" class="travel-image">
+            <div class="travel-card-content">
+              <h4>Maldives</h4>
+              <p>2 Days / 3 Nights</p>
+              <p class="price">
+                <span class="original-price">₹100,000</span>
+                <span class="offer-price">₹89,999</span>
+              </p>
+              <a href="#" class="taketour-btn">Take a Tour</a>
+            </div>
+          </div>
+          <!-- Card 3 -->
+          <div class="travel-card">
+            <img src="/Images/Singapore.jpg" alt="Singapore" class="travel-image">
+            <div class="travel-card-content">
+              <h4>Singapore</h4>
+              <p>2 Days / 3 Nights</p>
+              <p class="price">
+                <span class="original-price">₹100,000</span>
+                <span class="offer-price">₹89,999</span>
+              </p>
+              <a href="#" class="taketour-btn">Take a Tour</a>
+            </div>
+          </div>
+          <!-- Card 4 -->
+          <div class="travel-card">
+            <img src="/Images/Paris.jpg" alt="Paris" class="travel-image">
+            <div class="travel-card-content">
+              <h4>Paris</h4>
+              <p>5 Days / 4 Nights</p>
+              <p class="price">
+                <span class="original-price">₹55,000</span>
+                <span class="offer-price">₹49,999</span>
+              </p>
+              <a href="#" class="taketour-btn">Take a Tour</a>
+            </div>
+          </div>
+        </div>
+        <div class="explore-btn-container">
+          <a href="#" class="explore-btn">Explore More International Destinations</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+
+
+
+
+
+  <section class="why-choose-us">
+    <div class="why-container">
+        <h2>Why Choose Us?</h2>
+        <div class="features">
+            <div class="feature">
+                <i class="fas fa-users feature-icon"></i>
+                <h3>Trusted by Thousands</h3>
+                <p>With years of experience, we have built a reputation of trust and reliability.</p>
+            </div>
+            <div class="feature">
+                <i class="fas fa-headset feature-icon"></i>
+                <h3>24/7 Customer Support</h3>
+                <p>Our team is always ready to assist you with your travel needs.</p>
+            </div>
+            <div class="feature">
+                <i class="fas fa-tags feature-icon"></i>
+                <h3>Best Value for Money</h3>
+                <p>We provide affordable packages without compromising on quality.</p>
+            </div>
+            <div class="feature">
+                <i class="fas fa-map-marker-alt feature-icon"></i>
+                <h3>Exclusive Destinations</h3>
+                <p>Explore unique and breathtaking destinations curated just for you.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+
+
+<section class="tours">
+    <div class="Tcontainer">
+      <h2 class="section-title">Speciality Tours</h2>
+      <div class="tours-slider">
+        <button class="control prev" onclick="scrollTours('prev')">&lt;</button>
+        <div class="tours-list">
+          <!-- Chota Break -->
+          <div class="tour-card">
+            <img src="/Images/SpecialityChotabreak.jpg" alt="Chota Break">
+            <div class="tour-content">
+              <h4>Chota Break</h4>
+              <p>Mumbai > The city of Dreams</p>
+              <button class="btn">Explore</button>
+            </div>
+          </div>
+          <!-- Honeymoon Special -->
+          <div class="tour-card">
+            <img src="/Images/Specialitytour2.jpg" alt="Honeymoon Special">
+            <div class="tour-content">
+              <h4>Honeymoon Special</h4>
+              <p>Romantic escapes for couples.</p>
+              <button class="btn">Explore</button>
+            </div>
+          </div>
+          <!-- Kids' Paradise -->
+          <div class="tour-card">
+            <img src="/Images/Specialitykids.jpg" alt="Kids' Paradise">
+            <div class="tour-content">
+              <h4>Kids Paradise</h4>
+              <p>Imagicaa > Fun-filled family destinations.</p>
+              <button class="btn">Explore</button>
+            </div>
+          </div>
+          <!-- Sacred Journey -->
+          <div class="tour-card">
+            <img src="/Images/SpecialitySecondinning.jpg" alt="Sacred Journey">
+            <div class="tour-content">
+              <h4>Second Journey</h4>
+              <p>Recreation of Memories</p>
+              <button class="btn">Explore</button>
+            </div>
+          </div>
+          <!-- Adventure Mania -->
+          <div class="tour-card">
+            <img src="/Images/Pune Heritage.jpg" alt="Adventure Mania">
+            <div class="tour-content">
+              <h4>Adventure Mania</h4>
+              <p>Thrilling adventures await!</p>
+              <button class="btn">Explore</button>
+            </div>
+          </div>
+        </div>
+        <button class="control next" onclick="scrollTours('next')">&gt;</button>
+      </div>
+    </div>
+  </section>
+  
+  
+
+
+
+
+
+  <section class="Game">
+    <div class="gamecontainer">
+        <!-- Question Section -->
+        <div class="question-section">
+            <h2>What's Your Dream Vacation?</h2>
+            <p>pick 5 image to see the Magic!</p>
+            <div class="options">
+                <div id="option1" class="option" onclick="selectOption(1)">
+                    <img src="/Images/timeless japan.jpg" alt="Small Town Champ">
+                    <h3>Small Town Champ</h3>
+                </div>
+                <div id="option2" class="option" onclick="selectOption(2)">
+                    <img src="/Images/london.jpg" alt="Big City Glamour">
+                    <h3>Big City Glamour</h3>
+                </div>
+            </div>
+        </div>
+  
+        <!-- Result Section -->
+        <div class="result-section hidden">
+            <h2>Your Perfect Destinations:</h2>
+            <p id="result"></p>
+            <div class="button-group">
+                <a id="explore-button" class="btn" href="#" target="_blank">Take a Tour</a>
+                <button class="btn btn-secondary" onclick="restartGame()">Play Again</button>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+
+<!-- About Section -->
+<section class="about-section">
+    <div class="about-content">
+      <div class="about-text">
+        <h2 class="about-title">About Us</h2>
+        <p class="about-description">
+          At <strong>Cybromatech pvt ltd</strong>, we specialize in creating memorable travel experiences. 
+          With years of experience in the industry, we offer domestic and international tours, luxurious transportation services, 
+          and custom holiday packages tailored to meet your needs.
+        </p>
+        <a href="/Images/about.html" class="read-more-btn">Read More</a>
+      </div>
+      <div class="about-image">
+        <img src="/Images/About-homepage.jpg" alt="Our Office">
+      </div>
+    </div>
+  </section>
+
+
+   <!-- Review Section -->
+   <section class="review-section">
+    <h2 class="review-title text-center">Our pride</h2> 
+    
+    <!-- Review Navigation Controls -->
+    <div class="review-controls">
+      <span id="prev-btn" class="control-btn">&lt;</span>
+      
+      <span id="next-btn" class="control-btn">&gt;</span>
+    </div>
+  
+    <div class="review-container" id="review-container">
+      <!-- Review 1 -->
+      <div class="review-item">
+        <img src="/Images/Customerreview1.jpg" alt="Customer 1" class="review-img">
+        <p class="review-text">"Great service, fantastic trip! Highly recommend!"</p>
+        <h5 class="reviewer-name">John Doe</h5>
+        <p class="reviewer-location">New York</p>
+      </div>
+  
+      <!-- Review 2 -->
+      <div class="review-item">
+        <img src="/Images/travelbag.jpg" alt="Customer 2" class="review-img">
+        <p class="review-text">"Everything was perfectly organized. I had an unforgettable experience!"</p>
+        <h5 class="reviewer-name">Sarah Lee</h5>
+        <p class="reviewer-location">London</p>
+      </div>
+  
+      <!-- Review 3 -->
+      <div class="review-item">
+        <img src="/Images/customerreview2.jpg" alt="Customer 3" class="review-img">
+        <p class="review-text">"I felt like royalty on my trip. Highly recommend booking with this company!"</p>
+        <h5 class="reviewer-name">Michael Johnson</h5>
+        <p class="reviewer-location">Sydney</p>
+      </div>
+  
+      <!-- Review 4 -->
+      <div class="review-item">
+        <img src="/Images/Customerreview1.jpg" alt="Customer 4" class="review-img">
+        <p class="review-text">"Exceptional service and memorable trips. Couldn’t be happier!"</p>
+        <h5 class="reviewer-name">Emily Clark</h5>
+        <p class="reviewer-location">Paris</p>
+      </div>
+  
+      <!-- Review 5 -->
+      <div class="review-item">
+        <img src="/Images/travelbag.jpg" alt="Customer 5" class="review-img">
+        <p class="review-text">"Amazing vacation! We will be back next year!"</p>
+        <h5 class="reviewer-name">Alice Green</h5>
+        <p class="reviewer-location">Berlin</p>
+      </div>
+
+       <!-- Review 6 -->
+       <div class="review-item">
+        <img src="/Images/customerreview2.jpg" alt="Customer 5" class="review-img">
+        <p class="review-text">"Amazing vacation! We will be back next year!"</p>
+        <h5 class="reviewer-name">Alice Green</h5>
+        <p class="reviewer-location">Berlin</p>
+      </div>
+
+       <!-- Review 7 -->
+       <div class="review-item">
+        <img src="/Images/customerreview1.jpg" alt="Customer 5" class="review-img">
+        <p class="review-text">"Amazing vacation! We will be back next year!"</p>
+        <h5 class="reviewer-name">Alice Green</h5>
+        <p class="reviewer-location">Berlin</p>
+      </div>
+
+       <!-- Review 8 -->
+       <div class="review-item">
+        <img src="/Images/travelbag.jpg" alt="Customer 5" class="review-img">
+        <p class="review-text">"Amazing vacation! We will be back next year!"</p>
+        <h5 class="reviewer-name">Alice Green</h5>
+        <p class="reviewer-location">Berlin</p>
+      </div>
+
+       <!-- Review 9 -->
+       <div class="review-item">
+        <img src="/Images/customerreview2.jpg" alt="Customer 5" class="review-img">
+        <p class="review-text">"Amazing vacation! We will be back next year!"</p>
+        <h5 class="reviewer-name">Alice Green</h5>
+        <p class="reviewer-location">Berlin</p>
+      </div>
+  
+      <!-- Review 10 -->
+      <div class="review-item">
+        <img src="/Images/travelbag.jpg" alt="Customer 6" class="review-img">
+        <p class="review-text">"A truly amazing experience. Will definitely recommend to friends."</p>
+        <h5 class="reviewer-name">David Smith</h5>
+        <p class="reviewer-location">Los Angeles</p>
+      </div>
+    </div>
+  </section>
+  
+
+
+
+<!-- Travel Sources Section -->
+<div class="travel-sources-container">
+    <h2 class="travel-sources-title">Our Travel Sources</h2>
+    
+    <div class="travel-sources-cards">
+        <!-- Bus Card -->
+        <div class="travel-source-card">
+            <div class="card-image">
+                <img src="/Images/bushomepage.jpg" alt="Bus Travel">
+            </div>
+            <div class="card-content">
+                <h3>Bus Travel</h3>
+                <p>Affordable and scenic, ideal for short trips and budget travel.</p>
+            </div>
+        </div>
+        <!-- Train Card -->
+        <div class="travel-source-card">
+            <div class="card-image">
+                <img src="/Images/train.jpg" alt="Train Travel">
+            </div>
+            <div class="card-content">
+                <h3>Train Travel</h3>
+                <p>Comfortable, long-distance travel with scenic views along the way.</p>
+            </div>
+        </div>
+        <!-- Flight Card -->
+        <div class="travel-source-card">
+            <div class="card-image">
+                <img src="/Images/flighthomepage.jpg" alt="Flight Travel">
+            </div>
+            <div class="card-content">
+                <h3>Flight Travel</h3>
+                <p>Fastest way to travel, perfect for international and long-distance trips.</p>
+            </div>
+        </div>
+        <!-- Car Card -->
+        <div class="travel-source-card">
+            <div class="card-image">
+                <img src="/Images/carhomepage.jpg" alt="Car Travel">
+            </div>
+            <div class="card-content">
+                <h3>Car Travel</h3>
+                <p>Flexible and private, ideal for road trips and exploring remote areas.</p>
+            </div>
+        </div>
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+    <!-- Footer Section Start -->
+    <footer class="footer">
+        <div class="footer-container">
+            <!-- Row 1: About, Contact, Follow Us -->
+            <div class="row">
+                <!-- About Us Section -->
+                <div class="footer-section about">
+                    <h4>About Us</h4>
+                    <p>At cybromatech pvt Ltd we specialize in creating memorable travel experiences. With years of experience in the industry. Join us to explore the world with ease and style!</p>
+                </div>
+
+                <!-- Contact Us Section -->
+                <div class="footer-section contact">
+                    <h4>Contact Us</h4>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt"></i>marisoft it park kalyani nagar, pune, pune, Maharashtra, 411014</li>
+                        <li><i class="fas fa-phone-alt"></i> <a href="tel:9422295192">9422295192</a></li>
+                        <li><i class="fas fa-phone-alt"></i> <a href="tel:9730972384">9730972384</a></li>
+                        <li><i class="fas fa-envelope"></i> <a href="mailto:shrisamarthconst1974@gmail.com">cybromatechpvtltd.info@gmail.com</a></li>
+                    </ul>
+                </div>
+
+                <!-- Follow Us Section -->
+                <div class="footer-section follow">
+                    <h4>Follow Us</h4>
+                    <div class="social-icons">
+                        <a href="https://wa.me/9422295192" target="_blank" class="social-icon whatsapp-icon" aria-label="WhatsApp"></a>
+                        <a href="https://www.instagram.com/shrisamarthconstruction" target="_blank" class="social-icon instagram-icon" aria-label="Instagram"></a>
+                        <a href="https://www.facebook.com/shrisamarthconstruction" target="_blank" class="social-icon facebook-icon" aria-label="Facebook"></a>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- Row 2: Footer Bottom -->
+            <div class="footer-bottom">
+                <p>© <span id="currentYear"></span> Tours and Travels | All Rights Reserved</p>
+                <p>Powered by <a href="https://www.cybromatech.com" target="_blank" rel="noopener noreferrer">Cybromatech Technology Pvt Ltd</a></p>
+            </div>
+        </div>
+    </footer>
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+    document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+     // Select the hamburger icon and the nav-links
+      const hamburger = document.querySelector('.hamburger');
+      const navLinks = document.querySelector('.nav-links');
+
+      // Add click event to toggle the nav menu
+      hamburger.addEventListener('click', () => {
+          navLinks.classList.toggle('active');
+      });
+
+      // Select all dropdown menu items
+      const dropdownItems = document.querySelectorAll('.dropdown, .nested-dropdown');
+
+      dropdownItems.forEach(item => {
+          item.addEventListener('click', function(event) {
+              // Prevent the default link behavior (prevents page navigation)
+              event.preventDefault();
+
+              // Find the dropdown menu or nested menu inside the clicked item
+              const dropdownMenu = this.querySelector('.dropdown-menu, .nested-menu');
+      
+              if (dropdownMenu) {
+                  // Toggle visibility of the clicked menu (nested or parent)
+                  dropdownMenu.classList.toggle('show');
+              }
+
+              // Close other nested menus if open (optional: if you want only one menu open at a time)
+              dropdownItems.forEach(otherItem => {
+                  if (otherItem !== this) {
+                      const otherMenu = otherItem.querySelector('.dropdown-menu, .nested-menu');
+                      if (otherMenu) {
+                          otherMenu.classList.remove('show');
+                      }
+                  }
+              });
+          });
+      });
+
+      // Toggle nested dropdown on mobile
+      // Toggle nested dropdown on mobile
+      document.addEventListener('DOMContentLoaded', function () {
+          const nestedDropdowns = document.querySelectorAll('.nested-dropdown');
+          nestedDropdowns.forEach(function (dropdown) {
+              dropdown.addEventListener('click', function (e) {
+                  // Prevent parent link from redirecting
+                  e.preventDefault();
+                  // Toggle the active class to show/hide the nested menu
+                  dropdown.classList.toggle('active');
+              });
+          });
+      });
+
+
+
+
+      function scrollTours(direction) {
+const list = document.querySelector('.tours-list');
+const scrollAmount = list.offsetWidth / 2;
+
+if (direction === 'prev') {
+  list.scrollLeft -= scrollAmount;
+} else {
+  list.scrollLeft += scrollAmount;
+}
+};
+
+
+
+
+
+
+
+
+const options = [
+  { text1: "Small Town Champ", text2: "Big City Glamour", img1: "small city.jpg", img2: "london.jpg" },
+  { text1: "Beach Explorer", text2: "Mountain Adventurer", img1: "maldives.jpg", img2: "mountain.jpg" },
+  { text1: "Luxury Traveler", text2: "Backpacker", img1: "luxury.jpg", img2: "Ooty.jpg" },
+  { text1: "Nature Lover", text2: "Cultural Enthusiast", img1: "nature.jpg", img2:"Goldentemple.jpg" },
+  { text1: "Food Explorer", text2: "Wellness Seeker", img1: "foodie.jpg", img2: "wellness seeker.jpg" }
+];
+
+// Mapping results to categories
+
+const resultsMapping = {
+  relaxing: {
+    text: "You love relaxing vacations!",
+    exploreLink: "relaxing.html"
+  },
+  adventurous: {
+    text: "You enjoy adventurous trips!",
+    exploreLink: "adventurous.html"
+  },
+  cultural: {
+    text: "You are a cultural enthusiast!",
+    exploreLink: "cultural.html"
+  },
+  nature: {
+    text: "You are a nature lover!",
+    exploreLink: "nature.html"
+  },
+  foodie: {
+    text: "You are a foodie traveler!",
+    exploreLink: "foodie.html"
+  },
+  wellness: {
+    text: "You enjoy wellness and self-care trips!",
+    exploreLink: "wellness.html"
+  }
+};
+
+let currentStep = 0;
+const selectedOptions = [];
+
+function selectOption(option) {
+  selectedOptions.push(option);
+  currentStep++;
+
+  if (currentStep < 5) {
+    updateQuestion();
+  } else {
+    showResult();
+  }
+}
+
+function updateQuestion() {
+  const question = options[currentStep];
+  document.getElementById("option1").querySelector("img").src = question.img1;
+  document.getElementById("option1").querySelector("h3").textContent = question.text1;
+
+  document.getElementById("option2").querySelector("img").src = question.img2;
+  document.getElementById("option2").querySelector("h3").textContent = question.text2;
+}
+
+function showResult() {
+  document.querySelector(".question-section").classList.add("hidden");
+  document.querySelector(".result-section").classList.remove("hidden");
+
+  // Determine result based on user selections
+  const relaxingCount = selectedOptions.filter(option => option === 1).length;
+
+  let resultKey;
+  if (relaxingCount >= 3) {
+    resultKey = "relaxing";
+  } else if (selectedOptions.includes(2) && relaxingCount >= 2) {
+    resultKey = "adventurous";
+  } else if (selectedOptions.includes(1) && selectedOptions.includes(2)) {
+    resultKey = "cultural";
+  } else if (selectedOptions.includes(1) && relaxingCount === 1) {
+    resultKey = "nature";
+  } else if (selectedOptions.includes(2) && relaxingCount === 0) {
+    resultKey = "foodie";
+  } else {
+    resultKey = "wellness";
+  }
+
+  const resultData = resultsMapping[resultKey];
+  document.getElementById("result").textContent = resultData.text;
+
+  const exploreButton = document.getElementById("explore-button");
+  exploreButton.href = resultData.exploreLink;
+}
+
+function restartGame() {
+  currentStep = 0;
+  selectedOptions.length = 0;
+  document.querySelector(".question-section").classList.remove("hidden");
+  document.querySelector(".result-section").classList.add("hidden");
+  updateQuestion();
+}
+
+
+
+
+// Review section navigation logic
+let currentReview = 0;
+const reviews = document.querySelectorAll('.review-item');
+const totalReviews = reviews.length;
+const prevBtn = document.getElementById('prev-btn');
+const nextBtn = document.getElementById('next-btn');
+
+// Function to show the current set of reviews
+function showReviews() {
+  reviews.forEach((review, index) => {
+    if (index >= currentReview && index < currentReview + 3) {
+      review.style.display = 'block'; // Show review
+    } else {
+      review.style.display = 'none'; // Hide review
+    }
+  });
+}
+
+// Show the first set of reviews initially
+showReviews();
+
+// Handle previous button click
+prevBtn.addEventListener('click', () => {
+  if (currentReview > 0) {
+    currentReview -= 3; // Move to previous set of reviews
+    showReviews();
+  }
+});
+
+// Handle next button click
+nextBtn.addEventListener('click', () => {
+  if (currentReview + 3 < totalReviews) {
+    currentReview += 3; // Move to next set of reviews
+    showReviews();
+  }
+});
+
+
+
+
+  </script>
+
+    
+  
+    </body>
+    </html>

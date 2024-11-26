@@ -142,7 +142,7 @@ function displayFlightResults(fromCity, toCity, journeyDate, passengers, classTy
     const flights = [
         {
             airline: 'Vistara',
-            logo: 'Vistara.svg?height=40&width=40',
+            logo: '/Images/Vistara.svg?height=40&width=40',
             flightNumber: 'AI 803',
             departureTime: '06:10',
             arrivalTime: '09:10',
@@ -159,7 +159,7 @@ function displayFlightResults(fromCity, toCity, journeyDate, passengers, classTy
         },
         {
             airline: 'IndiGo',
-            logo: 'Indigo.png?height=40&width=40',
+            logo: '/Images/Indigo.png?height=40&width=40',
             flightNumber: '6E 2412',
             departureTime: '20:00',
             arrivalTime: '22:50',
@@ -176,7 +176,7 @@ function displayFlightResults(fromCity, toCity, journeyDate, passengers, classTy
         },
         {
             airline: 'Air India',
-            logo: 'AirIndia.png',
+            logo: '/Images/AirIndia.png',
             flightNumber: 'AI 815',
             departureTime: '15:45',
             arrivalTime: '18:40',
@@ -261,6 +261,8 @@ function displayFlightResults(fromCity, toCity, journeyDate, passengers, classTy
         `;
         resultsContainer.appendChild(flightCard);
     });
+
+    
 
     // Scroll to results
     searchResultsSection.scrollIntoView({ behavior: 'smooth' });

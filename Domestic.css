@@ -1,0 +1,757 @@
+/* Reset default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+  }
+  
+  /* Navbar styling */
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(117, 33, 187);
+    color: white;
+    padding: 10px 20px;
+    position: relative; /* Ensures correct stacking context */
+    z-index: 1000; /* Higher z-index to be above slideshow */
+  }
+  
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
+  
+  .logo .logo-img {
+    height: 40px;
+  }
+  
+  /* Navbar links */
+  .nav-links {
+    list-style-type: none;
+    display: flex;
+    gap: 15px;
+    position: relative;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .nav-links li {
+    display: inline-block;
+    position: relative;
+  }
+  
+  .nav-links a {
+    color: white;
+    text-decoration: none;
+    padding: 8px 12px;
+    
+    text-transform: uppercase;
+  }
+  
+  .nav-links a:hover {
+    background-color: rgb(117, 33, 187);
+    border-radius: 4px;
+  }
+  
+  /* Dropdown styling */
+  .dropdown:hover .dropdown-menu {
+    display: block;
+  }
+  
+  .dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: rgb(63, 21, 97);
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    min-width: 200px;
+  }
+  
+  .dropdown-menu li {
+    width: 100%;
+  
+  }
+  
+  .dropdown-menu a {
+    display: block;
+    padding: 10px 15px;
+    color: white;
+    text-decoration: none;
+    
+  }
+  
+  .dropdown-menu a:hover {
+    background-color: rgb(117, 33, 187);
+  }
+  
+  /* Nested dropdown (submenu) */
+  .nested-dropdown:hover .nested-menu {
+    display: block;
+  }
+  
+  .nested-menu {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 100%;
+    background-color: rgb(117, 33, 187);
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    min-width: 200px;
+  }
+  
+  /* Display nested menu when active class is added */
+  .nested-menu.show {
+    display: block;  /* Make visible when toggled */
+  }
+  
+  
+  .nested-menu a {
+    padding: 10px 15px;
+    color: white;
+    text-decoration: none;
+    text-transform: capitalize;
+  }
+  
+  .nested-menu a:hover {
+    background-color: rgb(152, 61, 226);
+  }
+  
+  
+  
+  /* Show dropdown and nested menus when they have the 'show' class */
+  .dropdown-menu.show,
+  .nested-menu.show {
+    display: block !important;
+  }
+  
+  
+  /* Hamburger Icon Styling */
+  .hamburger {
+    display: none;
+    cursor: pointer;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 25px;
+    height: 20px;
+    position: absolute;
+    top: 20px;
+    right: 20px; /* This aligns the hamburger to the right */
+    z-index: 10; /* Ensures it stays on top of other elements */
+  }
+  
+  .hamburger .bar {
+    background-color: white;
+    height: 3px;
+    width: 100%;
+    border-radius: 5px;
+    
+  }
+  
+  /* Show the hamburger icon on smaller screens */
+  @media screen and (max-width: 768px) {
+    .hamburger {
+        display: flex;
+    }
+  
+    /* Hide the nav links initially on smaller screens */
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        gap: 10px;
+        width: 100%;
+    }
+  
+    /* Show nav-links when active class is added */
+    .nav-links.active {
+        display: flex;
+    }
+    /* Show nav links when the hamburger is clicked */
+    .nav-links.active {
+        display: flex;
+    }
+  
+    /* Make dropdown menu clickable on small screens */
+    .dropdown:hover .dropdown-menu,
+    .nested-dropdown:hover .nested-menu {
+        display: block;
+    }
+  
+    /* Keep dropdowns visible in mobile view */
+    .dropdown-menu,
+    .nested-menu {
+        display: none; /* Make dropdown menus hidden by default */
+        position: relative; /* Adjust positioning to prevent overlap */
+        background-color: rgb(117, 33, 187);
+        width: 100%; /* Ensure full-width on small screens */
+    }
+  
+    .dropdown-menu li,
+    .nested-menu li {
+        width: 100%; /* Ensure full-width */
+    }
+  
+    .dropdown-menu.show,
+    .nested-menu.show {
+        display: block !important; /* Force visibility */
+    }
+  
+    /* Nested menu items need to be shown as well */
+    .nested-dropdown .nested-menu.show {
+        display: block;
+    }
+  
+    .nested-dropdown.show .nested-menu {
+        display: block !important; /* Show nested menu when parent is clicked */
+    }
+  
+    /* Ensure nested dropdowns open to the left side */
+    .nested-dropdown .nested-menu {
+        left: -100%; /* Position to the left of the parent item */
+        top: 0; /* Keep it aligned with the parent item */
+        display: none;  /* Make hidden by default */
+        position: relative; /* Positioning relative to the parent */
+        background-color: rgb(117, 33, 187);
+        min-width: 200px;
+    }
+  
+    
+  }
+  
+  
+  .nested-dropdown {
+    position: relative; /* This is needed for absolute positioning of nested menus */
+  }
+  
+  /* Keep dropdown and nested menu visible when 'active' class is added in smaller screens */
+  @media screen and (max-width: 768px) {
+    /* Ensure the parent item is clickable and shows the nested menu when clicked */
+    .nested-dropdown.active .nested-menu {
+        display: block !important;
+    }
+  }
+  
+  /* Show dropdown and nested menus when they have the 'show' class */
+  .dropdown-menu.show,
+  .nested-menu.show {
+    display: block !important;
+  }
+  
+  /* Make nested menu visible when toggled on mobile */
+  @media screen and (max-width: 768px) {
+    /* Make dropdown menu clickable on small screens */
+    .dropdown:hover .dropdown-menu,
+    .nested-dropdown:hover .nested-menu {
+        display: block;
+    }
+  
+    /* Ensure the parent item is clickable and shows the nested menu when clicked */
+    .nested-dropdown.active .nested-menu {
+        display: block !important;  /* Force visibility */
+    }
+  
+    /* Adjust positioning of nested dropdown */
+    .nested-dropdown .nested-menu {
+        position: relative;  /* Position relative to the parent */
+        left: 0;             /* Reset the left position */
+        top: 0;              /* Adjust positioning of the nested menu */
+        display: none;       /* Hidden by default */
+    }
+  
+    /* Show nested dropdown when clicked */
+    .nested-dropdown.active .nested-menu {
+        display: block !important; /* Ensure it becomes visible */
+    }
+  
+    /* Adjust z-index of dropdown for visibility */
+    .nested-menu,
+    .dropdown-menu {
+        z-index: 999; /* Ensure dropdown stays on top */
+    }
+  
+    .search-container {
+        width: 100%;
+        margin-top: 10px;
+        
+    }
+  }
+  
+  
+  /* Container for the search box */
+  .search-container {
+    position: relative;
+    width: 300px;
+    height: 40px;
+    border: 2px solid #333;  /* Border around the box */
+    border-radius: 30px;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    padding: 0 15px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);  /* Light shadow effect */
+    transition: box-shadow 0.3s ease;
+  }
+  
+  /* Search input styling */
+  .search-input {
+    width: 100%;
+    height: 30px;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    color: #333;
+    padding-left: 10px;
+    background-color: transparent;
+  }
+  
+  .search-input::placeholder {
+    color: #888; /* Lighter color for the placeholder */
+  }
+  
+  /* Button with search icon */
+  .search-btn {
+    position: absolute;
+    right: 15px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    color: #333;
+    font-size: 18px;
+    transition: color 0.3s ease;
+    visibility: hidden;  /* Hidden initially */
+  }
+  
+  /* Show the search icon button on focus or hover */
+  .search-container:hover .search-btn,
+  .search-input:focus + .search-btn {
+    visibility: visible;
+  }
+  
+  /* Hover effect on search container */
+  .search-container:hover {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);  /* Increase shadow on hover */
+  }
+  
+  /* Change color of the icon when focused */
+  .search-btn:hover {
+    color: #007BFF;  /* Change to a blue color on hover */
+  }
+  
+  
+  
+  /* Media Queries for Responsiveness */
+  @media screen and (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+  
+    .nav-links {
+        flex-direction: column;
+        gap: 10px;
+    }
+  
+    .search-box {
+        margin-top: 10px;
+        width: 100%;
+    }
+  
+    .search-input {
+        width: 100%;
+        max-width: 100%;
+    }
+  
+    .slideshow-container {
+        height: 400px; /* Reduce height on smaller screens */
+    }
+  
+    .caption h3 {
+        font-size: 24px;
+    }
+  
+    .caption p {
+        font-size: 16px;
+    }
+  }
+  
+  @media screen and (max-width: 480px) {
+    .nav-links {
+        display: none; /* Hide navigation links for smaller screens, implement toggle logic for a mobile menu */
+    }
+  
+    .search-box {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+  
+    .search-btn {
+        margin-top: 5px;
+        width: 100%;
+    }
+  
+    .slideshow-container {
+        height: 300px; /* Further reduce height for smaller screens */
+    }
+  
+    .caption h3 {
+        font-size: 18px;
+    }
+  
+    .caption p {
+        font-size: 14px;
+    }
+  }
+
+  
+
+
+  
+  /* General Footer Styling */
+  .footer {
+    background-color: rgb(117, 33, 187); /* Dark gray for a sleek look */
+    color: #eee;
+    padding: 50px 20px;
+    font-family: Arial, sans-serif;
+  }
+    
+  .footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+  }
+    
+  .row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+  }
+    
+  .footer-section {
+    flex: 1;
+    min-width: 250px;
+    padding: 20px;
+    border: 2px solid transparent; /* For hover effect border */
+    border-radius: 10px;
+    transition: transform 0.3s ease, border 0.3s ease, background-color 0.3s ease;
+  }
+    
+  .footer-section:hover {
+    transform: translateY(-10px);
+    border: 2px solid #f1c40f; /* Gold border on hover */
+    background-color: rgba(255, 255, 255, 0.1); /* Light translucent background */
+  }
+    
+  .footer-section h4 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    color: #f1c40f; /* Gold color */
+  }
+    
+  .footer-section p, .footer-section li, .footer-section a {
+    font-size: 1rem;
+    color: #ddd;
+    margin-bottom: 10px;
+    line-height: 1.5;
+  }
+    
+  .footer-section a {
+    text-decoration: none;
+  }
+    
+  .footer-section a:hover {
+    color: #f1c40f;
+  }
+    
+    /* Contact Icons */
+  ul li i {
+    font-size: 1.2rem;
+    margin-right: 10px;
+    color: #f1c40f; /* Gold color for icons */
+  }
+  
+    /* Contact Section List Styling */
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+    
+  ul li {
+    display: flex;
+    align-items: center; /* Ensures icon and text are vertically aligned */
+    margin-bottom: 15px; /* Adds space between list items */
+  }
+    
+  ul li i {
+    font-size: 1.5rem; /* Icon size */
+    margin-right: 15px; /* Space between the icon and text */
+    color: #f1c40f; /* Gold color for icons */
+  }
+    
+  ul li a {
+    color: #ddd; /* Light gray text color */
+    text-decoration: none;
+  }
+    
+  ul li a:hover {
+    color: #f1c40f; /* Gold on hover */
+  }
+    
+    
+    /* Social Media Icons */
+  .social-icons {
+    display: flex;
+    gap: 15px;
+  }
+    
+  .social-icon {
+    width: 40px;
+    height: 40px;
+    display: block;
+    background-size: cover;
+    border-radius: 50%;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+    
+  .social-icon:hover {
+    transform: scale(1.2);
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.2);
+  }
+    
+  .whatsapp-icon { background: url('https://img.icons8.com/color/48/000000/whatsapp--v1.png') center/cover no-repeat; }
+  .instagram-icon { background: url('https://img.icons8.com/fluency/48/000000/instagram-new.png') center/cover no-repeat; }
+  .facebook-icon { background: url('https://img.icons8.com/color/48/000000/facebook-new.png') center/cover no-repeat; }
+    
+    
+    /* Footer Bottom */
+  .footer-bottom {
+    text-align: center;
+    font-size: 0.9rem;
+    color: #aaa;
+    border-top: 1px solid #444;
+    padding-top: 20px;
+  }
+    
+  .footer-bottom a {
+    color: #f1c40f;
+    text-decoration: none;
+  }
+    
+  .footer-bottom a:hover {
+    color: #fff;
+  }
+    
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .row {
+      flex-direction: column;
+      align-items: center;
+    }
+    
+    .footer-section {
+      text-align: center;
+    }
+    
+    .social-icons {
+      justify-content: center;
+    }
+  }
+    
+  
+
+
+
+
+
+
+
+/* Honeymoon Packages Section Styling */
+.honeymoon-packages-section {
+  padding: 2rem;
+  background-image: url("/Images/international.bgc.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-color: #f9f9f98e;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  margin: 2rem auto;
+  max-width: 2000px;
+  height: 100vh;
+  margin-top: -25px;
+  margin-bottom: -25px;
+  font-family: Arial, sans-serif;
+}
+
+.honeymoon-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+/*.honeymoon-header h1 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #333;
+}*/
+
+.honeymoon-header h1 {
+  font-family: 'poppins,sans-serif';
+  font-size: 2.5rem;
+  color: #0920cb;
+  margin-top: 50px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  background: linear-gradient(90deg,#3498db,#2ecc71);
+  animation:fadeIn 1.5s ease-in-out;
+  position: relative;
+  
+}
+
+@keyframes fadeIn{
+  from{
+    opacity: 0;
+    transform: translate(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+
+.honeymoon-title {
+  font-size: 2rem;
+  text-align: center;
+  font-weight: bold;
+  color: #070707;
+  margin-bottom: 2rem;
+  text-transform: uppercase;
+}
+
+.honeymoon-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.honeymoon-card {
+  flex: 0 0 calc(25% - 1rem);
+  max-width: calc(25% - 1rem);
+  background: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+  text-align: center;
+  margin-top: 70px;
+}
+
+.honeymoon-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.honeymoon-img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.honeymoon-card-body {
+  padding: 1rem;
+}
+
+.honeymoon-card-body h5 {
+  font-size: 1.25rem;
+  color: #333;
+  margin-bottom: 0.5rem;
+}
+
+.honeymoon-card-body p {
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 0.5rem;
+}
+
+.honeymoon-badge {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
+  color: #fff;
+  background: #13a710;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.honeymoon-badge:hover {
+  background: #0e870d;
+}
+
+/* Responsive Styles for Honeymoon Packages Section */
+@media (max-width: 768px) {
+  .honeymoon-packages-section {
+    padding: 1rem; /* Reduce padding for mobile */
+    height: auto; /* Adjust height to fit content */
+  }
+
+  .honeymoon-header h1 {
+    font-size: 2rem; /* Slightly smaller heading */
+    margin-top: 20px; /* Adjust top margin */
+  }
+
+  .honeymoon-row {
+    flex-direction: column; /* Stack cards vertically */
+    gap: 1.5rem; /* Increase spacing between cards */
+  }
+
+  .honeymoon-card {
+    flex: 0 0 100%; /* Full width for each card */
+    max-width: 100%;
+    margin: 0 auto; /* Center align cards */
+  }
+
+  .honeymoon-card-body h5 {
+    font-size: 1.1rem; /* Reduce text size */
+  }
+
+  .honeymoon-card-body p {
+    font-size: 0.9rem; /* Smaller paragraph text */
+  }
+
+  .honeymoon-badge {
+    font-size: 0.8rem; /* Smaller badge text */
+    padding: 0.3rem 0.8rem; /* Adjust padding */
+  }
+}
+
+@media (max-width: 576px) {
+  .honeymoon-header h1 {
+    font-size: 1.8rem; /* Smaller heading for smaller screens */
+  }
+
+  .honeymoon-card-body h5 {
+    font-size: 1rem;
+  }
+
+  .honeymoon-card-body p {
+    font-size: 0.85rem;
+  }
+}
+
+
+
+

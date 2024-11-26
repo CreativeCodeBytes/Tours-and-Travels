@@ -4,28 +4,38 @@
 body {
     font-family: 'Poppins', sans-serif;
 }
-/* Navbar styling */
 .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     background-color: rgb(117, 33, 187);
     color: white;
     padding: 10px 20px;
     position: relative;
     z-index: 1000;
 }
-.logo .logo-img {
-    height: 40px;
-}
-.nav-links {
-    list-style-type: none;
+
+.section {
     display: flex;
-    gap: 15px;
-    position: relative;
-    padding: 0;
-    margin: 0;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
 }
+
+.nav-links {
+    display: flex;
+    /* align-items: center; */
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
 .nav-links li {
-    display: inline-block;
-    position: relative;
+    margin-right: 15px;
+}
+
+.nav-links li:last-child {
+    margin-right: 0;
 }
 .nav-links a {
     color: white;
@@ -38,6 +48,10 @@ body {
     border-radius: 4px;
 }
 /* Dropdown styling */
+.dropdown:hover .dropdown-menu {
+    display: block;
+  }
+  
 .dropdown-menu {
     display: none;
     position: absolute;
@@ -62,6 +76,9 @@ body {
     background-color: rgb(117, 33, 187);
 }
 /* Nested dropdown (submenu) */
+.nested-dropdown:hover .nested-menu {
+    display: block;
+  }
 .nested-menu {
     display: none;
     position: absolute;
@@ -73,6 +90,10 @@ body {
     margin: 0;
     min-width: 200px;
 }
+/* Display nested menu when active class is added */
+.nested-menu.show {
+    display: block;  /* Make visible when toggled */
+  }
 .nested-menu a {
     padding: 10px 15px;
     color: white;
@@ -81,6 +102,11 @@ body {
 }
 .nested-menu a:hover {
     background-color: rgb(152, 61, 226);
+}
+/* Show dropdown and nested menus when they have the 'show' class */
+.dropdown-menu.show,
+.nested-menu.show {
+  display: block !important;
 }
 /* Show dropdown and nested menus on hover */
 .dropdown:hover > .dropdown-menu,
@@ -95,17 +121,159 @@ body {
     justify-content: space-around;
     width: 25px;
     height: 20px;
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    z-index: 10;
 }
+
 .hamburger .bar {
     background-color: white;
     height: 3px;
     width: 100%;
     border-radius: 5px;
 }
+
+/* Show the hamburger icon on smaller screens */
+@media screen and (max-width: 768px) {
+    .hamburger {
+        display: flex;
+    }
+    /* Hide the nav links initially on smaller screens */
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        gap: 10px;
+        width: 100%;
+    }
+  
+    /* Show nav-links when active class is added */
+    .nav-links.active {
+        display: flex;
+    }
+    /* Show nav links when the hamburger is clicked */
+    .nav-links.active {
+        display: flex;
+    }
+  
+    /* Make dropdown menu clickable on small screens */
+    .dropdown:hover .dropdown-menu,
+    .nested-dropdown:hover .nested-menu {
+        display: block;
+    }
+  
+    /* Keep dropdowns visible in mobile view */
+    .dropdown-menu,
+    .nested-menu {
+        display: none; /* Make dropdown menus hidden by default */
+        position: relative; /* Adjust positioning to prevent overlap */
+        background-color: rgb(117, 33, 187);
+        width: 100%; /* Ensure full-width on small screens */
+    }
+  
+    .dropdown-menu li,
+    .nested-menu li {
+        width: 100%; /* Ensure full-width */
+    }
+  
+    .dropdown-menu.show,
+    .nested-menu.show {
+        display: block !important; /* Force visibility */
+    }
+  
+    /* Nested menu items need to be shown as well */
+    .nested-dropdown .nested-menu.show {
+        display: block;
+    }
+  
+    .nested-dropdown.show .nested-menu {
+        display: block !important; /* Show nested menu when parent is clicked */
+    }
+  
+    /* Ensure nested dropdowns open to the left side */
+    .nested-dropdown .nested-menu {
+        left: -100%; /* Position to the left of the parent item */
+        top: 0; /* Keep it aligned with the parent item */
+        display: none;  /* Make hidden by default */
+        position: relative; /* Positioning relative to the parent */
+        background-color: rgb(117, 33, 187);
+        min-width: 200px;
+    }
+  
+    
+  }
+  
+  
+  .nested-dropdown {
+    position: relative; /* This is needed for absolute positioning of nested menus */
+  }
+  
+  /* Keep dropdown and nested menu visible when 'active' class is added in smaller screens */
+  @media screen and (max-width: 768px) {
+    /* Ensure the parent item is clickable and shows the nested menu when clicked */
+    .nested-dropdown.active .nested-menu {
+        display: block !important;
+    }
+  }
+  
+  /* Show dropdown and nested menus when they have the 'show' class */
+  .dropdown-menu.show,
+  .nested-menu.show {
+    display: block !important;
+  }
+  
+  /* Make nested menu visible when toggled on mobile */
+  @media screen and (max-width: 768px) {
+    /* Make dropdown menu clickable on small screens */
+    .dropdown:hover .dropdown-menu,
+    .nested-dropdown:hover .nested-menu {
+        display: block;
+    }
+  
+    /* Ensure the parent item is clickable and shows the nested menu when clicked */
+    .nested-dropdown.active .nested-menu {
+        display: block !important;  /* Force visibility */
+    }
+  
+    /* Adjust positioning of nested dropdown */
+    .nested-dropdown .nested-menu {
+        position: relative;  /* Position relative to the parent */
+        left: 0;             /* Reset the left position */
+        top: 0;              /* Adjust positioning of the nested menu */
+        display: none;       /* Hidden by default */
+    }
+  
+    /* Show nested dropdown when clicked */
+    .nested-dropdown.active .nested-menu {
+        display: block !important; /* Ensure it becomes visible */
+    }
+  
+    /* Adjust z-index of dropdown for visibility */
+    .nested-menu,
+    .dropdown-menu {
+        z-index: 999; /* Ensure dropdown stays on top */
+    }
+  
+    .search-container {
+        width: 100%;
+        margin-top: 10px;
+        
+    }
+  }
+  
+
+
+ /* Container for the search box */
+ .search-container {
+    position: relative;
+    width: 300px;
+    height: 40px;
+    border: 2px solid #333;  /* Border around the box */
+    border-radius: 30px;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    padding: 0 15px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);  /* Light shadow effect */
+    transition: box-shadow 0.3s ease;
+  }
+
 /* Search container styling */
 .search-container {
     position: relative;
@@ -154,8 +322,77 @@ body {
 .search-btn:hover {
     color: #007BFF;
 }
+
+/* Media Queries for Responsiveness */
+@media screen and (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+  
+    .nav-links {
+        flex-direction: column;
+        gap: 10px;
+    }
+  
+    .search-box {
+        margin-top: 10px;
+        width: 100%;
+    }
+  
+    .search-input {
+        width: 100%;
+        max-width: 100%;
+    }
+  
+    .slideshow-container {
+        height: 400px; /* Reduce height on smaller screens */
+    }
+  
+    .caption h3 {
+        font-size: 24px;
+    }
+  
+    .caption p {
+        font-size: 16px;
+    }
+  }
+
+  @media screen and (max-width: 480px) {
+    .nav-links {
+        display: none; /* Hide navigation links for smaller screens, implement toggle logic for a mobile menu */
+    }
+  
+    .search-box {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+  
+    .search-btn {
+        margin-top: 5px;
+        width: 100%;
+    }
+  
+    .slideshow-container {
+        height: 300px; /* Further reduce height for smaller screens */
+    }
+  
+    .caption h3 {
+        font-size: 18px;
+    }
+  
+    .caption p {
+        font-size: 14px;
+    }
+  }
+
 /* Banner styling */
+.carousel{
+    padding-top: 5px;
+}
 .banner {
+    padding-top: 5px;
     position: relative;
     height: 70vh;
     overflow: hidden;
@@ -419,6 +656,14 @@ body {
     color: #f1c40f;
     text-decoration: none;
 }
+ul li i {
+    font-size: 1.5rem; /* Icon size */
+    margin-right: 15px; /* Space between the icon and text */
+    color: #f1c40f; /* Gold color for icons */
+  }
+ul li a:hover {
+    color: #f1c40f; /* Gold on hover */
+  }
 .footer-bottom a:hover {
     color: #fff;
 }
@@ -468,6 +713,40 @@ body {
         justify-content: center;
     }
 }
+
+/* Updated */
+/* Media Queries for Responsiveness */
+@media screen and (max-width: 768px) {
+    .section {
+        flex-wrap: wrap;
+    }
+
+    .hamburger {
+        display: flex;
+        order: 3; /* Move hamburger to the right */
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        order: 4; /* Ensure nav-links appear below other elements */
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .search-container {
+        order: 2; /* Move search bar to the middle */
+        margin-left: 5px; /* Add some space between search and hamburger */
+    }
+
+    .logo {
+        order: 1; /* Keep logo on the left */
+    }
+}
+/* Updated ends */
 
 @media screen and (min-width: 200px)and (max-width: 600px) {
     .carousel-caption h5 {

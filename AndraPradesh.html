@@ -1,0 +1,840 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Andhra Pradesh Tourism - Tours and Travels</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <!-- <link rel="stylesheet" href="madhyapradesh.css"> -->
+    
+    <style>
+        :root {
+    --primary-color: #00BFA6;
+}
+body {
+    font-family: 'Poppins', sans-serif;
+}
+/* Navbar styling */
+.navbar {
+    background-color: rgb(117, 33, 187);
+    color: white;
+    padding: 10px 20px;
+    position: relative;
+    z-index: 1000;
+}
+.logo .logo-img {
+    height: 40px;
+}
+.nav-links {
+    list-style-type: none;
+    display: flex;
+    gap: 15px;
+    position: relative;
+    padding: 0;
+    margin: 0;
+}
+.nav-links li {
+    display: inline-block;
+    position: relative;
+}
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    padding: 8px 12px;
+    text-transform: uppercase;
+}
+.nav-links a:hover {
+    background-color: rgb(152, 61, 226);
+    border-radius: 4px;
+}
+ul li i {
+    font-size: 1.2rem;
+    margin-right: 10px;
+    color: #f1c40f; /* Gold color for icons */
+  }
+ul li a:hover {
+    color: #f1c40f; /* Gold on hover */
+  }
+/* Dropdown styling */
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: rgb(63, 21, 97);
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    min-width: 200px;
+}
+.dropdown-menu li {
+    width: 100%;
+}
+.dropdown-menu a {
+    display: block;
+    padding: 10px 15px;
+    color: white;
+    text-decoration: none;
+}
+.dropdown-menu a:hover {
+    background-color: rgb(117, 33, 187);
+}
+/* Nested dropdown (submenu) */
+.nested-menu {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 100%;
+    background-color: rgb(117, 33, 187);
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    min-width: 200px;
+}
+.nested-menu a {
+    padding: 10px 15px;
+    color: white;
+    text-decoration: none;
+    text-transform: capitalize;
+}
+.nested-menu a:hover {
+    background-color: rgb(152, 61, 226);
+}
+/* Show dropdown and nested menus on hover */
+.dropdown:hover > .dropdown-menu,
+.nested-dropdown:hover > .nested-menu {
+    display: block;
+}
+/* Hamburger Icon Styling */
+.hamburger {
+    display: none;
+    cursor: pointer;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 25px;
+    height: 20px;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 10;
+}
+.hamburger .bar {
+    background-color: white;
+    height: 3px;
+    width: 100%;
+    border-radius: 5px;
+}
+/* Search container styling */
+.search-container {
+    position: relative;
+    width: 300px;
+    height: 40px;
+    border: 2px solid #333;
+    border-radius: 30px;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    padding: 0 15px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
+}
+.search-input {
+    width: 100%;
+    height: 30px;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    color: #333;
+    padding-left: 10px;
+    background-color: transparent;
+}
+.search-input::placeholder {
+    color: #888;
+}
+.search-btn {
+    position: absolute;
+    right: 15px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    color: #333;
+    font-size: 18px;
+    transition: color 0.3s ease;
+    visibility: hidden;
+}
+.search-container:hover .search-btn,
+.search-input:focus + .search-btn {
+    visibility: visible;
+}
+.search-container:hover {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+.search-btn:hover {
+    color: #007BFF;
+}
+/* Banner styling */
+.banner {
+    position: relative;
+    height: 80vh;
+    overflow: hidden;
+}
+.banner-slider {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+.banner-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+.banner-slide.active {
+    opacity: 1;
+}
+.banner-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+.banner-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+.banner-text {
+    color: rgb(245, 163, 12);
+    font-size: 5rem;
+    font-weight: bold;
+    text-align: center;
+    text-transform: uppercase;
+    opacity: 0;
+    transform: translateY(-20px);
+    animation: fadeInUp 1s ease-out forwards;
+    text-shadow: -1px 1px 0 #000,
+                 1px 1px 0 #000,
+                 1px -1px 0 #000,
+                 -1px -1px 0 #000;
+}
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+.slider-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(255, 255, 255, 0.5);
+    color: #000;
+    padding: 10px;
+    text-decoration: none;
+    font-size: 24px;
+    z-index: 10;
+    transition: background-color 0.3s;
+}
+.slider-arrow:hover {
+    background-color: rgba(255, 255, 255, 0.8);
+}
+.slider-arrow.prev {
+    left: 10px;
+}
+.slider-arrow.next {
+    right: 10px;
+}
+/* Tour card styling */
+.tour-card {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    transition: all 0.3s ease-in-out;
+    border: 2px solid var(--primary-color);
+    opacity: 0;
+    transform: translateY(20px);
+}
+.tour-card.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+.tour-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    border-color: #ff6b6b;
+}
+.tour-card .card-img-top {
+    height: 200px;
+    object-fit: cover;
+}
+.tour-card .card-body {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+.tour-card .card-text {
+    flex-grow: 1;
+}
+.tour-price {
+    color: var(--primary-color);
+    font-weight: bold;
+    font-family:'Times New Roman', Times, serif;
+}
+.card-title{
+    font-weight: bold;
+}
+.btn-contact {
+    align-self: flex-end;
+    margin-top: auto;
+}
+.animated-title {
+    font-size: 3rem;
+    font-weight: 700;
+    background-color: #000;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 300% 300%;
+    animation: gradient-animation 5s ease infinite;
+    text-decoration: black underline;
+}
+@keyframes gradient-animation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+.attractive-container {
+    background: whitesmoke;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    transform: translateY(0);
+    transition: all 0.3s ease;
+}
+.attractive-container:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+}
+.attractive-container h2 {
+    color: white;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+}
+.info-label {
+    color: #00BFA6;
+    font-weight: 500;
+}
+.travel-text {
+    color: #00BFA6;
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+.info-row {
+    padding: 1rem 0;
+    border-bottom: 1px solid #eee;
+}
+.info-row:last-child {
+    border-bottom: none;
+}
+/* Footer styling */
+.footer {
+    background-color: rgb(117, 33, 187);
+    color: #eee;
+    padding: 50px 20px;
+    font-family: Arial, sans-serif;
+}
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+.footer-section {
+    flex: 1;
+    min-width: 250px;
+    padding: 20px;
+    border: 2px solid transparent;
+    border-radius: 10px;
+    transition: transform 0.3s ease, border 0.3s ease, background-color 0.3s ease;
+}
+.footer-section:hover {
+    transform: translateY(-10px);
+    border: 2px solid #f1c40f;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+.footer-section h4 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    color: #f1c40f;
+}
+.footer-section p, .footer-section li, .footer-section a {
+    font-size: 1rem;
+    color: #ddd;
+    margin-bottom: 10px;
+    line-height: 1.5;
+}
+.footer-section a {
+    text-decoration: none;
+}
+.footer-section a:hover {
+    color: #f1c40f;
+}
+.footer ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.footer ul li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+.footer ul li i {
+    font-size: 1.5rem;
+    margin-right: 15px;
+    color: #f1c40f;
+}
+.social-icons {
+    display: flex;
+    gap: 15px;
+}
+.social-icon {
+    width: 40px;
+    height: 40px;
+    display: block;
+    background-size: cover;
+    border-radius: 50%;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.social-icon:hover {
+    transform: scale(1.2);
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.2);
+}
+.whatsapp-icon { background: url('https://img.icons8.com/color/48/000000/whatsapp--v1.png') center/cover no-repeat; }
+.instagram-icon { background: url('https://img.icons8.com/fluency/48/000000/instagram-new.png') center/cover no-repeat; }
+.facebook-icon { background: url('https://img.icons8.com/color/48/000000/facebook-new.png') center/cover no-repeat; }
+.footer-bottom {
+    text-align: center;
+    font-size: 0.9rem;
+    color: #aaa;
+    border-top: 1px solid #444;
+    padding-top: 20px;
+}
+.footer-bottom a {
+    color: #f1c40f;
+    text-decoration: none;
+}
+.footer-bottom a:hover {
+    color: #fff;
+}
+/* Responsive styles */
+@media screen and (max-width: 768px) {
+    .hamburger {
+        display: flex;
+    }
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        gap: 10px;
+        width: 100%;
+    }
+    .nav-links.active {
+        display: flex;
+    }
+    .dropdown-menu,
+    .nested-menu {
+        position: static;
+        background-color: rgb(117, 33, 187);
+        width: 100%;
+    }
+    .dropdown-menu li,
+    .nested-menu li {
+        width: 100%;
+    }
+    .nested-dropdown .nested-menu {
+        left: 0;
+        top: 0;
+    }
+    .search-container {
+        width: 100%;
+        margin-top: 10px;
+    }
+    .banner-text {
+        font-size: 3rem;
+    }
+    .footer .row {
+        flex-direction: column;
+        align-items: center;
+    }
+    .footer-section {
+        text-align: center;
+    }
+    .social-icons {
+        justify-content: center;
+    }
+}
+    </style>
+
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html"><img src="logo.png" alt="Logo" class="logo-img"></a>
+            </div>
+            <div class="hamburger">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+            <ul class="nav-links">
+                <li class="dropdown">
+                    <a href="#">Group Tours <i class="fa fa-caret-down"></i></a>
+                    <ul class="dropdown-menu">
+                        <li class="nested-dropdown">
+                            <a href="#">Domestic <i class="fa fa-caret-right"></i></a>
+                            <ul class="nested-menu">
+                                <li><a href="#">Andaman</a></li>
+                                <li><a href="AndraPradesh.html">Andhra Pradesh</a></li>
+                                <li><a href="Gujarat.html">Gujarat</a></li>
+                                <li><a href="#">Himachal Pradesh</a></li>
+                                <li><a href="#">Jammu & Kashmir</a></li>
+                                <li><a href="#">Karnataka</a></li>
+                                <li><a href="#">Kerala</a></li>
+                                <li><a href="#">Leh Ladakh</a></li>
+                                <li><a href="madhyapradesh.html">Madhya Pradesh</a></li>
+                                <li><a href="#">Northeast India</a></li>
+                                <li><a href="#">Orissa</a></li>
+                                <li><a href="#">Rajasthan</a></li>
+                                <li><a href="#">Uttarakhand</a></li>
+                                <li><a href="#">West Bengal</a></li>
+                                <li><a href="maharashtra.html">Maharashtra</a></li>
+                                <li><a href="#">Goa</a></li>
+                            </ul>
+                        </li>
+                        <li class="nested-dropdown">
+                            <a href="#">Pilgrimage Yatra <i class="fa fa-caret-right"></i></a>
+                            <ul class="nested-menu">
+                                <li><a href="#">Amarnath Vaishnodevi</a></li>
+                                <li><a href="Chardham yatra.html">Chardham Yatra</a></li>
+                                <li><a href="#">Narmada Parikrama</a></li>
+                                <li><a href="#">Pithapur Kuravpur</a></li>
+                                <li><a href="#">Tristhali Yatra</a></li>
+                                <li><a href="#">Gujarat</a></li>
+                            </ul>
+                        </li>
+                        <li class="nested-dropdown">
+                            <a href="#">International <i class="fa fa-caret-right"></i></a>
+                            <ul class="nested-menu">
+                                <!-- <li><a href="#">Africa</a></li>
+                                <li><a href="#">America</a></li>
+                                <li><a href="#">Australia</a></li> -->
+                                <li><a href="Bali.html">Bali</a></li>
+                                <!-- <li><a href="#">Bhutan</a></li>
+                                <li><a href="#">Cambodia</a></li>
+                                <li><a href="#">Canada</a></li>
+                                <li><a href="#">China</a></li> -->
+                                <li><a href="Dubai.html">Dubai</a></li>
+                                
+                            </ul>
+                        </li>
+                        <li><a href="#">International Customised Tour</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#">Honeymoon <i class="fa fa-caret-down"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="Domestic.html">DOMESTIC</a></li>
+                        <li><a href="international.html">INTERNATIONAL</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#">Customised Tours <i class="fa fa-caret-down"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">DOMESTIC</a></li>
+                        <li><a href="#">INTERNATIONAL</a></li>
+                    </ul>
+                </li>
+                <li><a href="Air Ticket.html">Air Ticket & Hotel Booking</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="search-container">
+                <input type="text" placeholder="Search..." class="search-input">
+                <button class="search-btn">
+                    <i class="fas fa-search"></i>
+                </button>
+            </div>
+        </div>
+    </nav> <br>
+    <!-- Nav Ends -->
+
+    <div class="banner">
+        <div class="banner-slider">
+            <div class="banner-slide active">
+                <img src="Images/1ap.jpg" alt="Andhra Pradesh Tourism 1">
+            </div>
+            <div class="banner-slide">
+                <img src="Images/2ap.jpg" alt="Andhra Pradesh Tourism 2">
+            </div>
+            <div class="banner-slide">
+                <img src="Images/3ap.jpg" alt="Andhra Pradesh Tourism 3">
+            </div>
+        </div>
+        <div class="banner-overlay">
+            <span class="banner-text">Discover Andhra Pradesh</span>
+        </div>
+        <a href="#" class="slider-arrow prev" aria-label="Previous slide">&lt;</a>
+        <a href="#" class="slider-arrow next" aria-label="Next slide">&gt;</a>
+    </div>
+
+    <div class="container mt-5">
+        <h2 class="text-center mb-4 animated-title">Our Best Tours</h2>
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+            <div class="col">
+                <div class="card tour-card">
+                    <img src="Images/Charminar.jpg" class="card-img-top" alt="Charminar">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-center mb-2">
+                            <h5 class="card-title mb-0">Charminar</h5>
+                            <p class="tour-price mb-0">Onwards ₹50,000</p>
+                        </div>
+                        <p class="card-text">The monument was built in 1591 by Muḥammad Qulī Quṭb Shah, the fifth king of the Quṭb Shāhī dynasty, reportedly as the first building in Hyderabad, his new capital. Over the years, it has become a signature monument to and an iconic symbol of the city’s heritage. </p>
+                        <a href="#" class="btn btn-primary btn-contact">Contact Us</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card tour-card">
+                    <img src="Images/Golconda-Fort.jpg" class="card-img-top" alt="Golconda Fort">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-center mb-2">
+                            <h5 class="card-title mb-0">Golconda Fort</h5>
+                            <p class="tour-price mb-0">Onwards ₹40000</p>
+                        </div>
+                        <p class="card-text">Golconda Fort is located in the western part of Hyderabad city and is about 9 km from the Hussain Sagar Lake. The outer fort occupies an area of three square kilometers, which is 4.8 kilometers in length. It was originally known as Mankal, and built on a hilltop in the year 1143.</p>
+                        <a href="#" class="btn btn-primary btn-contact">Contact Us</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card tour-card">
+                    <img src="Images/Ramoji-Film-City.jpg" class="card-img-top" alt="Ramoji Film City">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-center mb-2">
+                            <h5 class="card-title mb-0">Ramoji Film City</h5>
+                            <p class="tour-price mb-0">Onwards ₹20,240</p>
+                        </div>
+                        <p class="card-text">Ramoji Film City, the world's largest film city and premier theme park. As a top holiday destination, it seamlessly blends the excitement of a filmy amusement park with the allure of a tourist attraction.</p>
+                        <a href="#" class="btn btn-primary btn-contact">Contact Us</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card tour-card">
+                    <img src="Images/Chowmahalla-Palace.jpg" class="card-img-top" alt="Chowmahalla Palace">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-center mb-2">
+                            <h5 class="card-title mb-0">Chowmahalla Palace</h5>
+                            <p class="tour-price mb-0">Onwards ₹69,999</p>
+                        </div>
+                        <p class="card-text">Chowmahalla Palace was the official residence of the Nizams of Hyderabad State from 1720 to 1948. The palace complex is a stunning example of Indo-Saracenic architecture, blending European and Islamic styles.</p>
+                        <a href="#" class="btn btn-primary btn-contact">Contact Us</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card tour-card">
+                    <img src="Images/Hussain Sagar Lake.jpg" class="card-img-top" alt="Dwarka">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-center mb-2">
+                            <h5 class="card-title mb-0">Dwarka</h5>
+                            <p class="tour-price mb-0">Onwards ₹10,240</p>
+                        </div>
+                        <p class="card-text">Hussain Sagar Lake is a heart-shaped artificial lake located in Hyderabad, Telangana, India. Built in 1562 AD by Ibrahim Quli Qutb Shah, it is one of the largest man-made lakes in the country, spanning 5.7 square kilometers.</p>
+                        <a href="#" class="btn btn-primary btn-contact">Contact Us</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card tour-card">
+                    <img src="Images/Qutub Shahi Tombs.jpg" class="card-img-top" alt="Qutub Shahi Tombs">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-center mb-2">
+                            <h5 class="card-title mb-0">Qutub Shahi Tombs</h5>
+                            <p class="tour-price mb-0">Onwards ₹59,240</p>
+                        </div>
+                        <p class="card-text">The Qutub Shahi Tombs are located in the Ibrahim Bagh (garden precinct), close to the famous Golconda Fort in Hyderabad, India. They contain the tombs and mosques built by the various kings of the Qutub Shahi dynasty.</p>
+                        <a href="#" class="btn btn-primary btn-contact">Contact Us</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container py-5">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="info-row">
+                    <div class="info-label">State</div>
+                    <div>Telangana</div>
+                </div>
+                <div class="info-row">
+                    <div class="info-label">Capital</div>
+                    <div>Hyderabad</div>
+                </div>
+                <div class="info-row">
+                    <div class="info-label">Language</div>
+                    <div>Telugu</div>
+                </div>
+                <div class="info-row">
+                    <div class="info-label">Traditional cuisine</div>
+                    <div>Hyderabadi Biryani</div>
+                </div>
+                <div class="info-row">
+                    <div class="info-label">Best Time for Travel</div>
+                    <div>November to February</div>
+                </div>
+            </div>
+            
+            <div class="col-md-6">
+                <h1 class="mb-4">Andhra Pradesh Tours</h1>
+                <p class="mb-4">Andhra Pradesh has a significant place in Indian history, with ancient cities like Lothal and Dholavira, which were part of the Indus Valley Civilization and are some of the world’s oldest archaeological sites.</p>
+                <p class="mb-4">Check out  Andhra Pradesh Tour Packages.</p>
+                
+                <div class="d-flex justify-content-between align-items-center mt-5">
+                    <span class="travel-text">Travel Andhra Pradesh with us!</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+<!-- Footer Starts -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="row">
+                <div class="footer-section about">
+                    <h4>About Us</h4>
+                    <p>At cybromatech pvt Ltd we specialize in creating memorable travel experiences. With years of experience in the industry. Join us to explore the world with ease and style!</p>
+                </div>
+                <div class="footer-section contact">
+                    <h4>Contact Us</h4>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt"></i>marisoft it park kalyani nagar, pune, pune, Maharashtra, 411014</li>
+                        <li><i class="fas fa-phone-alt"></i> <a href="tel:9422295192">9422295192</a></li>
+                        <li><i class="fas fa-phone-alt"></i> <a href="tel:9730972384">9730972384</a></li>
+                        <li><i class="fas fa-envelope"></i> <a href="mailto:cybromatechpvtltd.info@gmail.com">cybromatechpvtltd.info@gmail.com</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section follow">
+                    <h4>Follow Us</h4>
+                    <div class="social-icons">
+                        <a href="https://wa.me/9422295192" target="_blank" class="social-icon whatsapp-icon" aria-label="WhatsApp"></a>
+                        <a href="https://www.instagram.com/shrisamarthconstruction" target="_blank" class="social-icon instagram-icon" aria-label="Instagram"></a>
+                        <a href="https://www.facebook.com/shrisamarthconst" target="_blank" class="social-icon facebook-icon" aria-label="Facebook"></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© <span id="currentYear"></span> Tours and Travels | All Rights Reserved</p>
+                <p>Powered by <a href="https://www.cybromatech.com" target="_blank" rel="noopener noreferrer">Cybromatech Technology Pvt Ltd</a></p>
+            </div>
+        </div>
+    </footer>
+    <!-- Footer Ends -->
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const cards = document.querySelectorAll('.tour-card');
+            
+            function showCards() {
+                cards.forEach((card, index) => {
+                    setTimeout(() => {
+                        card.classList.add('show');
+                    }, index * 100);
+                });
+            }
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        showCards();
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            observer.observe(document.querySelector('.row'));
+
+            const slides = document.querySelectorAll('.banner-slide');
+            let currentSlide = 0;
+
+            function showSlide(index) {
+                slides[currentSlide].classList.remove('active');
+                currentSlide = (index + slides.length) % slides.length;
+                slides[currentSlide].classList.add('active');
+            }
+
+            function nextSlide() {
+                showSlide(currentSlide + 1);
+            }
+
+            function prevSlide() {
+                showSlide(currentSlide - 1);
+            }
+
+            document.querySelector('.slider-arrow.next').addEventListener('click', function(e) {
+                e.preventDefault();
+                nextSlide();
+            });
+
+            document.querySelector('.slider-arrow.prev').addEventListener('click', function(e) {
+                e.preventDefault();
+                prevSlide();
+            });
+
+            setInterval(nextSlide, 5000);
+
+            // Hamburger menu functionality
+            const hamburger = document.querySelector('.hamburger');
+            const navLinks = document.querySelector('.nav-links');
+
+            hamburger.addEventListener('click', () => {
+                navLinks.classList.toggle('active');
+            });
+
+            // Mobile dropdown functionality
+            if (window.innerWidth <= 768) {
+                const dropdowns = document.querySelectorAll('.dropdown, .nested-dropdown');
+                dropdowns.forEach(dropdown => {
+                    dropdown.addEventListener('click', (e) => {
+                        e.preventDefault();
+                        const submenu = dropdown.querySelector('.dropdown-menu, .nested-menu');
+                        if (submenu) {
+                            submenu.style.display = submenu.style.display === 'block' ? 'none' : 'block';
+                        }
+                    });
+                });
+            }
+
+            // Update current year in footer
+            document.getElementById('currentYear').textContent = new Date().getFullYear();
+        });
+    </script>
+</body>
+</html>
