@@ -4,145 +4,395 @@
 body {
     font-family: 'Poppins', sans-serif;
 }
-/* Navbar styling */
 .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     background-color: rgb(117, 33, 187);
-    padding: 15px 20px;
+    color: white;
+    padding: 10px 20px;
+    position: relative;
     z-index: 1000;
 }
 
-.navbar-brand {
-    padding: 5px;
+.section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
 }
 
-.logo-img {
-    height: 40px;
-}
-
-.navbar-nav .nav-link {
-    color: white;
-    padding: 10px 15px;
-    transition: background-color 0.3s;
-    position: relative;
-}
-
-.navbar-nav .nav-link:hover {
-    background-color: rgba(255, 255, 255, 0.2);
-    border-radius: 5px;
-}
-
-.navbar-toggler {
-    border-color: rgba(255,255,255,0.5);
-}
-
-.navbar-toggler-icon {
-    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255, 255, 255, 0.5)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
-}
-
-/* Dropdown styling */
-.dropdown-menu {
-    background-color: rgb(63, 21, 97);
-    border: none;
-    border-radius: 0;
+.nav-links {
+    display: flex;
+    /* align-items: center; */
+    list-style-type: none;
+    margin: 0;
     padding: 0;
 }
 
-.dropdown-item {
-    color: white;
-    padding: 10px 15px;
+.nav-links li {
+    margin-right: 15px;
 }
 
-.dropdown-item:hover {
+.nav-links li:last-child {
+    margin-right: 0;
+}
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    padding: 8px 12px;
+    text-transform: uppercase;
+}
+.nav-links a:hover {
     background-color: rgb(152, 61, 226);
+    border-radius: 4px;
+}
+/* Dropdown styling */
+.dropdown:hover .dropdown-menu {
+    display: block;
+  }
+  
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: rgb(63, 21, 97);
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    min-width: 200px;
+}
+.dropdown-menu li {
+    width: 100%;
+}
+.dropdown-menu a {
+    display: block;
+    padding: 10px 15px;
     color: white;
+    text-decoration: none;
 }
-
+.dropdown-menu a:hover {
+    background-color: rgb(117, 33, 187);
+}
 /* Nested dropdown (submenu) */
-.dropdown-submenu {
-    position: relative;
-}
-
-.dropdown-submenu > .dropdown-menu {
+.nested-dropdown:hover .nested-menu {
+    display: block;
+  }
+.nested-menu {
+    display: none;
+    position: absolute;
     top: 0;
     left: 100%;
-    margin-top: -6px;
-    margin-left: -1px;
+    background-color: rgb(117, 33, 187);
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    min-width: 200px;
 }
-
-.dropdown-submenu:hover > .dropdown-menu {
+/* Display nested menu when active class is added */
+.nested-menu.show {
+    display: block;  /* Make visible when toggled */
+  }
+.nested-menu a {
+    padding: 10px 15px;
+    color: white;
+    text-decoration: none;
+    text-transform: capitalize;
+}
+.nested-menu a:hover {
+    background-color: rgb(152, 61, 226);
+}
+/* Show dropdown and nested menus when they have the 'show' class */
+.dropdown-menu.show,
+.nested-menu.show {
+  display: block !important;
+}
+/* Show dropdown and nested menus on hover */
+.dropdown:hover > .dropdown-menu,
+.nested-dropdown:hover > .nested-menu {
     display: block;
 }
-
-.dropdown-submenu > a:after {
-    display: block;
-    content: " ";
-    float: right;
-    width: 0;
-    height: 0;
-    border-color: transparent;
-    border-style: solid;
-    border-width: 5px 0 5px 5px;
-    border-left-color: #cccccc;
-    margin-top: 5px;
-    margin-right: -10px;
+/* Hamburger Icon Styling */
+.hamburger {
+    display: none;
+    cursor: pointer;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 25px;
+    height: 20px;
 }
 
-/* Search bar styling */
-.search-container1 {
+.hamburger .bar {
+    background-color: white;
+    height: 3px;
+    width: 100%;
+    border-radius: 5px;
+}
+
+/* Show the hamburger icon on smaller screens */
+@media screen and (max-width: 768px) {
+    .hamburger {
+        display: flex;
+    }
+    /* Hide the nav links initially on smaller screens */
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        gap: 10px;
+        width: 100%;
+    }
+  
+    /* Show nav-links when active class is added */
+    .nav-links.active {
+        display: flex;
+    }
+    /* Show nav links when the hamburger is clicked */
+    .nav-links.active {
+        display: flex;
+    }
+  
+    /* Make dropdown menu clickable on small screens */
+    .dropdown:hover .dropdown-menu,
+    .nested-dropdown:hover .nested-menu {
+        display: block;
+    }
+  
+    /* Keep dropdowns visible in mobile view */
+    .dropdown-menu,
+    .nested-menu {
+        display: none; /* Make dropdown menus hidden by default */
+        position: relative; /* Adjust positioning to prevent overlap */
+        background-color: rgb(117, 33, 187);
+        width: 100%; /* Ensure full-width on small screens */
+    }
+  
+    .dropdown-menu li,
+    .nested-menu li {
+        width: 100%; /* Ensure full-width */
+    }
+  
+    .dropdown-menu.show,
+    .nested-menu.show {
+        display: block !important; /* Force visibility */
+    }
+  
+    /* Nested menu items need to be shown as well */
+    .nested-dropdown .nested-menu.show {
+        display: block;
+    }
+  
+    .nested-dropdown.show .nested-menu {
+        display: block !important; /* Show nested menu when parent is clicked */
+    }
+  
+    /* Ensure nested dropdowns open to the left side */
+    .nested-dropdown .nested-menu {
+        left: -100%; /* Position to the left of the parent item */
+        top: 0; /* Keep it aligned with the parent item */
+        display: none;  /* Make hidden by default */
+        position: relative; /* Positioning relative to the parent */
+        background-color: rgb(117, 33, 187);
+        min-width: 200px;
+    }
+  
+    
+  }
+  
+  
+  .nested-dropdown {
+    position: relative; /* This is needed for absolute positioning of nested menus */
+  }
+  
+  /* Keep dropdown and nested menu visible when 'active' class is added in smaller screens */
+  @media screen and (max-width: 768px) {
+    /* Ensure the parent item is clickable and shows the nested menu when clicked */
+    .nested-dropdown.active .nested-menu {
+        display: block !important;
+    }
+  }
+  
+  /* Show dropdown and nested menus when they have the 'show' class */
+  .dropdown-menu.show,
+  .nested-menu.show {
+    display: block !important;
+  }
+  
+  /* Make nested menu visible when toggled on mobile */
+  @media screen and (max-width: 768px) {
+    /* Make dropdown menu clickable on small screens */
+    .dropdown:hover .dropdown-menu,
+    .nested-dropdown:hover .nested-menu {
+        display: block;
+    }
+  
+    /* Ensure the parent item is clickable and shows the nested menu when clicked */
+    .nested-dropdown.active .nested-menu {
+        display: block !important;  /* Force visibility */
+    }
+  
+    /* Adjust positioning of nested dropdown */
+    .nested-dropdown .nested-menu {
+        position: relative;  /* Position relative to the parent */
+        left: 0;             /* Reset the left position */
+        top: 0;              /* Adjust positioning of the nested menu */
+        display: none;       /* Hidden by default */
+    }
+  
+    /* Show nested dropdown when clicked */
+    .nested-dropdown.active .nested-menu {
+        display: block !important; /* Ensure it becomes visible */
+    }
+  
+    /* Adjust z-index of dropdown for visibility */
+    .nested-menu,
+    .dropdown-menu {
+        z-index: 999; /* Ensure dropdown stays on top */
+    }
+  
+    .search-container {
+        width: 100%;
+        margin-top: 10px;
+        
+    }
+  }
+  
+
+
+ /* Container for the search box */
+ .search-container {
+    position: relative;
+    width: 300px;
+    height: 40px;
+    border: 2px solid #333;  /* Border around the box */
+    border-radius: 30px;
+    background-color: #fff;
     display: flex;
     align-items: center;
-    margin-top: 10px;
-}
+    padding: 0 15px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);  /* Light shadow effect */
+    transition: box-shadow 0.3s ease;
+  }
 
-.search-input1 {
-    border-radius: 5px 0 0 5px;
-    flex-grow: 1;
+/* Search container styling */
+.search-container {
+    position: relative;
+    width: 300px;
+    height: 40px;
+    border: 2px solid #333;
+    border-radius: 30px;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    padding: 0 15px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
 }
-
-.search1-btn {
-    background-color: white;
+.search-input {
+    width: 100%;
+    height: 30px;
     border: none;
-    border-radius: 0 5px 5px 0;
-    padding: 6px 12px;
+    outline: none;
+    font-size: 16px;
+    color: #333;
+    padding-left: 10px;
+    background-color: transparent;
+}
+.search-input::placeholder {
+    color: #888;
+}
+.search-btn {
+    position: absolute;
+    right: 15px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    color: #333;
+    font-size: 18px;
+    transition: color 0.3s ease;
+    visibility: hidden;
+}
+.search-container:hover .search-btn,
+.search-input:focus + .search-btn {
+    visibility: visible;
+}
+.search-container:hover {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+.search-btn:hover {
+    color: #007BFF;
 }
 
-.search1-btn i {
-    color: rgb(20, 18, 21);
-}
-
-/* Responsive adjustments */
-@media (max-width: 991px) {
-    .navbar-nav {
-        padding-top: 10px;
+/* Media Queries for Responsiveness */
+@media screen and (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        align-items: flex-start;
     }
-
-    .navbar-nav .nav-link {
-        padding: 10px 0;
+  
+    .nav-links {
+        flex-direction: column;
+        gap: 10px;
     }
-
-    .dropdown-menu {
-        background-color: transparent;
-        border: none;
-        padding-left: 20px;
+  
+    .search-box {
+        margin-top: 10px;
+        width: 100%;
     }
-
-    .dropdown-item {
-        color: rgba(255, 255, 255, 0.8);
+  
+    .search-input {
+        width: 100%;
+        max-width: 100%;
     }
-
-    .dropdown-submenu > .dropdown-menu {
-        display: block;
-        margin-left: 15px;
+  
+    .slideshow-container {
+        height: 400px; /* Reduce height on smaller screens */
     }
-
-    .search-container1 {
-        margin-top: 15px;
-        margin-bottom: 10px;
+  
+    .caption h3 {
+        font-size: 24px;
     }
-}
-/* NAV ENDS */
+  
+    .caption p {
+        font-size: 16px;
+    }
+  }
+
+  @media screen and (max-width: 480px) {
+    .nav-links {
+        display: none; /* Hide navigation links for smaller screens, implement toggle logic for a mobile menu */
+    }
+  
+    .search-box {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+  
+    .search-btn {
+        margin-top: 5px;
+        width: 100%;
+    }
+  
+    .slideshow-container {
+        height: 300px; /* Further reduce height for smaller screens */
+    }
+  
+    .caption h3 {
+        font-size: 18px;
+    }
+  
+    .caption p {
+        font-size: 14px;
+    }
+  }
+
 /* Banner styling */
+.carousel{
+    padding-top: 5px;
+}
 .banner {
+    padding-top: 5px;
     position: relative;
     height: 70vh;
     overflow: hidden;
@@ -406,6 +656,14 @@ body {
     color: #f1c40f;
     text-decoration: none;
 }
+ul li i {
+    font-size: 1.5rem; /* Icon size */
+    margin-right: 15px; /* Space between the icon and text */
+    color: #f1c40f; /* Gold color for icons */
+  }
+ul li a:hover {
+    color: #f1c40f; /* Gold on hover */
+  }
 .footer-bottom a:hover {
     color: #fff;
 }
@@ -454,4 +712,57 @@ body {
     .social-icons {
         justify-content: center;
     }
+}
+
+/* Updated */
+/* Media Queries for Responsiveness */
+@media screen and (max-width: 768px) {
+    .section {
+        flex-wrap: wrap;
+    }
+
+    .hamburger {
+        display: flex;
+        order: 3; /* Move hamburger to the right */
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        order: 4; /* Ensure nav-links appear below other elements */
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .search-container {
+        order: 2; /* Move search bar to the middle */
+        margin-left: 5px; /* Add some space between search and hamburger */
+    }
+
+    .logo {
+        order: 1; /* Keep logo on the left */
+    }
+}
+/* Updated ends */
+
+@media screen and (min-width: 200px)and (max-width: 600px) {
+    .carousel-caption h5 {
+       
+        font-size: 2rem; 
+        font-weight: bolder;
+        text-shadow: 2px 2px 10px rgba(255, 6, 6, 0.7);
+     
+}
+}
+@media screen and (min-width: 601px) {
+    .carousel-caption h5 {
+       
+        font-size: 8rem; 
+        font-weight: bolder;
+        
+        text-shadow: 2px 2px 10px rgba(255, 6, 6, 0.7);
+}
 }

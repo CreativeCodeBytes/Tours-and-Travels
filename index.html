@@ -3,19 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tours & Travels</title>    
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <title>Navbar with Nested Dropdown</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Include Font Awesome for Icons -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="index.css">
+    
+
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    
+
+    
+ 
+    
 </head>
 <body>
-
     <nav class="navbar">
         <div class="container">
             <div class="logo">
-              <h1>Cirasthayi</h1>
-                <!-- <a href="index.html"><img src="Images/Cybromatech-logo.jpg" alt="Logo" class="logo-img"></a> -->
+                <a href="index.html"><img src="Images/Cybromatech-logo.jpg" alt="Logo" class="logo-img"></a>
             </div>
 
 
@@ -52,88 +58,81 @@
                                 <li><a href="#">West Bengal</a></li>
                                 <li><a href="madhyapradesh.html">Maharashtra</a></li>
                                 <li><a href="#">Goa</a></li>
-=======
-  <nav class="navbar navbar-expand-lg fixed-top">
-    <div class="container-fluid">
-        <a class="navbar-brand" href="index.html">
-            <img src="Images/Cybromatech-logo.jpg" alt="Logo" class="logo-img">
-        </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="groupToursDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        GROUP TOURS
-                    </a>
-                    <ul class="dropdown-menu" aria-labelledby="groupToursDropdown">
-                        <li class="dropdown-submenu">
-                            <a class="dropdown-item dropdown-toggle" href="#">Domestic</a>
-                            <ul class="dropdown-menu">
-                                <!-- <li><a class="dropdown-item" href="#">Andaman</a></li> -->
-                                <li><a class="dropdown-item" href="AndraPradesh.html">Andhra Pradesh</a></li>
-                                <li><a class="dropdown-item" href="Gujarat.html">Gujarat</a></li>
-                                <li><a class="dropdown-item" href="madhyapradesh.html">Madhya Pradesh</a></li>
-                                <li><a class="dropdown-item" href="maharashtra.html">Maharashtra</a></li>
-                                <!-- <li><a class="dropdown-item" href="#">Goa</a></li> -->
                             </ul>
                         </li>
-                        <li class="dropdown-submenu">
-                            <a class="dropdown-item dropdown-toggle" href="#">Pilgrimage Yatra</a>
-                            <ul class="dropdown-menu">
-                                <!-- <li><a class="dropdown-item" href="#">Amarnath Vaishnodevi</a></li> -->
-                                <li><a class="dropdown-item" href="Chardham yatra.html">Chardham Yatra</a></li>
-                                <!-- <li><a class="dropdown-item" href="#">Narmada Parikrama</a></li>
-                                <li><a class="dropdown-item" href="#">Pithapur Kuravpur</a></li>
-                                <li><a class="dropdown-item" href="#">Tristhali Yatra</a></li>
-                                <li><a class="dropdown-item" href="#">Gujarat</a></li> -->
+                        <!-- Pilgrimage Yatra Dropdown -->
+                        <li class="nested-dropdown">
+                            <a href="#">Pilgrimage Yatra <i class="fa fa-caret-down"></i></a>
+                            <ul class="nested-menu">
+                                <li><a href="#">Amarnath Vaishnodevi</a></li>
+                                <li><a href="Chardham yatra.html">Chardham Yatra</a></li>
+                                <li><a href="#">Narmada Parikrama</a></li>
+                                <li><a href="#">Pithapur Kuravpur</a></li>
+                                <li><a href="#">Tristhali Yatra</a></li>
+                                <li><a href="#">Gujarat</a></li>
                             </ul>
                         </li>
-                        <li class="dropdown-submenu">
-                            <a class="dropdown-item dropdown-toggle" href="#">International</a>
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="Bali.html">Bali</a></li>
-                                <li><a class="dropdown-item" href="Dubai.html">Dubai</a></li>
+                        <!-- International Dropdown -->
+                        <li class="nested-dropdown">
+                            <a href="#">International <i class="fa fa-caret-down"></i> </a>
+                            <ul class="nested-menu">
+                                <li><a href="#">Africa</a></li>
+                                <li><a href="#">America</a></li>
+                                <li><a href="#">Australia</a></li>
+                                <li><a href="Bali.html">Bali</a></li>
+                                <li><a href="#">Bhutan</a></li>
+                                <li><a href="#">Cambodia</a></li>
+                                <li><a href="#">Canada</a></li>
+                                <li><a href="#">China</a></li>
+                                <li><a href="Dubai.html">Dubai</a></li>
+                                <li><a href="#">Europe</a></li>
+                                <li><a href="#">Hong Kong</a></li>
+                                <li><a href="#">Malaysia</a></li>
+                                <li><a href="#">Nepal</a></li>
+                                <li><a href="#">New Zealand</a></li>
+                                <li><a href="#">Russia</a></li>
+                                <li><a href="#">Singapore</a></li>
+                                <li><a href="#">Sri Lanka</a></li>
+                                <li><a href="#">Thailand</a></li>
+                                <li><a href="#">Vietnam</a></li>
                             </ul>
                         </li>
-                        <li><a class="dropdown-item" href="#">International Customised Tour</a></li>
+                        <!-- International Customised Tour -->
+                        <li><a href="#">International Customised Tour</a></li>
                     </ul>
                 </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="honeymoonDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        HONEYMOON
-                    </a>
-                    <ul class="dropdown-menu" aria-labelledby="honeymoonDropdown">
-                        <li><a class="dropdown-item" href="Domestic.html">DOMESTIC</a></li>
-                        <li><a class="dropdown-item" href="international.html">INTERNATIONAL</a></li>
+                <li class="dropdown">
+                    <a href="#">Honeymoon <i class="fa fa-caret-down"></i> </a>
+                    <ul class="dropdown-menu">
+                        <!-- Honeymoon Domestic -->
+                        <li><a href="Domestic.html">DOMESTIC</a></li>
+                        <!-- Honeymoon International -->
+                        <li><a href="international.html">INTERNATIONAL</a></li>
                     </ul>
                 </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="customisedToursDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        CUSTOMISED TOURS
-                    </a>
-                    <ul class="dropdown-menu" aria-labelledby="customisedToursDropdown">
-                        <li><a class="dropdown-item" href="#">DOMESTIC</a></li>
-                        <li><a class="dropdown-item" href="#">INTERNATIONAL</a></li>
+                <li class="dropdown">
+                    <a href="#">Customised Tours <i class="fa fa-caret-down"></i> </a>
+                    <ul class="dropdown-menu">
+                        <!-- Customised Domestic -->
+                        <li><a href="#">DOMESTIC</a></li>
+                        <!-- Customised International -->
+                        <li><a href="#">INTERNATIONAL</a></li>
                     </ul>
                 </li>
-                <li class="nav-item"><a class="nav-link" href="Air Ticket.html">AIR TICKET & HOTEL BOOKING</a></li>
-                <li class="nav-item"><a class="nav-link" href="contact.html">CONTACT</a></li>
+                <li><a href="Air Ticket.html">Air Ticket & Hotel Booking <i class="fa fa-caret-down"></i> </a></li>
+                <li><a href="contact.html">Contact <i class="fa fa-caret-down"></i></a></li>
             </ul>
-            <form class="d-flex search-container1">
-                <input class="form-control me-2 search-input1" type="search" placeholder="Search..." aria-label="Search">
-                <button class="btn search1-btn" type="submit">
+            <div class="search-container">
+                <input type="text" placeholder="Search..." class="search-input">
+                <button class="search-btn">
                     <i class="fas fa-search"></i>
                 </button>
-            </form>
+            </div>
         </div>
-    </div>
-</nav>
-<!-- Nav Ends -->
+    </nav>
+   
 
 
-    <section>
     <div class="slideshow-container">
         <div class="slide slide1">
             <div class="caption"> 
@@ -172,14 +171,9 @@
             </div>
         </div>
     </div>
-    </section>
+       
 
 
-
-
-
-
-    
 <!-- Travel Destinations Section -->
 <section class="travel-destinations">
     <div class="travel-container">
@@ -191,7 +185,7 @@
         <div class="travel-cards">
           <!-- Card 1 -->
           <div class="travel-card">
-            <img src="Images/Manalihomepage.jpg" alt="Manali" class="travel-image">
+            <img src="/Images/Manalihomepage.jpg" alt="Manali" class="travel-image">
             <div class="travel-card-content">
               <h4>Manali</h4>
               <p>5 Days / 4 Nights</p>
@@ -204,7 +198,7 @@
           </div>
           <!-- Card 2 -->
           <div class="travel-card">
-            <img src="Images/Keralanew.jpg" alt="Kerala" class="travel-image">
+            <img src="/Images/Keralanew.jpg" alt="Kerala" class="travel-image">
             <div class="travel-card-content">
               <h4>Kerala</h4>
               <p>4 Days / 3 Nights</p>
@@ -217,7 +211,7 @@
           </div>
           <!-- Card 3 -->
           <div class="travel-card">
-            <img src="Images/Ooty.jpg" alt="OOty" class="travel-image">
+            <img src="/Images/Ooty.jpg" alt="OOty" class="travel-image">
             <div class="travel-card-content">
               <h4>Ooty</h4>
               <p>5 Days / 4 Nights</p>
@@ -230,7 +224,7 @@
           </div>
           <!-- Card 4 -->
           <div class="travel-card">
-            <img src="Images/Goa.jpg" alt="Goa" class="travel-image">
+            <img src="/Images/Goa.jpg" alt="Goa" class="travel-image">
             <div class="travel-card-content">
               <h4>Goa</h4>
               <p>5 Days / 4 Nights</p>
@@ -253,7 +247,7 @@
         <div class="travel-cards">
           <!-- Card 1 -->
           <div class="travel-card">
-            <img src="Images/london.jpg" alt="London" class="travel-image">
+            <img src="/Images/london.jpg" alt="London" class="travel-image">
             <div class="travel-card-content">
               <h4>London</h4>
               <p>2 Days / 3 Nights</p>
@@ -266,7 +260,7 @@
           </div>
           <!-- Card 2 -->
           <div class="travel-card">
-            <img src="Images/maldives.jpg" alt="Maldives" class="travel-image">
+            <img src="/Images/maldives.jpg" alt="Maldives" class="travel-image">
             <div class="travel-card-content">
               <h4>Maldives</h4>
               <p>2 Days / 3 Nights</p>
@@ -279,7 +273,7 @@
           </div>
           <!-- Card 3 -->
           <div class="travel-card">
-            <img src="Images/Singapore.jpg" alt="Singapore" class="travel-image">
+            <img src="/Images/Singapore.jpg" alt="Singapore" class="travel-image">
             <div class="travel-card-content">
               <h4>Singapore</h4>
               <p>2 Days / 3 Nights</p>
@@ -292,7 +286,7 @@
           </div>
           <!-- Card 4 -->
           <div class="travel-card">
-            <img src="Images/Paris.jpg" alt="Paris" class="travel-image">
+            <img src="/Images/Paris.jpg" alt="Paris" class="travel-image">
             <div class="travel-card-content">
               <h4>Paris</h4>
               <p>5 Days / 4 Nights</p>
@@ -310,7 +304,6 @@
       </div>
     </div>
   </section>
-  
 
 
 
@@ -319,8 +312,6 @@
 
 
 
-
-  
   <section class="why-choose-us">
     <div class="why-container">
         <h2>Why Choose Us?</h2>
@@ -354,7 +345,6 @@
 
 
 
-
 <section class="tours">
     <div class="Tcontainer">
       <h2 class="section-title">Speciality Tours</h2>
@@ -363,7 +353,7 @@
         <div class="tours-list">
           <!-- Chota Break -->
           <div class="tour-card">
-            <img src="Images/SpecialityChotabreak.jpg" alt="Chota Break">
+            <img src="/Images/SpecialityChotabreak.jpg" alt="Chota Break">
             <div class="tour-content">
               <h4>Chota Break</h4>
               <p>Mumbai > The city of Dreams</p>
@@ -372,7 +362,7 @@
           </div>
           <!-- Honeymoon Special -->
           <div class="tour-card">
-            <img src="Images/Specialitytourhoneymoon.jpg" alt="Honeymoon Special">
+            <img src="/Images/Specialitytour2.jpg" alt="Honeymoon Special">
             <div class="tour-content">
               <h4>Honeymoon Special</h4>
               <p>Romantic escapes for couples.</p>
@@ -381,7 +371,7 @@
           </div>
           <!-- Kids' Paradise -->
           <div class="tour-card">
-            <img src="Images/Specialitykids.jpg" alt="Kids' Paradise">
+            <img src="/Images/Specialitykids.jpg" alt="Kids' Paradise">
             <div class="tour-content">
               <h4>Kids Paradise</h4>
               <p>Imagicaa > Fun-filled family destinations.</p>
@@ -390,7 +380,7 @@
           </div>
           <!-- Sacred Journey -->
           <div class="tour-card">
-            <img src="Images/SpecialitySecondinning.jpg" alt="Sacred Journey">
+            <img src="/Images/SpecialitySecondinning.jpg" alt="Sacred Journey">
             <div class="tour-content">
               <h4>Second Journey</h4>
               <p>Recreation of Memories</p>
@@ -399,7 +389,7 @@
           </div>
           <!-- Adventure Mania -->
           <div class="tour-card">
-            <img src="Images/Pune Heritage.jpg" alt="Adventure Mania">
+            <img src="/Images/Pune Heritage.jpg" alt="Adventure Mania">
             <div class="tour-content">
               <h4>Adventure Mania</h4>
               <p>Thrilling adventures await!</p>
@@ -412,11 +402,12 @@
     </div>
   </section>
   
-
-
-
-
   
+
+
+
+
+
   <section class="Game">
     <div class="gamecontainer">
         <!-- Question Section -->
@@ -425,11 +416,11 @@
             <p>pick 5 image to see the Magic!</p>
             <div class="options">
                 <div id="option1" class="option" onclick="selectOption(1)">
-                    <img src="Images/timeless japan.jpg" alt="Small Town Champ">
+                    <img src="/Images/timeless japan.jpg" alt="Small Town Champ">
                     <h3>Small Town Champ</h3>
                 </div>
                 <div id="option2" class="option" onclick="selectOption(2)">
-                    <img src="Images/london.jpg" alt="Big City Glamour">
+                    <img src="/Images/london.jpg" alt="Big City Glamour">
                     <h3>Big City Glamour</h3>
                 </div>
             </div>
@@ -451,37 +442,27 @@
 
 
 
-
-
-
-
 <!-- About Section -->
 <section class="about-section">
     <div class="about-content">
       <div class="about-text">
         <h2 class="about-title">About Us</h2>
         <p class="about-description">
-          At <strong>Cirasthayi pvt ltd</strong>, we specialize in creating memorable travel experiences. 
+          At <strong>Cybromatech pvt ltd</strong>, we specialize in creating memorable travel experiences. 
           With years of experience in the industry, we offer domestic and international tours, luxurious transportation services, 
           and custom holiday packages tailored to meet your needs.
         </p>
-        <a href="about.html" class="read-more-btn">Read More</a>
+        <a href="/Images/about.html" class="read-more-btn">Read More</a>
       </div>
       <div class="about-image">
-        <img src="Images/About-homepage.jpg" alt="Our Office">
+        <img src="/Images/About-homepage.jpg" alt="Our Office">
       </div>
     </div>
   </section>
 
 
-
-
-
-
-
-
-<!-- Review Section -->
-<section class="review-section">
+   <!-- Review Section -->
+   <section class="review-section">
     <h2 class="review-title text-center">Our pride</h2> 
     
     <!-- Review Navigation Controls -->
@@ -494,7 +475,7 @@
     <div class="review-container" id="review-container">
       <!-- Review 1 -->
       <div class="review-item">
-        <img src="Images/customerreview2.jpg" alt="Customer 1" class="review-img">
+        <img src="/Images/Customerreview1.jpg" alt="Customer 1" class="review-img">
         <p class="review-text">"Great service, fantastic trip! Highly recommend!"</p>
         <h5 class="reviewer-name">John Doe</h5>
         <p class="reviewer-location">New York</p>
@@ -502,7 +483,7 @@
   
       <!-- Review 2 -->
       <div class="review-item">
-        <img src="Images/Customerreview1.jpg" alt="Customer 2" class="review-img">
+        <img src="/Images/travelbag.jpg" alt="Customer 2" class="review-img">
         <p class="review-text">"Everything was perfectly organized. I had an unforgettable experience!"</p>
         <h5 class="reviewer-name">Sarah Lee</h5>
         <p class="reviewer-location">London</p>
@@ -510,7 +491,7 @@
   
       <!-- Review 3 -->
       <div class="review-item">
-        <img src="Images/Customerreview1.jpg" alt="Customer 3" class="review-img">
+        <img src="/Images/customerreview2.jpg" alt="Customer 3" class="review-img">
         <p class="review-text">"I felt like royalty on my trip. Highly recommend booking with this company!"</p>
         <h5 class="reviewer-name">Michael Johnson</h5>
         <p class="reviewer-location">Sydney</p>
@@ -518,7 +499,7 @@
   
       <!-- Review 4 -->
       <div class="review-item">
-        <img src="Images/Customerreview1.jpg" alt="Customer 4" class="review-img">
+        <img src="/Images/Customerreview1.jpg" alt="Customer 4" class="review-img">
         <p class="review-text">"Exceptional service and memorable trips. Couldn’t be happier!"</p>
         <h5 class="reviewer-name">Emily Clark</h5>
         <p class="reviewer-location">Paris</p>
@@ -526,7 +507,7 @@
   
       <!-- Review 5 -->
       <div class="review-item">
-        <img src="Images/Customerreview1.jpg" alt="Customer 5" class="review-img">
+        <img src="/Images/travelbag.jpg" alt="Customer 5" class="review-img">
         <p class="review-text">"Amazing vacation! We will be back next year!"</p>
         <h5 class="reviewer-name">Alice Green</h5>
         <p class="reviewer-location">Berlin</p>
@@ -534,7 +515,7 @@
 
        <!-- Review 6 -->
        <div class="review-item">
-        <img src="Images/Customerreview1.jpg" alt="Customer 5" class="review-img">
+        <img src="/Images/customerreview2.jpg" alt="Customer 5" class="review-img">
         <p class="review-text">"Amazing vacation! We will be back next year!"</p>
         <h5 class="reviewer-name">Alice Green</h5>
         <p class="reviewer-location">Berlin</p>
@@ -542,7 +523,7 @@
 
        <!-- Review 7 -->
        <div class="review-item">
-        <img src="Images/Customerreview1.jpg" alt="Customer 5" class="review-img">
+        <img src="/Images/customerreview1.jpg" alt="Customer 5" class="review-img">
         <p class="review-text">"Amazing vacation! We will be back next year!"</p>
         <h5 class="reviewer-name">Alice Green</h5>
         <p class="reviewer-location">Berlin</p>
@@ -550,7 +531,7 @@
 
        <!-- Review 8 -->
        <div class="review-item">
-        <img src="Images/Customerreview1.jpg" alt="Customer 5" class="review-img">
+        <img src="/Images/travelbag.jpg" alt="Customer 5" class="review-img">
         <p class="review-text">"Amazing vacation! We will be back next year!"</p>
         <h5 class="reviewer-name">Alice Green</h5>
         <p class="reviewer-location">Berlin</p>
@@ -558,7 +539,7 @@
 
        <!-- Review 9 -->
        <div class="review-item">
-        <img src="Images/Customerreview1.jpg" alt="Customer 5" class="review-img">
+        <img src="/Images/customerreview2.jpg" alt="Customer 5" class="review-img">
         <p class="review-text">"Amazing vacation! We will be back next year!"</p>
         <h5 class="reviewer-name">Alice Green</h5>
         <p class="reviewer-location">Berlin</p>
@@ -566,7 +547,7 @@
   
       <!-- Review 10 -->
       <div class="review-item">
-        <img src="Images/Customerreview1.jpg" alt="Customer 6" class="review-img">
+        <img src="/Images/travelbag.jpg" alt="Customer 6" class="review-img">
         <p class="review-text">"A truly amazing experience. Will definitely recommend to friends."</p>
         <h5 class="reviewer-name">David Smith</h5>
         <p class="reviewer-location">Los Angeles</p>
@@ -577,10 +558,6 @@
 
 
 
-
-
-
-  
 <!-- Travel Sources Section -->
 <div class="travel-sources-container">
     <h2 class="travel-sources-title">Our Travel Sources</h2>
@@ -589,7 +566,7 @@
         <!-- Bus Card -->
         <div class="travel-source-card">
             <div class="card-image">
-                <img src="Images/bushomepage.jpg" alt="Bus Travel">
+                <img src="/Images/bushomepage.jpg" alt="Bus Travel">
             </div>
             <div class="card-content">
                 <h3>Bus Travel</h3>
@@ -599,7 +576,7 @@
         <!-- Train Card -->
         <div class="travel-source-card">
             <div class="card-image">
-                <img src="Images/train.jpg" alt="Train Travel">
+                <img src="/Images/train.jpg" alt="Train Travel">
             </div>
             <div class="card-content">
                 <h3>Train Travel</h3>
@@ -609,7 +586,7 @@
         <!-- Flight Card -->
         <div class="travel-source-card">
             <div class="card-image">
-                <img src="Images/flighthomepage.jpg" alt="Flight Travel">
+                <img src="/Images/flighthomepage.jpg" alt="Flight Travel">
             </div>
             <div class="card-content">
                 <h3>Flight Travel</h3>
@@ -619,7 +596,7 @@
         <!-- Car Card -->
         <div class="travel-source-card">
             <div class="card-image">
-                <img src="Images/carhomepage.jpg" alt="Car Travel">
+                <img src="/Images/carhomepage.jpg" alt="Car Travel">
             </div>
             <div class="card-content">
                 <h3>Car Travel</h3>
@@ -630,45 +607,11 @@
   </div>
 
 
- <!-- Footer Starts -->
- <footer class="footer">
-  <div class="footer-container">
-      <div class="row">
-          <div class="footer-section about">
-              <h4>About Us</h4>
-              <p>At cybromatech pvt Ltd we specialize in creating memorable travel experiences. With years of experience in the industry. Join us to explore the world with ease and style!</p>
-          </div>
-          <div class="footer-section contact">
-              <h4>Contact Us</h4>
-              <ul>
-                  <li><i class="fas fa-map-marker-alt"></i>marisoft it park kalyani nagar, pune, pune, Maharashtra, 411014</li>
-                  <li><i class="fas fa-phone-alt"></i> <a href="tel:9422295192">9422295192</a></li>
-                  <li><i class="fas fa-phone-alt"></i> <a href="tel:9730972384">9730972384</a></li>
-                  <li><i class="fas fa-envelope"></i> <a href="mailto:cybromatechpvtltd.info@gmail.com">cybromatechpvtltd.info@gmail.com</a></li>
-              </ul>
-          </div>
-          <div class="footer-section follow">
-              <h4>Follow Us</h4>
-              <div class="social-icons">
-                  <a href="https://wa.me/9422295192" target="_blank" class="social-icon whatsapp-icon" aria-label="WhatsApp"></a>
-                  <a href="https://www.instagram.com/shrisamarthconstruction" target="_blank" class="social-icon instagram-icon" aria-label="Instagram"></a>
-                  <a href="https://www.facebook.com/shrisamarthconst" target="_blank" class="social-icon facebook-icon" aria-label="Facebook"></a>
-              </div>
-          </div>
-      </div>
-      <div class="footer-bottom">
-          <p>© <span id="currentYear"></span> Tours and Travels | All Rights Reserved</p>
-          <p>Powered by <a href="https://www.cybromatech.com" target="_blank" rel="noopener noreferrer">Cybromatech Technology Pvt Ltd</a></p>
-      </div>
-  </div>
-</footer>
-<!-- Footer Ends -->
 
 
 
 
 
-<<<<<<< HEAD
 
 
 
@@ -706,7 +649,7 @@
                 <!-- About Us Section -->
                 <div class="footer-section about">
                     <h4>About Us</h4>
-                    <p>At Cirasthayi pvt Ltd we specialize in creating memorable travel experiences. With years of experience in the industry. Join us to explore the world with ease and style!</p>
+                    <p>At cybromatech pvt Ltd we specialize in creating memorable travel experiences. With years of experience in the industry. Join us to explore the world with ease and style!</p>
                 </div>
 
                 <!-- Contact Us Section -->
@@ -735,7 +678,7 @@
             <!-- Row 2: Footer Bottom -->
             <div class="footer-bottom">
                 <p>© <span id="currentYear"></span> Tours and Travels | All Rights Reserved</p>
-                <p>Powered by <a href="https://www.cybromatech.com" target="_blank" rel="noopener noreferrer">Cirasthayi Technology Pvt Ltd</a></p>
+                <p>Powered by <a href="https://www.cybromatech.com" target="_blank" rel="noopener noreferrer">Cybromatech Technology Pvt Ltd</a></p>
             </div>
         </div>
     </footer>
@@ -747,16 +690,68 @@
 
 
 
-=======
-   
->>>>>>> 3662fbede56cb9db4a702f2d055b9ffdee327208
 
 
 
 
 <script>
+    document.getElementById('currentYear').textContent = new Date().getFullYear();
 
- function scrollTours(direction) {
+     // Select the hamburger icon and the nav-links
+      const hamburger = document.querySelector('.hamburger');
+      const navLinks = document.querySelector('.nav-links');
+
+      // Add click event to toggle the nav menu
+      hamburger.addEventListener('click', () => {
+          navLinks.classList.toggle('active');
+      });
+
+      // Select all dropdown menu items
+      const dropdownItems = document.querySelectorAll('.dropdown, .nested-dropdown');
+
+      dropdownItems.forEach(item => {
+          item.addEventListener('click', function(event) {
+              // Prevent the default link behavior (prevents page navigation)
+              event.preventDefault();
+
+              // Find the dropdown menu or nested menu inside the clicked item
+              const dropdownMenu = this.querySelector('.dropdown-menu, .nested-menu');
+      
+              if (dropdownMenu) {
+                  // Toggle visibility of the clicked menu (nested or parent)
+                  dropdownMenu.classList.toggle('show');
+              }
+
+              // Close other nested menus if open (optional: if you want only one menu open at a time)
+              dropdownItems.forEach(otherItem => {
+                  if (otherItem !== this) {
+                      const otherMenu = otherItem.querySelector('.dropdown-menu, .nested-menu');
+                      if (otherMenu) {
+                          otherMenu.classList.remove('show');
+                      }
+                  }
+              });
+          });
+      });
+
+      // Toggle nested dropdown on mobile
+      // Toggle nested dropdown on mobile
+      document.addEventListener('DOMContentLoaded', function () {
+          const nestedDropdowns = document.querySelectorAll('.nested-dropdown');
+          nestedDropdowns.forEach(function (dropdown) {
+              dropdown.addEventListener('click', function (e) {
+                  // Prevent parent link from redirecting
+                  e.preventDefault();
+                  // Toggle the active class to show/hide the nested menu
+                  dropdown.classList.toggle('active');
+              });
+          });
+      });
+
+
+
+
+      function scrollTours(direction) {
 const list = document.querySelector('.tours-list');
 const scrollAmount = list.offsetWidth / 2;
 
@@ -770,12 +765,16 @@ if (direction === 'prev') {
 
 
 
+
+
+
+
 const options = [
-  { text1: "Small Town Champ", text2: "Big City Glamour", img1: "Images/nature.jpg", img2: "Images/london.jpg" },
-  { text1: "Beach Explorer", text2: "Mountain Adventurer", img1: "Images/maldives.jpg", img2: "Images/mountain.jpg" },
-  { text1: "Luxury Traveler", text2: "Backpacker", img1: "Images/luxury.jpg", img2: "Images/Ooty.jpg" },
-  { text1: "Nature Lover", text2: "Cultural Enthusiast", img1: "Images/nature.jpg", img2:"Images/Goldentemple.jpg" },
-  { text1: "Food Explorer", text2: "Wellness Seeker", img1: "Images/foodie.jpg", img2: "Images/wellness seeker.jpg" }
+  { text1: "Small Town Champ", text2: "Big City Glamour", img1: "small city.jpg", img2: "london.jpg" },
+  { text1: "Beach Explorer", text2: "Mountain Adventurer", img1: "maldives.jpg", img2: "mountain.jpg" },
+  { text1: "Luxury Traveler", text2: "Backpacker", img1: "luxury.jpg", img2: "Ooty.jpg" },
+  { text1: "Nature Lover", text2: "Cultural Enthusiast", img1: "nature.jpg", img2:"Goldentemple.jpg" },
+  { text1: "Food Explorer", text2: "Wellness Seeker", img1: "foodie.jpg", img2: "wellness seeker.jpg" }
 ];
 
 // Mapping results to categories
@@ -908,14 +907,11 @@ nextBtn.addEventListener('click', () => {
 });
 
 
-</script>
 
 
+  </script>
 
-
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-   
-  <script>  document.getElementById('currentYear').textContent = new Date().getFullYear();</script>
-</body>
-</html>
+    
+  
+    </body>
+    </html>

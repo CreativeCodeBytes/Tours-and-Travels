@@ -1,158 +1,578 @@
-/* Navbar styling */
-.navbar {
-  background-color: rgb(117, 33, 187);
-  padding: 15px 20px;
-  z-index: 1000;
-}
-
-.navbar-brand {
-  padding: 5px;
-}
-
-.logo-img {
-  height: 40px;
-}
-
-.navbar-nav .nav-link {
-  color: white;
-  padding: 10px 15px;
-  transition: background-color 0.3s;
-  position: relative;
-}
-
-.navbar-nav .nav-link:hover {
-  background-color: rgba(255, 255, 255, 0.2);
-  border-radius: 5px;
-}
-
-.navbar-toggler {
-  border-color: rgba(255,255,255,0.5);
-}
-
-.navbar-toggler-icon {
-  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255, 255, 255, 0.5)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
-}
-
-/* Dropdown styling */
-.dropdown-menu {
-  background-color: rgb(63, 21, 97);
-  border: none;
-  border-radius: 0;
-  padding: 0;
-}
-
-.dropdown-item {
-  color: white;
-  padding: 10px 15px;
-}
-
-.dropdown-item:hover {
-  background-color: rgb(152, 61, 226);
-  color: white;
-}
-
-/* Nested dropdown (submenu) */
-.dropdown-submenu {
-  position: relative;
-}
-
-.dropdown-submenu > .dropdown-menu {
-  top: 0;
-  left: 100%;
-  margin-top: -6px;
-  margin-left: -1px;
-}
-
-.dropdown-submenu:hover > .dropdown-menu {
-  display: block;
-}
-
-.dropdown-submenu > a:after {
-  display: block;
-  content: " ";
-  float: right;
-  width: 0;
-  height: 0;
-  border-color: transparent;
-  border-style: solid;
-  border-width: 5px 0 5px 5px;
-  border-left-color: #cccccc;
-  margin-top: 5px;
-  margin-right: -10px;
-}
-
-/* Search bar styling */
-.search-container1 {
-  display: flex;
-  align-items: center;
-  margin-top: 10px;
-}
-
-.search-input1 {
-  border-radius: 5px 0 0 5px;
-  flex-grow: 1;
-}
-
-.search1-btn {
-  background-color: white;
-  border: none;
-  border-radius: 0 5px 5px 0;
-  padding: 6px 12px;
-}
-
-.search1-btn i {
-  color: rgb(20, 18, 21);
-}
-
-/* Responsive adjustments */
-@media (max-width: 991px) {
-  .navbar-nav {
-      padding-top: 10px;
+/* Reset default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
   }
-
-  .navbar-nav .nav-link {
-      padding: 10px 0;
+  
+  body {
+    font-family: Arial, sans-serif;
   }
-
+  
+  /* Navbar styling */
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(117, 33, 187);
+    color: white;
+    padding: 10px 20px;
+    position: relative; /* Ensures correct stacking context */
+    z-index: 1000; /* Higher z-index to be above slideshow */
+  }
+  
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
+  
+  .logo .logo-img {
+    height: 40px;
+  }
+  
+  /* Navbar links */
+  .nav-links {
+    list-style-type: none;
+    display: flex;
+    gap: 15px;
+    position: relative;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .nav-links li {
+    display: inline-block;
+    position: relative;
+  }
+  
+  .nav-links a {
+    color: white;
+    text-decoration: none;
+    padding: 8px 12px;
+    
+    text-transform: uppercase;
+  }
+  
+  .nav-links a:hover {
+    background-color: rgb(117, 33, 187);
+    border-radius: 4px;
+  }
+  
+  /* Dropdown styling */
+  .dropdown:hover .dropdown-menu {
+    display: block;
+  }
+  
   .dropdown-menu {
-      background-color: transparent;
-      border: none;
-      padding-left: 20px;
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: rgb(63, 21, 97);
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    min-width: 200px;
+  }
+  
+  .dropdown-menu li {
+    width: 100%;
+  
+  }
+  
+  .dropdown-menu a {
+    display: block;
+    padding: 10px 15px;
+    color: white;
+    text-decoration: none;
+    
+  }
+  
+  .dropdown-menu a:hover {
+    background-color: rgb(117, 33, 187);
+  }
+  
+  /* Nested dropdown (submenu) */
+  .nested-dropdown:hover .nested-menu {
+    display: block;
+  }
+  
+  .nested-menu {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 100%;
+    background-color: rgb(117, 33, 187);
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    min-width: 200px;
+  }
+  
+  /* Display nested menu when active class is added */
+  .nested-menu.show {
+    display: block;  /* Make visible when toggled */
+  }
+  
+  
+  .nested-menu a {
+    padding: 10px 15px;
+    color: white;
+    text-decoration: none;
+    text-transform: capitalize;
+  }
+  
+  .nested-menu a:hover {
+    background-color: rgb(152, 61, 226);
+  }
+  
+  
+  
+  /* Show dropdown and nested menus when they have the 'show' class */
+  .dropdown-menu.show,
+  .nested-menu.show {
+    display: block !important;
+  }
+  
+  
+  /* Hamburger Icon Styling */
+  .hamburger {
+    display: none;
+    cursor: pointer;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 25px;
+    height: 20px;
+    position: absolute;
+    top: 20px;
+    right: 20px; /* This aligns the hamburger to the right */
+    z-index: 10; /* Ensures it stays on top of other elements */
+  }
+  
+  .hamburger .bar {
+    background-color: white;
+    height: 3px;
+    width: 100%;
+    border-radius: 5px;
+    
+  }
+  
+  /* Show the hamburger icon on smaller screens */
+  @media screen and (max-width: 768px) {
+    .hamburger {
+        display: flex;
+    }
+  
+    /* Hide the nav links initially on smaller screens */
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        gap: 10px;
+        width: 100%;
+    }
+  
+    /* Show nav-links when active class is added */
+    .nav-links.active {
+        display: flex;
+    }
+    /* Show nav links when the hamburger is clicked */
+    .nav-links.active {
+        display: flex;
+    }
+  
+    /* Make dropdown menu clickable on small screens */
+    .dropdown:hover .dropdown-menu,
+    .nested-dropdown:hover .nested-menu {
+        display: block;
+    }
+  
+    /* Keep dropdowns visible in mobile view */
+    .dropdown-menu,
+    .nested-menu {
+        display: none; /* Make dropdown menus hidden by default */
+        position: relative; /* Adjust positioning to prevent overlap */
+        background-color: rgb(117, 33, 187);
+        width: 100%; /* Ensure full-width on small screens */
+    }
+  
+    .dropdown-menu li,
+    .nested-menu li {
+        width: 100%; /* Ensure full-width */
+    }
+  
+    .dropdown-menu.show,
+    .nested-menu.show {
+        display: block !important; /* Force visibility */
+    }
+  
+    /* Nested menu items need to be shown as well */
+    .nested-dropdown .nested-menu.show {
+        display: block;
+    }
+  
+    .nested-dropdown.show .nested-menu {
+        display: block !important; /* Show nested menu when parent is clicked */
+    }
+  
+    /* Ensure nested dropdowns open to the left side */
+    .nested-dropdown .nested-menu {
+        left: -100%; /* Position to the left of the parent item */
+        top: 0; /* Keep it aligned with the parent item */
+        display: none;  /* Make hidden by default */
+        position: relative; /* Positioning relative to the parent */
+        background-color: rgb(117, 33, 187);
+        min-width: 200px;
+    }
+  
+    
+  }
+  
+  
+  .nested-dropdown {
+    position: relative; /* This is needed for absolute positioning of nested menus */
+  }
+  
+  /* Keep dropdown and nested menu visible when 'active' class is added in smaller screens */
+  @media screen and (max-width: 768px) {
+    /* Ensure the parent item is clickable and shows the nested menu when clicked */
+    .nested-dropdown.active .nested-menu {
+        display: block !important;
+    }
+  }
+  
+  /* Show dropdown and nested menus when they have the 'show' class */
+  .dropdown-menu.show,
+  .nested-menu.show {
+    display: block !important;
+  }
+  
+  /* Make nested menu visible when toggled on mobile */
+  @media screen and (max-width: 768px) {
+    /* Make dropdown menu clickable on small screens */
+    .dropdown:hover .dropdown-menu,
+    .nested-dropdown:hover .nested-menu {
+        display: block;
+    }
+  
+    /* Ensure the parent item is clickable and shows the nested menu when clicked */
+    .nested-dropdown.active .nested-menu {
+        display: block !important;  /* Force visibility */
+    }
+  
+    /* Adjust positioning of nested dropdown */
+    .nested-dropdown .nested-menu {
+        position: relative;  /* Position relative to the parent */
+        left: 0;             /* Reset the left position */
+        top: 0;              /* Adjust positioning of the nested menu */
+        display: none;       /* Hidden by default */
+    }
+  
+    /* Show nested dropdown when clicked */
+    .nested-dropdown.active .nested-menu {
+        display: block !important; /* Ensure it becomes visible */
+    }
+  
+    /* Adjust z-index of dropdown for visibility */
+    .nested-menu,
+    .dropdown-menu {
+        z-index: 999; /* Ensure dropdown stays on top */
+    }
+  
+    .search-container {
+        width: 100%;
+        margin-top: 10px;
+        
+    }
+  }
+  
+  
+  /* Container for the search box */
+  .search-container {
+    position: relative;
+    width: 300px;
+    height: 40px;
+    border: 2px solid #333;  /* Border around the box */
+    border-radius: 30px;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    padding: 0 15px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);  /* Light shadow effect */
+    transition: box-shadow 0.3s ease;
+  }
+  
+  /* Search input styling */
+  .search-input {
+    width: 100%;
+    height: 30px;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    color: #333;
+    padding-left: 10px;
+    background-color: transparent;
+  }
+  
+  .search-input::placeholder {
+    color: #888; /* Lighter color for the placeholder */
+  }
+  
+  /* Button with search icon */
+  .search-btn {
+    position: absolute;
+    right: 15px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    color: #333;
+    font-size: 18px;
+    transition: color 0.3s ease;
+    visibility: hidden;  /* Hidden initially */
+  }
+  
+  /* Show the search icon button on focus or hover */
+  .search-container:hover .search-btn,
+  .search-input:focus + .search-btn {
+    visibility: visible;
+  }
+  
+  /* Hover effect on search container */
+  .search-container:hover {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);  /* Increase shadow on hover */
+  }
+  
+  /* Change color of the icon when focused */
+  .search-btn:hover {
+    color: #007BFF;  /* Change to a blue color on hover */
+  }
+  
+  
+  
+  /* Media Queries for Responsiveness */
+  @media screen and (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+  
+    .nav-links {
+        flex-direction: column;
+        gap: 10px;
+    }
+  
+    .search-box {
+        margin-top: 10px;
+        width: 100%;
+    }
+  
+    .search-input {
+        width: 100%;
+        max-width: 100%;
+    }
+  
+    .slideshow-container {
+        height: 400px; /* Reduce height on smaller screens */
+    }
+  
+    .caption h3 {
+        font-size: 24px;
+    }
+  
+    .caption p {
+        font-size: 16px;
+    }
+  }
+  
+  @media screen and (max-width: 480px) {
+    .nav-links {
+        display: none; /* Hide navigation links for smaller screens, implement toggle logic for a mobile menu */
+    }
+  
+    .search-box {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+  
+    .search-btn {
+        margin-top: 5px;
+        width: 100%;
+    }
+  
+    .slideshow-container {
+        height: 300px; /* Further reduce height for smaller screens */
+    }
+  
+    .caption h3 {
+        font-size: 18px;
+    }
+  
+    .caption p {
+        font-size: 14px;
+    }
   }
 
-  .dropdown-item {
-      color: rgba(255, 255, 255, 0.8);
+  
+
+
+  
+  /* General Footer Styling */
+  .footer {
+    background-color: rgb(117, 33, 187); /* Dark gray for a sleek look */
+    color: #eee;
+    padding: 50px 20px;
+    font-family: Arial, sans-serif;
   }
-
-  .dropdown-submenu > .dropdown-menu {
-      display: block;
-      margin-left: 15px;
+    
+  .footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
   }
-
-  .search-container1 {
-      margin-top: 15px;
-      margin-bottom: 10px;
+    
+  .row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
   }
-}
-/* NAV ENDS */
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    
+  .footer-section {
+    flex: 1;
+    min-width: 250px;
+    padding: 20px;
+    border: 2px solid transparent; /* For hover effect border */
+    border-radius: 10px;
+    transition: transform 0.3s ease, border 0.3s ease, background-color 0.3s ease;
+  }
+    
+  .footer-section:hover {
+    transform: translateY(-10px);
+    border: 2px solid #f1c40f; /* Gold border on hover */
+    background-color: rgba(255, 255, 255, 0.1); /* Light translucent background */
+  }
+    
+  .footer-section h4 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    color: #f1c40f; /* Gold color */
+  }
+    
+  .footer-section p, .footer-section li, .footer-section a {
+    font-size: 1rem;
+    color: #ddd;
+    margin-bottom: 10px;
+    line-height: 1.5;
+  }
+    
+  .footer-section a {
+    text-decoration: none;
+  }
+    
+  .footer-section a:hover {
+    color: #f1c40f;
+  }
+    
+    /* Contact Icons */
+  ul li i {
+    font-size: 1.2rem;
+    margin-right: 10px;
+    color: #f1c40f; /* Gold color for icons */
+  }
+  
+    /* Contact Section List Styling */
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+    
+  ul li {
+    display: flex;
+    align-items: center; /* Ensures icon and text are vertically aligned */
+    margin-bottom: 15px; /* Adds space between list items */
+  }
+    
+  ul li i {
+    font-size: 1.5rem; /* Icon size */
+    margin-right: 15px; /* Space between the icon and text */
+    color: #f1c40f; /* Gold color for icons */
+  }
+    
+  ul li a {
+    color: #ddd; /* Light gray text color */
+    text-decoration: none;
+  }
+    
+  ul li a:hover {
+    color: #f1c40f; /* Gold on hover */
+  }
+    
+    
+    /* Social Media Icons */
+  .social-icons {
+    display: flex;
+    gap: 15px;
+  }
+    
+  .social-icon {
+    width: 40px;
+    height: 40px;
+    display: block;
+    background-size: cover;
+    border-radius: 50%;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+    
+  .social-icon:hover {
+    transform: scale(1.2);
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.2);
+  }
+    
+  .whatsapp-icon { background: url('https://img.icons8.com/color/48/000000/whatsapp--v1.png') center/cover no-repeat; }
+  .instagram-icon { background: url('https://img.icons8.com/fluency/48/000000/instagram-new.png') center/cover no-repeat; }
+  .facebook-icon { background: url('https://img.icons8.com/color/48/000000/facebook-new.png') center/cover no-repeat; }
+    
+    
+    /* Footer Bottom */
+  .footer-bottom {
+    text-align: center;
+    font-size: 0.9rem;
+    color: #aaa;
+    border-top: 1px solid #444;
+    padding-top: 20px;
+  }
+    
+  .footer-bottom a {
+    color: #f1c40f;
+    text-decoration: none;
+  }
+    
+  .footer-bottom a:hover {
+    color: #fff;
+  }
+    
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .row {
+      flex-direction: column;
+      align-items: center;
+    }
+    
+    .footer-section {
+      text-align: center;
+    }
+    
+    .social-icons {
+      justify-content: center;
+    }
+  }
+    
+  
 
 
 
@@ -163,7 +583,7 @@
 /* Honeymoon Packages Section Styling */
 .honeymoon-packages-section {
   padding: 2rem;
-  background-image: url("/Images/background.jpg");
+  background-image: url("/Images/international.bgc.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-color: #f9f9f98e;
@@ -171,10 +591,9 @@
   margin: 2rem auto;
   max-width: 2000px;
   height: 100vh;
- /* margin-top: -25px;
-  margin-bottom: -25px;*/
+  margin-top: -25px;
+  margin-bottom: -25px;
   font-family: Arial, sans-serif;
-  
 }
 
 .honeymoon-header {
@@ -291,7 +710,7 @@
 
   .honeymoon-header h1 {
     font-size: 2rem; /* Slightly smaller heading */
-    margin-top: 40px; /* Adjust top margin */
+    margin-top: 20px; /* Adjust top margin */
   }
 
   .honeymoon-row {
@@ -336,166 +755,3 @@
 
 
 
-
-
-
-
-
-   
-/* Footer styling */
-.footer {
-  background-color: rgb(117, 33, 187);
-  color: #eee;
-  padding: 20px 20px;
-  font-family: Arial, sans-serif;
-}
-.footer-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  gap: 30px;
-}
-.footer-section {
-  flex: 1;
-  min-width: 250px;
-  padding: 5px;
-  border: 2px solid transparent;
-  border-radius: 10px;
-  transition: transform 0.3s ease, border 0.3s ease, background-color 0.3s ease;
-}
-.footer-section:hover {
-  transform: translateY(-10px);
-  border: 2px solid #f1c40f;
-  background-color: rgba(255, 255, 255, 0.1);
-}
-.footer-section h4 {
-  font-size: 1.5rem;
-  margin-bottom: 15px;
-  color: #f1c40f;
-}
-.footer-section p, .footer-section li, .footer-section a {
-  font-size: 1rem;
-  color: #ddd;
-  margin-bottom: 10px;
-  line-height: 1.5;
-}
-.footer-section a {
-  text-decoration: none;
-}
-.footer-section a:hover {
-  color: #f1c40f;
-}
-.footer ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-.footer ul li {
-  display: flex;
-  align-items: center;
-  margin-bottom: 15px;
-}
-.footer ul li i {
-  font-size: 1.5rem;
-  margin-right: 15px;
-  color: #f1c40f;
-}
-.social-icons {
-  display: flex;
-  gap: 15px;
-}
-.social-icon {
-  width: 40px;
-  height: 40px;
-  display: block;
-  background-size: cover;
-  border-radius: 50%;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-.social-icon:hover {
-  transform: scale(1.2);
-  box-shadow: 0 4px 8px rgba(255, 255, 255, 0.2);
-}
-.whatsapp-icon { background: url('https://img.icons8.com/color/48/000000/whatsapp--v1.png') center/cover no-repeat; }
-.instagram-icon { background: url('https://img.icons8.com/fluency/48/000000/instagram-new.png') center/cover no-repeat; }
-.facebook-icon { background: url('https://img.icons8.com/color/48/000000/facebook-new.png') center/cover no-repeat; }
-.footer-bottom {
-  text-align: center;
-  font-size: 0.9rem;
-  color: #aaa;
-  border-top: 1px solid #444;
-  padding-top: 20px;
-}
-.footer-bottom a {
-  color: #f1c40f;
-  text-decoration: none;
-}
-.footer-bottom a:hover {
-  color: #fff;
-}
-/* Responsive styles */
-@media screen and (max-width: 768px) {
-  .hamburger {
-      display: flex;
-  }
-  .nav-links {
-      display: none;
-      flex-direction: column;
-      gap: 10px;
-      width: 100%;
-  }
-  .nav-links.active {
-      display: flex;
-  }
-  .dropdown-menu,
-  .nested-menu {
-      position: static;
-      background-color: rgb(117, 33, 187);
-      width: 100%;
-  }
-  .dropdown-menu li,
-  .nested-menu li {
-      width: 100%;
-  }
-  .nested-dropdown .nested-menu {
-      left: 0;
-      top: 0;
-  }
-  .search-container {
-      width: 100%;
-      margin-top: 10px;
-  }
-  .banner-text {
-      font-size: 3rem;
-  }
-  .footer .row {
-      flex-direction: column;
-      align-items: center;
-  }
-  .footer-section {
-      text-align: center;
-  }
-  .social-icons {
-      justify-content: center;
-  }
-}
-
-@media screen and (min-width: 200px)and (max-width: 600px) {
-  .carousel-caption h5 {
-     
-      font-size: 2rem; 
-      font-weight: bolder;
-      text-shadow: 2px 2px 10px rgba(255, 6, 6, 0.7);
-   
-}
-}
-@media screen and (min-width: 601px) {
-  .carousel-caption h5 {
-     
-      font-size: 8rem; 
-      font-weight: bolder;
-      
-      text-shadow: 2px 2px 10px rgba(255, 6, 6, 0.7);
-}
-}
