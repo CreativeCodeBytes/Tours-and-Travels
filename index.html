@@ -5,17 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Navbar with Nested Dropdown</title>
     <link rel="stylesheet" href="styles.css">
-    <!-- Include Font Awesome for Icons -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
-    
-
-    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    
-
-    
- 
-    
 </head>
 <body>
     <nav class="navbar">
@@ -23,104 +13,59 @@
             <div class="logo">
                 <a href="index.html"><img src="Images/Cybromatech-logo.jpg" alt="Logo" class="logo-img"></a>
             </div>
-
-
-            <!-- Add hamburger menu -->
             <div class="hamburger">
                 <div class="bar"></div>
                 <div class="bar"></div>
                 <div class="bar"></div>
             </div>
-
-
-            
             <ul class="nav-links">
                 <li class="dropdown">
-                    <a href="#">Group Tours <i class="fa fa-caret-down"></i> </a>
+                    <a href="#" class="dropdown-toggle">Group Tours <i class="fa fa-caret-down"></i></a>
                     <ul class="dropdown-menu">
-                        <!-- Domestic Dropdown -->
                         <li class="nested-dropdown">
-                            <a href="#">Domestic <i class="fa fa-caret-down"></i></a>
+                            <a href="#" class="dropdown-toggle">Domestic <i class="fa fa-caret-down"></i></a>
                             <ul class="nested-menu">
-                                <li><a href="#">Andaman</a></li>
+                                <li><a href="Andaman.html">Andaman</a></li>
                                 <li><a href="AndraPradesh.html">Andhra Pradesh</a></li>
                                 <li><a href="Gujarat.html">Gujarat</a></li>
-                                <li><a href="#">Himachal Pradesh</a></li>
-                                <li><a href="#">Jammu & Kashmir</a></li>
-                                <li><a href="#">Karnataka</a></li>
-                                <li><a href="#">Kerala</a></li>
-                                <li><a href="#">Leh Ladakh</a></li>
                                 <li><a href="madhyapradesh.html">Madhya Pradesh</a></li>
-                                <li><a href="#">Northeast India</a></li>
-                                <li><a href="#">Orissa</a></li>
-                                <li><a href="#">Rajasthan</a></li>
-                                <li><a href="#">Uttarakhand</a></li>
-                                <li><a href="#">West Bengal</a></li>
                                 <li><a href="madhyapradesh.html">Maharashtra</a></li>
                                 <li><a href="#">Goa</a></li>
                             </ul>
                         </li>
-                        <!-- Pilgrimage Yatra Dropdown -->
                         <li class="nested-dropdown">
-                            <a href="#">Pilgrimage Yatra <i class="fa fa-caret-down"></i></a>
+                            <a href="#" class="dropdown-toggle">Pilgrimage Yatra <i class="fa fa-caret-down"></i></a>
                             <ul class="nested-menu">
                                 <li><a href="#">Amarnath Vaishnodevi</a></li>
                                 <li><a href="Chardham yatra.html">Chardham Yatra</a></li>
-                                <li><a href="#">Narmada Parikrama</a></li>
-                                <li><a href="#">Pithapur Kuravpur</a></li>
-                                <li><a href="#">Tristhali Yatra</a></li>
-                                <li><a href="#">Gujarat</a></li>
                             </ul>
                         </li>
-                        <!-- International Dropdown -->
                         <li class="nested-dropdown">
-                            <a href="#">International <i class="fa fa-caret-down"></i> </a>
+                            <a href="#" class="dropdown-toggle">International <i class="fa fa-caret-down"></i> </a>
                             <ul class="nested-menu">
-                                <li><a href="#">Africa</a></li>
-                                <li><a href="#">America</a></li>
-                                <li><a href="#">Australia</a></li>
                                 <li><a href="Bali.html">Bali</a></li>
-                                <li><a href="#">Bhutan</a></li>
-                                <li><a href="#">Cambodia</a></li>
-                                <li><a href="#">Canada</a></li>
-                                <li><a href="#">China</a></li>
                                 <li><a href="Dubai.html">Dubai</a></li>
-                                <li><a href="#">Europe</a></li>
-                                <li><a href="#">Hong Kong</a></li>
-                                <li><a href="#">Malaysia</a></li>
-                                <li><a href="#">Nepal</a></li>
-                                <li><a href="#">New Zealand</a></li>
-                                <li><a href="#">Russia</a></li>
-                                <li><a href="#">Singapore</a></li>
-                                <li><a href="#">Sri Lanka</a></li>
-                                <li><a href="#">Thailand</a></li>
-                                <li><a href="#">Vietnam</a></li>
                             </ul>
                         </li>
-                        <!-- International Customised Tour -->
                         <li><a href="#">International Customised Tour</a></li>
                     </ul>
                 </li>
                 <li class="dropdown">
-                    <a href="#">Honeymoon <i class="fa fa-caret-down"></i> </a>
+                    <a href="#" class="dropdown-toggle">Honeymoon <i class="fa fa-caret-down"></i> </a>
                     <ul class="dropdown-menu">
-                        <!-- Honeymoon Domestic -->
                         <li><a href="Domestic.html">DOMESTIC</a></li>
-                        <!-- Honeymoon International -->
                         <li><a href="international.html">INTERNATIONAL</a></li>
                     </ul>
                 </li>
                 <li class="dropdown">
-                    <a href="#">Customised Tours <i class="fa fa-caret-down"></i> </a>
+                    <a href="#" class="dropdown-toggle">Customised Tours <i class="fa fa-caret-down"></i> </a>
                     <ul class="dropdown-menu">
-                        <!-- Customised Domestic -->
                         <li><a href="#">DOMESTIC</a></li>
-                        <!-- Customised International -->
                         <li><a href="#">INTERNATIONAL</a></li>
                     </ul>
                 </li>
-                <li><a href="Air Ticket.html">Air Ticket & Hotel Booking <i class="fa fa-caret-down"></i> </a></li>
-                <li><a href="contact.html">Contact <i class="fa fa-caret-down"></i></a></li>
+                <li><a href="Air Ticket.html">Air Ticket & Hotel Booking</a></li>
+                <li><a href="contact.html">Contact</a></li>
             </ul>
             <div class="search-container">
                 <input type="text" placeholder="Search..." class="search-input">
@@ -130,8 +75,6 @@
             </div>
         </div>
     </nav>
-   
-
 
     <div class="slideshow-container">
         <div class="slide slide1">
@@ -606,40 +549,6 @@
     </div>
   </div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
   
     <!-- Footer Section Start -->
     <footer class="footer">
@@ -683,235 +592,7 @@
         </div>
     </footer>
 
+<script src="index.js"></script>
 
-
-
-
-
-
-
-
-
-
-
-<script>
-    document.getElementById('currentYear').textContent = new Date().getFullYear();
-
-     // Select the hamburger icon and the nav-links
-      const hamburger = document.querySelector('.hamburger');
-      const navLinks = document.querySelector('.nav-links');
-
-      // Add click event to toggle the nav menu
-      hamburger.addEventListener('click', () => {
-          navLinks.classList.toggle('active');
-      });
-
-      // Select all dropdown menu items
-      const dropdownItems = document.querySelectorAll('.dropdown, .nested-dropdown');
-
-      dropdownItems.forEach(item => {
-          item.addEventListener('click', function(event) {
-              // Prevent the default link behavior (prevents page navigation)
-              event.preventDefault();
-
-              // Find the dropdown menu or nested menu inside the clicked item
-              const dropdownMenu = this.querySelector('.dropdown-menu, .nested-menu');
-      
-              if (dropdownMenu) {
-                  // Toggle visibility of the clicked menu (nested or parent)
-                  dropdownMenu.classList.toggle('show');
-              }
-
-              // Close other nested menus if open (optional: if you want only one menu open at a time)
-              dropdownItems.forEach(otherItem => {
-                  if (otherItem !== this) {
-                      const otherMenu = otherItem.querySelector('.dropdown-menu, .nested-menu');
-                      if (otherMenu) {
-                          otherMenu.classList.remove('show');
-                      }
-                  }
-              });
-          });
-      });
-
-      // Toggle nested dropdown on mobile
-      // Toggle nested dropdown on mobile
-      document.addEventListener('DOMContentLoaded', function () {
-          const nestedDropdowns = document.querySelectorAll('.nested-dropdown');
-          nestedDropdowns.forEach(function (dropdown) {
-              dropdown.addEventListener('click', function (e) {
-                  // Prevent parent link from redirecting
-                  e.preventDefault();
-                  // Toggle the active class to show/hide the nested menu
-                  dropdown.classList.toggle('active');
-              });
-          });
-      });
-
-
-
-
-      function scrollTours(direction) {
-const list = document.querySelector('.tours-list');
-const scrollAmount = list.offsetWidth / 2;
-
-if (direction === 'prev') {
-  list.scrollLeft -= scrollAmount;
-} else {
-  list.scrollLeft += scrollAmount;
-}
-};
-
-
-
-
-
-
-
-
-const options = [
-  { text1: "Small Town Champ", text2: "Big City Glamour", img1: "small city.jpg", img2: "london.jpg" },
-  { text1: "Beach Explorer", text2: "Mountain Adventurer", img1: "maldives.jpg", img2: "mountain.jpg" },
-  { text1: "Luxury Traveler", text2: "Backpacker", img1: "luxury.jpg", img2: "Ooty.jpg" },
-  { text1: "Nature Lover", text2: "Cultural Enthusiast", img1: "nature.jpg", img2:"Goldentemple.jpg" },
-  { text1: "Food Explorer", text2: "Wellness Seeker", img1: "foodie.jpg", img2: "wellness seeker.jpg" }
-];
-
-// Mapping results to categories
-
-const resultsMapping = {
-  relaxing: {
-    text: "You love relaxing vacations!",
-    exploreLink: "relaxing.html"
-  },
-  adventurous: {
-    text: "You enjoy adventurous trips!",
-    exploreLink: "adventurous.html"
-  },
-  cultural: {
-    text: "You are a cultural enthusiast!",
-    exploreLink: "cultural.html"
-  },
-  nature: {
-    text: "You are a nature lover!",
-    exploreLink: "nature.html"
-  },
-  foodie: {
-    text: "You are a foodie traveler!",
-    exploreLink: "foodie.html"
-  },
-  wellness: {
-    text: "You enjoy wellness and self-care trips!",
-    exploreLink: "wellness.html"
-  }
-};
-
-let currentStep = 0;
-const selectedOptions = [];
-
-function selectOption(option) {
-  selectedOptions.push(option);
-  currentStep++;
-
-  if (currentStep < 5) {
-    updateQuestion();
-  } else {
-    showResult();
-  }
-}
-
-function updateQuestion() {
-  const question = options[currentStep];
-  document.getElementById("option1").querySelector("img").src = question.img1;
-  document.getElementById("option1").querySelector("h3").textContent = question.text1;
-
-  document.getElementById("option2").querySelector("img").src = question.img2;
-  document.getElementById("option2").querySelector("h3").textContent = question.text2;
-}
-
-function showResult() {
-  document.querySelector(".question-section").classList.add("hidden");
-  document.querySelector(".result-section").classList.remove("hidden");
-
-  // Determine result based on user selections
-  const relaxingCount = selectedOptions.filter(option => option === 1).length;
-
-  let resultKey;
-  if (relaxingCount >= 3) {
-    resultKey = "relaxing";
-  } else if (selectedOptions.includes(2) && relaxingCount >= 2) {
-    resultKey = "adventurous";
-  } else if (selectedOptions.includes(1) && selectedOptions.includes(2)) {
-    resultKey = "cultural";
-  } else if (selectedOptions.includes(1) && relaxingCount === 1) {
-    resultKey = "nature";
-  } else if (selectedOptions.includes(2) && relaxingCount === 0) {
-    resultKey = "foodie";
-  } else {
-    resultKey = "wellness";
-  }
-
-  const resultData = resultsMapping[resultKey];
-  document.getElementById("result").textContent = resultData.text;
-
-  const exploreButton = document.getElementById("explore-button");
-  exploreButton.href = resultData.exploreLink;
-}
-
-function restartGame() {
-  currentStep = 0;
-  selectedOptions.length = 0;
-  document.querySelector(".question-section").classList.remove("hidden");
-  document.querySelector(".result-section").classList.add("hidden");
-  updateQuestion();
-}
-
-
-
-
-// Review section navigation logic
-let currentReview = 0;
-const reviews = document.querySelectorAll('.review-item');
-const totalReviews = reviews.length;
-const prevBtn = document.getElementById('prev-btn');
-const nextBtn = document.getElementById('next-btn');
-
-// Function to show the current set of reviews
-function showReviews() {
-  reviews.forEach((review, index) => {
-    if (index >= currentReview && index < currentReview + 3) {
-      review.style.display = 'block'; // Show review
-    } else {
-      review.style.display = 'none'; // Hide review
-    }
-  });
-}
-
-// Show the first set of reviews initially
-showReviews();
-
-// Handle previous button click
-prevBtn.addEventListener('click', () => {
-  if (currentReview > 0) {
-    currentReview -= 3; // Move to previous set of reviews
-    showReviews();
-  }
-});
-
-// Handle next button click
-nextBtn.addEventListener('click', () => {
-  if (currentReview + 3 < totalReviews) {
-    currentReview += 3; // Move to next set of reviews
-    showReviews();
-  }
-});
-
-
-
-
-  </script>
-
-    
-  
     </body>
     </html>
